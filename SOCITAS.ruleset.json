@@ -35,6 +35,11 @@
       "id": "PTE0012",
       "action": "None",
       "justification": "Disabled for Test App"
-    }
+    },
+    {
+      "id": "LC0068",
+      "action": "None",
+      "justification": "Disabled some scenarios not nice resolved"
+    }    
   ]
 }
