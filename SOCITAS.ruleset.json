@@ -1,0 +1,40 @@
+{
+  "name": "Socitas Ruleset",
+  "rules": [
+    {
+      "id": "AS0053",
+      "action": "None",
+      "justification": "Ignore SaaS environment check"
+    },
+    {
+      "id": "PTE0005",
+      "action": "None",
+      "justification": "Ignore SaaS environment check"
+    },
+    {
+      "id": "AA0214",
+      "action": "None",
+      "justification": "Not possible to solve"
+    },
+    {
+      "id": "AS0084",
+      "action": "None",
+      "justification": "Ignore AppStore Id Range"
+    },
+    {
+      "id": "AS0092",
+      "action": "None",
+      "justification": "Ignore Application Insight"
+    },
+    {
+      "id": "AS0081",
+      "action": "None",
+      "justification": "Disabled for Test App"
+    },
+    {
+      "id": "PTE0012",
+      "action": "None",
+      "justification": "Disabled for Test App"
+    }
+  ]
+}
