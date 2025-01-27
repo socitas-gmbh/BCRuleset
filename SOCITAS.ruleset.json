@@ -413,7 +413,7 @@
     },
     {
       "id": "AA0248",
-      "action": "Warning",
+      "action": "Info",
       "justification": "Add 'this' qualification to improve readability."
     },
     {
