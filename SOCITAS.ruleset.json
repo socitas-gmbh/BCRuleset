@@ -413,7 +413,7 @@
     },
     {
       "id": "AA0248",
-      "action": "Info",
+      "action": "None",
       "justification": "Add 'this' qualification to improve readability."
     },
     {
@@ -773,7 +773,7 @@
     },
     {
       "id": "LC0029",
-      "action": "Warning",
+      "action": "None",
       "justification": "Use CompareDateTime method in Type Helper codeunit for DateTime variable comparisons."
     },
     {
@@ -1000,6 +1000,11 @@
       "id": "LC0074",
       "action": "Warning",
       "justification": "Set values for FlowFilter fields using filtering methods."
+    },
+    {
+      "id": "LC0084",
+      "action": "None",
+      "justification": "Use return value for better error handling."
     }
   ]
 }
