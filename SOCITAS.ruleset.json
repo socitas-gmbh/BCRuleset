@@ -547,6 +547,16 @@
       "justification": "The enum ordinal value should be within the allowed range"
     },
     {
+      "id": "PTE0024",
+      "action": "Error",
+      "justification": "Moving tables or fields is not allowed on per-tenant extensions"
+    },
+    {
+      "id": "PTE0025",
+      "action": "None",
+      "justification": "Avoid using duplicate object names"
+    },
+    {
       "id": "AW0001",
       "action": "Error",
       "justification": "The Web client does not support displaying the Request page of XMLPorts."
@@ -1002,9 +1012,89 @@
       "justification": "Set values for FlowFilter fields using filtering methods."
     },
     {
+      "id": "LC0075",
+      "action": "Error",
+      "justification": "Incorrect number or type of arguments in .Get() method on Record object."
+    },
+    {
+      "id": "LC0076",
+      "action": "Warning",
+      "justification": "The field with table relation should have at least the same length as the referenced field."
+    },
+    {
+      "id": "LC0077",
+      "action": "Warning",
+      "justification": "Methods should always be called with parenthesis."
+    },
+    {
+      "id": "LC0078",
+      "action": "Warning",
+      "justification": "Temporary records should not trigger table triggers."
+    },
+    {
+      "id": "LC0079",
+      "action": "Warning",
+      "justification": "Event publishers should not be public."
+    },
+    {
+      "id": "LC0080",
+      "action": "Warning",
+      "justification": "Replace double quotes in JPath expressions with two single quotes."
+    },
+    {
+      "id": "LC0081",
+      "action": "Warning",
+      "justification": "Use Rec.IsEmpty() for checking record existence."
+    },
+    {
+      "id": "LC0082",
+      "action": "Warning",
+      "justification": "Consider using a Query or Rec.Find('-') with Rec.Next()."
+    },
+    {
+      "id": "LC0083",
+      "action": "Warning",
+      "justification": "Use new Date/Time/DateTime methods for extracting parts."
+    },
+    {
       "id": "LC0084",
       "action": "None",
       "justification": "Use return value for better error handling."
+    },
+    {
+      "id": "LC0085",
+      "action": "Warning",
+      "justification": "Use the (CR)LFSeparator from the \"Type Helper\" codeunit."
+    },
+    {
+      "id": "LC0086",
+      "action": "Warning",
+      "justification": "Use the new PageStyle datatype instead string literals."
+    },
+    {
+      "id": "LC0087",
+      "action": "Warning",
+      "justification": "Use IsNullGuid() to check for empty GUID values."
+    },
+    {
+      "id": "LC0088",
+      "action": "Warning",
+      "justification": "Option types should be avoided, use enum if applicable."
+    },
+    {
+      "id": "LC0089",
+      "action": "None",
+      "justification": "Show Cognitive Complexity diagnostics for all methods."
+    },
+    {
+      "id": "LC0090",
+      "action": "Info",
+      "justification": "Show Cognitive Complexity diagnostics for methods above threshold."
+    },
+    {
+      "id": "LC0091",
+      "action": "Warning",
+      "justification": "Translatable texts should be translated."
     }
   ]
 }
