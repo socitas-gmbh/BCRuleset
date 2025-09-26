@@ -417,6 +417,11 @@
       "justification": "Add 'this' qualification to improve readability."
     },
     {
+      "id": "AA0249",
+      "action": "Info",
+      "justification": "PageField trigger is unused due to a property value."      
+    },
+    {
       "id": "AA0448",
       "action": "Error",
       "justification": "You must use the FieldCaption method instead of the FieldName method and TableCaption method instead of TableName method."
