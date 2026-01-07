@@ -419,7 +419,7 @@
     {
       "id": "AA0249",
       "action": "Info",
-      "justification": "PageField trigger is unused due to a property value."      
+      "justification": "PageField trigger is unused due to a property value."
     },
     {
       "id": "AA0448",
@@ -435,6 +435,11 @@
       "id": "AA0470",
       "action": "Warning",
       "justification": "Placeholders should have a comment explaining their content."
+    },
+    {
+      "id": "AL0897",
+      "action": "Warning",
+      "justification": "Using statements are not ordered alphabetically."
     },
     {
       "id": "PTE0001",
