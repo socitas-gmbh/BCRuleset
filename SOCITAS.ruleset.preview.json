@@ -7,6 +7,11 @@
       "justification": "The compilation target of an application must be a value that is allowed in a multi-tenant SaaS environment"
     },
     {
+      "id": "AS0081",
+      "action": "None",
+      "justification": "InternalsVisibleTo should not be used as a security feature."
+    },
+    {
       "id": "AS0084",
       "action": "None",
       "justification": "The ID range assigned to the extension must be within the allowed range"
@@ -15,11 +20,6 @@
       "id": "AS0092",
       "action": "None",
       "justification": "The app.json file must specify an Azure Application Insights resource."
-    },
-    {
-      "id": "AS0081",
-      "action": "None",
-      "justification": "InternalsVisibleTo should not be used as a security feature."
     },
     {
       "id": "AA0001",
@@ -707,11 +707,6 @@
       "justification": "MaskType is not supported inside repeaters and is silently ignored by the Web client."
     },
     {
-      "id": "LC0000",
-      "action": "Info",
-      "justification": "An error ocurred in a given rule. Please create an issue on GitHub"
-    },
-    {
       "id": "AC0001",
       "action": "Warning",
       "justification": "DrillDownPageId and LookupPageId must be filled in table when table is used in list page."
@@ -867,6 +862,11 @@
       "justification": "Informs the user that there are missing permission to access tabledata."
     },
     {
+      "id": "AC0032",
+      "action": "Info",
+      "justification": "Unused permission declared. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
       "id": "DC0001",
       "action": "Warning",
       "justification": "Commit() needs a comment to justify its existence. Either a leading or a trailing comment."
@@ -892,6 +892,31 @@
       "justification": "The documentation comment must match the procedure syntax."
     },
     {
+      "id": "DC0006",
+      "action": "Hidden",
+      "justification": "Internal procedures must include XML documentation comments. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "DC0007",
+      "action": "Info",
+      "justification": "Public objects must include XML documentation comments. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "DC0008",
+      "action": "Hidden",
+      "justification": "Internal objects must include XML documentation comments. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "DC0009",
+      "action": "Hidden",
+      "justification": "Events must include XML documentation comments. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "DC0010",
+      "action": "Hidden",
+      "justification": "Internal events must include XML documentation comments. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
       "id": "FC0001",
       "action": "Error",
       "justification": "Procedure or Trigger declaration should not end with semicolon."
@@ -905,6 +930,26 @@
       "id": "FC0003",
       "action": "Warning",
       "justification": "Methods should always be called with parenthesis."
+    },
+    {
+      "id": "FC0004",
+      "action": "Info",
+      "justification": "Permission declarations should be ordered alphabetically. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "FC0005",
+      "action": "Warning",
+      "justification": "Use parenthesis for method calls instead of assignment syntax. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "FC0006",
+      "action": "Info",
+      "justification": "Permission values should be lowercase. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "FC0007",
+      "action": "Info",
+      "justification": "Statement blocks should be separated by a blank line. Entered at the ALCops default severity, to be tightened once measured."
     },
     {
       "id": "LC0003",
@@ -1030,6 +1075,41 @@
       "id": "LC0091",
       "action": "Warning",
       "justification": "Translatable texts should be translated."
+    },
+    {
+      "id": "LC0092",
+      "action": "Warning",
+      "justification": "Name does not match the naming convention. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "LC0094",
+      "action": "Warning",
+      "justification": "AllowInCustomizations redundancy. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "LC0095",
+      "action": "Warning",
+      "justification": "Parameter is not referenced. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "LC0096",
+      "action": "Warning",
+      "justification": "Unnecessary record parameter in method call. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "LC0097",
+      "action": "Info",
+      "justification": "Avoid mixing exit() and named return variable assignments. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "LC0098",
+      "action": "Info",
+      "justification": "Event subscriber name does not match the configured template. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "LC0099",
+      "action": "Info",
+      "justification": "Event subscriber parameter is not referenced. Entered at the ALCops default severity, to be tightened once measured."
     },
     {
       "id": "PC0001",
@@ -1167,9 +1247,64 @@
       "justification": "The field with table relation should have at least the same length as the referenced field."
     },
     {
+      "id": "PC0029",
+      "action": "Info",
+      "justification": "Use CreateSequentialGuid for key fields. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "PC0030",
+      "action": "Info",
+      "justification": "Use partial records on read operation. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "PC0031",
+      "action": "Warning",
+      "justification": "Partial records cause JIT load on full-field operations. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "PC0032",
+      "action": "Error",
+      "justification": "Report layout property exceeds maximum length. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "PC0033",
+      "action": "Warning",
+      "justification": "Duplicate OData EntityName on page controls. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "PC0034",
+      "action": "Warning",
+      "justification": "Placeholder argument count mismatch. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "PC0035",
+      "action": "Warning",
+      "justification": "Use SetAutoCalcFields for loops. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
       "id": "PC0036",
       "action": "Warning",
       "justification": "PageVariable.SetRecord(): You cannot use a temporary record for the Record parameter."
+    },
+    {
+      "id": "PC0037",
+      "action": "Warning",
+      "justification": "Use Validate() instead of direct field assignment. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "PC0038",
+      "action": "Info",
+      "justification": "Not all code paths return a value. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "TA0001",
+      "action": "Warning",
+      "justification": "Global procedures in test codeunits must be test methods. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "TA0002",
+      "action": "Warning",
+      "justification": "Actions cannot be invoked on a part page opened directly through its own TestPage variable. Entered at the ALCops default severity, to be tightened once measured."
     }
   ]
 }
