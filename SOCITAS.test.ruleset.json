@@ -762,6 +762,11 @@
       "justification": "Tests switch GlobalLanguage directly to set up language scenarios."
     },
     {
+      "id": "AA0210",
+      "action": "None",
+      "justification": "Tests filter production tables on fields needed by the scenario; keys are not added for test lookups."
+    },
+    {
       "id": "LC0023",
       "action": "Info",
       "justification": "Always provide fieldsgroups DropDown and Brick on tables."
