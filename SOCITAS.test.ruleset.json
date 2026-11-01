@@ -247,11 +247,6 @@
       "justification": "The EventSubscriber method must be local."
     },
     {
-      "id": "AA0210",
-      "action": "Info",
-      "justification": "Avoid non-indexed fields into filtering."
-    },
-    {
       "id": "AA0211",
       "action": "Error",
       "justification": "Avoids a runtime error from using CalcFields on a field that is not a FlowField or a field of type Blob."
