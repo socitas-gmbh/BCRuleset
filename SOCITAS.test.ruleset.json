@@ -1115,6 +1115,11 @@
       "id": "AI0001",
       "action": "None",
       "justification": "Test codeunits and libraries keep shared fixture and handler state in global variables."
+    },
+    {
+      "id": "SC0042",
+      "action": "None",
+      "justification": "Test procedure and handler names use the Area_Case_Expectation style with underscores to stay readable."
     }
   ]
 }
