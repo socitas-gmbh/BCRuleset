@@ -178,13 +178,13 @@
     },
     {
       "id": "AA0175",
-      "action": "Warning",
-      "justification": "Only find record if you need to use it."
+      "action": "None",
+      "justification": "Tests call Get or Find to check that a record exists without using its values."
     },
     {
       "id": "AA0181",
-      "action": "Warning",
-      "justification": "The FindSet() or Find() methods must be used only in connection with the Next() method."
+      "action": "None",
+      "justification": "Tests call Find to check that a record exists without reading it."
     },
     {
       "id": "AA0189",
@@ -758,8 +758,8 @@
     },
     {
       "id": "LC0022",
-      "action": "Warning",
-      "justification": "GlobalLanguage() must be implemented through the Translation Helper codeunit from the Base Application."
+      "action": "None",
+      "justification": "Tests switch GlobalLanguage directly to set up language scenarios."
     },
     {
       "id": "LC0023",
@@ -1105,6 +1105,16 @@
       "id": "LC0091",
       "action": "Warning",
       "justification": "Translatable texts should be translated."
+    },
+    {
+      "id": "SC0002",
+      "action": "None",
+      "justification": "Tests set up data with direct field assignments on purpose; Validate would fire business logic the test does not want to exercise."
+    },
+    {
+      "id": "AI0001",
+      "action": "None",
+      "justification": "Test codeunits and libraries keep shared fixture and handler state in global variables."
     }
   ]
 }
