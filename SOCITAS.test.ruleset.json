@@ -767,6 +767,11 @@
       "justification": "Tests filter production tables on fields needed by the scenario; keys are not added for test lookups."
     },
     {
+      "id": "AI0005",
+      "action": "None",
+      "justification": "Test JSON helpers may deliberately tolerate non-value tokens where the built-in Get<Type> shortcuts would error."
+    },
+    {
       "id": "LC0023",
       "action": "Info",
       "justification": "Always provide fieldsgroups DropDown and Brick on tables."
