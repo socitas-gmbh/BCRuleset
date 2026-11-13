@@ -1,0 +1,9 @@
+{
+  "al.codeAnalyzers": [
+    "${CodeCop}",
+    "${analyzerFolder}BusinessCentral.LinterCop.dll",
+    "${analyzerFolder}BusinessCentral.SocitasCop.dll"
+  ],
+  "al.enableCodeAnalysis": true,
+  "al.ruleSetPath": ".codeanalyzer/SOCITAS.test.ruleset.json"
+}

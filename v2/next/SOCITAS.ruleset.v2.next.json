@@ -1,0 +1,2220 @@
+{
+  "name": "Global Socitas Ruleset v2",
+  "rules": [
+    {
+      "id": "AS0053",
+      "action": "None",
+      "justification": "The compilation target of an application must be a value that is allowed in a multi-tenant SaaS environment"
+    },
+    {
+      "id": "AS0081",
+      "action": "None",
+      "justification": "InternalsVisibleTo should not be used as a security feature."
+    },
+    {
+      "id": "AS0084",
+      "action": "None",
+      "justification": "The ID range assigned to the extension must be within the allowed range"
+    },
+    {
+      "id": "AS0092",
+      "action": "None",
+      "justification": "The app.json file must specify an Azure Application Insights resource."
+    },
+    {
+      "id": "AA0001",
+      "action": "Error",
+      "justification": "There must be exactly one space character on each side of a binary operator such as := + - AND OR =."
+    },
+    {
+      "id": "AA0002",
+      "action": "Error",
+      "justification": "There must be no space character."
+    },
+    {
+      "id": "AA0003",
+      "action": "Error",
+      "justification": "There must be exactly one space character between the NOT operator and its argument."
+    },
+    {
+      "id": "AA0005",
+      "action": "Warning",
+      "justification": "Only use BEGIN..END to enclose compound statements."
+    },
+    {
+      "id": "AA0008",
+      "action": "Error",
+      "justification": "Function calls should have parenthesis even if they do not have any parameters."
+    },
+    {
+      "id": "AA0013",
+      "action": "Error",
+      "justification": "When BEGIN follows THEN, ELSE, DO, it should be on the same line, preceded by one space character."
+    },
+    {
+      "id": "AA0018",
+      "action": "Error",
+      "justification": "The END, IF, REPEAT, UNTIL, FOR, WHILE, and CASE statement should always start a line."
+    },
+    {
+      "id": "AA0021",
+      "action": "Warning",
+      "justification": "Variable declarations should be ordered by type."
+    },
+    {
+      "id": "AA0022",
+      "action": "Error",
+      "justification": "Substitute the IF THEN ELSE structure with a CASE."
+    },
+    {
+      "id": "AA0040",
+      "action": "Error",
+      "justification": "Avoid using nested WITH statements."
+    },
+    {
+      "id": "AA0050",
+      "action": "Warning",
+      "justification": "Permission set extensions should not include permissions for objects defined in another application."
+    },
+    {
+      "id": "AA0051",
+      "action": "Warning",
+      "justification": "Permission set extensions should not include permission sets defined in another application."
+    },
+    {
+      "id": "AA0052",
+      "action": "Warning",
+      "justification": "Permission set extensions should not include permission sets which include permissions for objects defined in another application."
+    },
+    {
+      "id": "AA0053",
+      "action": "Warning",
+      "justification": "Permission set extensions should not include wildcard permissions."
+    },
+    {
+      "id": "AA0072",
+      "action": "None",
+      "justification": "The name of variables and parameters must be suffixed with the type or object name."
+    },
+    {
+      "id": "AA0073",
+      "action": "Warning",
+      "justification": "The name of temporary variable must be prefixed with Temp."
+    },
+    {
+      "id": "AA0074",
+      "action": "Warning",
+      "justification": "TextConst and Label variable names should have an approved suffix."
+    },
+    {
+      "id": "AA0087",
+      "action": "Error",
+      "justification": "Lowering permissions should only be used in tests"
+    },
+    {
+      "id": "AA0100",
+      "action": "Error",
+      "justification": "Do not have identifiers with quotes in the name."
+    },
+    {
+      "id": "AA0101",
+      "action": "Error",
+      "justification": "Use camel case property values in pages of type API."
+    },
+    {
+      "id": "AA0102",
+      "action": "Error",
+      "justification": "Use camel case name for field controls in pages of type API."
+    },
+    {
+      "id": "AA0103",
+      "action": "Error",
+      "justification": "Use camel case property values in queries of type API."
+    },
+    {
+      "id": "AA0104",
+      "action": "Error",
+      "justification": "Use camel case name for column controls in queries of type API."
+    },
+    {
+      "id": "AA0105",
+      "action": "Error",
+      "justification": "PagePart controls must not refer to parent pages."
+    },
+    {
+      "id": "AA0106",
+      "action": "Error",
+      "justification": "A page of type API can only refer to the same subpage once."
+    },
+    {
+      "id": "AA0131",
+      "action": "Error",
+      "justification": "String parameters must match placeholders."
+    },
+    {
+      "id": "AA0136",
+      "action": "Error",
+      "justification": "Do not write code that will never be hit."
+    },
+    {
+      "id": "AA0137",
+      "action": "Warning",
+      "justification": "Do not declare variables that are unused."
+    },
+    {
+      "id": "AA0139",
+      "action": "Warning",
+      "justification": "Do not assign a text to a target with smaller size."
+    },
+    {
+      "id": "AA0150",
+      "action": "Warning",
+      "justification": "Do not declare parameters by reference if their values are never changed."
+    },
+    {
+      "id": "AA0161",
+      "action": "Error",
+      "justification": "Only use AssertError in Test Codeunits."
+    },
+    {
+      "id": "AA0175",
+      "action": "Warning",
+      "justification": "Only find record if you need to use it."
+    },
+    {
+      "id": "AA0181",
+      "action": "Warning",
+      "justification": "The FindSet() or Find() methods must be used only in connection with the Next() method."
+    },
+    {
+      "id": "AA0189",
+      "action": "Error",
+      "justification": "Only use a correct values of ApplicationArea."
+    },
+    {
+      "id": "AA0194",
+      "action": "Warning",
+      "justification": "Only write actions that have an effect."
+    },
+    {
+      "id": "AA0198",
+      "action": "Error",
+      "justification": "Do not use identical names for local and global variables."
+    },
+    {
+      "id": "AA0199",
+      "action": "Error",
+      "justification": "Use only a correct order for ApplicationArea."
+    },
+    {
+      "id": "AA0200",
+      "action": "Error",
+      "justification": "When ApplicationArea is set to 'All', no other values for ApplicationArea should be specified."
+    },
+    {
+      "id": "AA0201",
+      "action": "Error",
+      "justification": "When ApplicationArea is set to 'Basic', you must also specify 'Suite'."
+    },
+    {
+      "id": "AA0202",
+      "action": "Error",
+      "justification": "To avoid confusion, do not give local variables the same name as fields, methods, or actions in the same scope."
+    },
+    {
+      "id": "AA0203",
+      "action": "Error",
+      "justification": "To avoid confusion, do not give methods the same name as fields or actions in the same scope."
+    },
+    {
+      "id": "AA0204",
+      "action": "Error",
+      "justification": "To avoid confusion, do not give global variables the same name as fields, methods, or actions in the same scope."
+    },
+    {
+      "id": "AA0205",
+      "action": "Warning",
+      "justification": "Variables must be initialized before usage."
+    },
+    {
+      "id": "AA0206",
+      "action": "Warning",
+      "justification": "The value assigned to a variable must be used."
+    },
+    {
+      "id": "AA0207",
+      "action": "Error",
+      "justification": "The EventSubscriber method must be local."
+    },
+    {
+      "id": "AA0210",
+      "action": "Info",
+      "justification": "Avoid non-indexed fields into filtering."
+    },
+    {
+      "id": "AA0211",
+      "action": "Error",
+      "justification": "Avoids a runtime error from using CalcFields on a field that is not a FlowField or a field of type Blob."
+    },
+    {
+      "id": "AA0213",
+      "action": "Error",
+      "justification": "Obsoleted object must have a state 'Pending' or 'Removed' and a justification specifying why this field is being obsoleted."
+    },
+    {
+      "id": "AA0214",
+      "action": "Warning",
+      "justification": "The local record should be modified before saving to the database."
+    },
+    {
+      "id": "AA0215",
+      "action": "Error",
+      "justification": "Follow the style guide about the best practices for naming."
+    },
+    {
+      "id": "AA0216",
+      "action": "Warning",
+      "justification": "Use a text constant for passing user messages and errors without concatenations."
+    },
+    {
+      "id": "AA0217",
+      "action": "None",
+      "justification": "Use a text constant or label for format string in StrSubstNo."
+    },
+    {
+      "id": "AA0218",
+      "action": "Warning",
+      "justification": "You must write a tooltip in the Tooltip property for all controls of type Action and Field that exist on page objects."
+    },
+    {
+      "id": "AA0219",
+      "action": "Warning",
+      "justification": "The Tooltip property of Fields must start with 'Specifies'."
+    },
+    {
+      "id": "AA0220",
+      "action": "Warning",
+      "justification": "The value of the Tooltip property of Fields must be filled."
+    },
+    {
+      "id": "AA0221",
+      "action": "Error",
+      "justification": "You must specify a OptionCaption property for all fields which source expressions is not a table field."
+    },
+    {
+      "id": "AA0222",
+      "action": "Warning",
+      "justification": "SIFT index should not be used on primary or unique key."
+    },
+    {
+      "id": "AA0223",
+      "action": "Error",
+      "justification": "The value of the OptionCaption property of Fields must be filled in."
+    },
+    {
+      "id": "AA0224",
+      "action": "Error",
+      "justification": "The count of option captions specified in the OptionCaption property is wrong."
+    },
+    {
+      "id": "AA0225",
+      "action": "Error",
+      "justification": "You must specify a caption in the Caption property for Fields that exist on page objects."
+    },
+    {
+      "id": "AA0226",
+      "action": "Error",
+      "justification": "The value of the Caption property of Fields must be filled in."
+    },
+    {
+      "id": "AA0227",
+      "action": "Error",
+      "justification": "Optional return value should not be omitted in upgrade codeunits."
+    },
+    {
+      "id": "AA0228",
+      "action": "Warning",
+      "justification": "The local method must be used; otherwise removed."
+    },
+    {
+      "id": "AA0230",
+      "action": "Error",
+      "justification": "Version should not be specified for internal assemblies."
+    },
+    {
+      "id": "AA0231",
+      "action": "Warning",
+      "justification": "StrSubstNo or string concatenation must not be used as a parameter in the Error method."
+    },
+    {
+      "id": "AA0232",
+      "action": "Info",
+      "justification": "The FlowField of a table should be indexed."
+    },
+    {
+      "id": "AA0233",
+      "action": "Error",
+      "justification": "Use Get(), FindFirst() and FindLast() without Next() method."
+    },
+    {
+      "id": "AA0234",
+      "action": "Warning",
+      "justification": "You must write a tooltip in the Tooltip property for all fields on table objects."
+    },
+    {
+      "id": "AA0235",
+      "action": "Error",
+      "justification": "When using 'OnInstallAppPerCompany' you should also add 'Company-Initialize'::'OnCompanyInitialize' event subscriber."
+    },
+    {
+      "id": "AA0237",
+      "action": "Error",
+      "justification": "The name of non-temporary variables must not be prefixed with Temp."
+    },
+    {
+      "id": "AA0240",
+      "action": "Error",
+      "justification": "Email and Phone No must not be present in any part of the source code."
+    },
+    {
+      "id": "AA0241",
+      "action": "None",
+      "justification": "Use all lowercase letters for reserved language keywords."
+    },
+    {
+      "id": "AA0242",
+      "action": "Error",
+      "justification": "Limit JIT loads by selecting all fields for load."
+    },
+    {
+      "id": "AA0243",
+      "action": "Error",
+      "justification": "Running an upgrade codeunit is not allowed."
+    },
+    {
+      "id": "AA0244",
+      "action": "Error",
+      "justification": "Do not use identical names for parameters and global variables."
+    },
+    {
+      "id": "AA0245",
+      "action": "Error",
+      "justification": "To avoid confusion, do not give parameters the same name as fields, methods, or actions in the same scope."
+    },
+    {
+      "id": "AA0246",
+      "action": "Error",
+      "justification": "Suppressing all diagnostics is not allowed."
+    },
+    {
+      "id": "AA0247",
+      "action": "Info",
+      "justification": "Use namespaces."
+    },
+    {
+      "id": "AA0248",
+      "action": "None",
+      "justification": "Add 'this' qualification to improve readability."
+    },
+    {
+      "id": "AA0249",
+      "action": "Info",
+      "justification": "PageField trigger is unused due to a property value."
+    },
+    {
+      "id": "AA0250",
+      "action": "Warning",
+      "justification": "External business events must carry an obsolete marker so consumers get a deprecation path."
+    },
+    {
+      "id": "AA0251",
+      "action": "Error",
+      "justification": "An external business event marked obsolete must also set the obsolete attribute."
+    },
+    {
+      "id": "AA0252",
+      "action": "Error",
+      "justification": "External business events must not be moved to another app; it breaks existing consumers."
+    },
+    {
+      "id": "AA0448",
+      "action": "Error",
+      "justification": "You must use the FieldCaption method instead of the FieldName method and TableCaption method instead of TableName method."
+    },
+    {
+      "id": "AA0462",
+      "action": "Error",
+      "justification": "The CalcDate should only be used with DataFormula variables. Alternatively the string should be enclosed using the <> symbols."
+    },
+    {
+      "id": "AA0470",
+      "action": "Warning",
+      "justification": "Placeholders should have a comment explaining their content."
+    },
+    {
+      "id": "AA0471",
+      "action": "Warning",
+      "justification": "Page control fields of type Decimal must specify AutoFormatType so amounts format per locale."
+    },
+    {
+      "id": "AA0472",
+      "action": "Warning",
+      "justification": "Amount AutoFormatType requires AutoFormatExpression to resolve the currency."
+    },
+    {
+      "id": "AA0473",
+      "action": "Warning",
+      "justification": "Table control fields of type Decimal must specify AutoFormatType so amounts format per locale."
+    },
+    {
+      "id": "AA0474",
+      "action": "Warning",
+      "justification": "Amount AutoFormatType requires AutoFormatExpression to resolve the currency."
+    },
+    {
+      "id": "AA0475",
+      "action": "Error",
+      "justification": "Truncate is only valid on normal tables without media fields and outside try functions."
+    },
+    {
+      "id": "AA0476",
+      "action": "Error",
+      "justification": "An invalid AI test configuration must not compile."
+    },
+    {
+      "id": "AA0477",
+      "action": "Warning",
+      "justification": "Using statements are not ordered alphabetically."
+    },
+    {
+      "id": "PTE0001",
+      "action": "Error",
+      "justification": "Object ID must be in free range."
+    },
+    {
+      "id": "PTE0002",
+      "action": "Error",
+      "justification": "Field ID must be in free range."
+    },
+    {
+      "id": "PTE0003",
+      "action": "Error",
+      "justification": "Procedures must not subscribe to CompanyOpen events"
+    },
+    {
+      "id": "PTE0004",
+      "action": "Error",
+      "justification": "Table definitions must have a matching permission set."
+    },
+    {
+      "id": "PTE0005",
+      "action": "Error",
+      "justification": "The compilation target of an application must be a value that is allowed in a multi-tenant SaaS environment"
+    },
+    {
+      "id": "PTE0006",
+      "action": "Error",
+      "justification": "Encryption key functions must not be invoked."
+    },
+    {
+      "id": "PTE0007",
+      "action": "Error",
+      "justification": "Test assertion functions are not allowed in a non-test context."
+    },
+    {
+      "id": "PTE0008",
+      "action": "Error",
+      "justification": "Page controls and actions must use the ApplicationArea property"
+    },
+    {
+      "id": "PTE0009",
+      "action": "Error",
+      "justification": "This app.json property must not be used for per-tenant extensions."
+    },
+    {
+      "id": "PTE0010",
+      "action": "Error",
+      "justification": "The extension name is too long."
+    },
+    {
+      "id": "PTE0011",
+      "action": "Error",
+      "justification": "The publisher name is too long."
+    },
+    {
+      "id": "PTE0012",
+      "action": "None",
+      "justification": "InternalsVisibleTo should not be used as a security feature."
+    },
+    {
+      "id": "PTE0013",
+      "action": "Error",
+      "justification": "Entitlements cannot be defined in an extension."
+    },
+    {
+      "id": "PTE0014",
+      "action": "Error",
+      "justification": "Permission Sets should not be defined in XML files."
+    },
+    {
+      "id": "PTE0015",
+      "action": "Error",
+      "justification": "The extension name is not valid."
+    },
+    {
+      "id": "PTE0016",
+      "action": "Warning",
+      "justification": "Permission set extensions should not include permissions for objects defined in another application."
+    },
+    {
+      "id": "PTE0017",
+      "action": "Warning",
+      "justification": "Permission set extensions should not include permission sets defined in another application."
+    },
+    {
+      "id": "PTE0018",
+      "action": "Warning",
+      "justification": "Permission set extensions should not include permission sets which include permissions for objects defined in another application."
+    },
+    {
+      "id": "PTE0019",
+      "action": "Warning",
+      "justification": "Permission set extensions should not include wildcard permissions."
+    },
+    {
+      "id": "PTE0020",
+      "action": "Error",
+      "justification": "Use the 'application' property instead of specifying an explicit dependency on Base Application."
+    },
+    {
+      "id": "PTE0021",
+      "action": "Error",
+      "justification": "Defining reserved namespaces is not allowed."
+    },
+    {
+      "id": "PTE0022",
+      "action": "Error",
+      "justification": "The member ID should be within the allowed range"
+    },
+    {
+      "id": "PTE0023",
+      "action": "Info",
+      "justification": "The enum ordinal value should be within the allowed range"
+    },
+    {
+      "id": "PTE0024",
+      "action": "Error",
+      "justification": "Moving tables or fields is not allowed on per-tenant extensions"
+    },
+    {
+      "id": "PTE0025",
+      "action": "None",
+      "justification": "Avoid using duplicate object names"
+    },
+    {
+      "id": "PTE0026",
+      "action": "Warning",
+      "justification": "Table fields must set AllowInCustomizations to control personalization explicitly."
+    },
+    {
+      "id": "AW0001",
+      "action": "Error",
+      "justification": "The Web client does not support displaying the Request page of XMLPorts."
+    },
+    {
+      "id": "AW0002",
+      "action": "Error",
+      "justification": "The Web client does not support displaying both Actions and Fields in Cue Groups. Only Fields will be displayed."
+    },
+    {
+      "id": "AW0003",
+      "action": "Error",
+      "justification": "The Web client does not support displaying Repeater controls containing Parts."
+    },
+    {
+      "id": "AW0004",
+      "action": "Error",
+      "justification": "A Blob cannot be used as a source expression for a page field."
+    },
+    {
+      "id": "AW0005",
+      "action": "Warning",
+      "justification": "Actions should use the Image property."
+    },
+    {
+      "id": "AW0006",
+      "action": "Warning",
+      "justification": "Pages and reports should use the UsageCategory and ApplicationArea properties to be searchable."
+    },
+    {
+      "id": "AW0007",
+      "action": "Error",
+      "justification": "The Web client does not support displaying Repeater controls that contain FlowFilter fields."
+    },
+    {
+      "id": "AW0008",
+      "action": "Warning",
+      "justification": "The Web client only supports displaying Repeater controls in pages of type List, ListPart, and Worksheet."
+    },
+    {
+      "id": "AW0009",
+      "action": "Warning",
+      "justification": "Using a Blob with subtype Bitmap on a page field is deprecated. Instead use the Media/MediaSet data types."
+    },
+    {
+      "id": "AW0010",
+      "action": "Error",
+      "justification": "A Repeater control used on a List page must be defined at the beginning of the area(Content) section."
+    },
+    {
+      "id": "AW0011",
+      "action": "Warning",
+      "justification": "Add PromotedOnly=true to some or all promoted actions to avoid identical actions from appearing in both the promoted and default sections of the command bar."
+    },
+    {
+      "id": "AW0012",
+      "action": "Error",
+      "justification": "The Web client does not support properties for teaching tips in certain contexts."
+    },
+    {
+      "id": "AW0013",
+      "action": "Error",
+      "justification": "Groups containing promoted actions should not be hidden."
+    },
+    {
+      "id": "AW0014",
+      "action": "Error",
+      "justification": "Groups containing ActionRef targets should not be hidden."
+    },
+    {
+      "id": "AW0015",
+      "action": "Error",
+      "justification": "Actions with scope repeater must be promoted."
+    },
+    {
+      "id": "AW0016",
+      "action": "Error",
+      "justification": "Rich Text Editor fields are only allowed while alone in a FastTab group."
+    },
+    {
+      "id": "AW0017",
+      "action": "Warning",
+      "justification": "MaskType is not supported inside repeaters and is silently ignored by the Web client."
+    },
+    {
+      "id": "AC0001",
+      "action": "Warning",
+      "justification": "DrillDownPageId and LookupPageId must be filled in table when table is used in list page."
+    },
+    {
+      "id": "AC0002",
+      "action": "Warning",
+      "justification": "Any table with a single field in the PK of type code or text, should have set NotBlank on the PK field."
+    },
+    {
+      "id": "AC0003",
+      "action": "Warning",
+      "justification": "Set NotBlank property to false when 'No. Series' TableRelation exists."
+    },
+    {
+      "id": "AC0004",
+      "action": "Warning",
+      "justification": "Confirm() must be implemented through the Confirm Management codeunit from the System Application."
+    },
+    {
+      "id": "AC0005",
+      "action": "Warning",
+      "justification": "GlobalLanguage() must be implemented through the Translation Helper codeunit from the Base Application."
+    },
+    {
+      "id": "AC0006",
+      "action": "Warning",
+      "justification": "Utilize the Page Management codeunit for launching page."
+    },
+    {
+      "id": "AC0007",
+      "action": "Error",
+      "justification": "Set Access property to Internal for Install/Upgrade codeunits."
+    },
+    {
+      "id": "AC0008",
+      "action": "None",
+      "justification": "Every table needs to specify a value for the DataPerCompany property. Either true or false."
+    },
+    {
+      "id": "AC0009",
+      "action": "Error",
+      "justification": "The Caption of permissionset objects should not exceed the maximum length."
+    },
+    {
+      "id": "AC0010",
+      "action": "Error",
+      "justification": "All application objects should be covered by at least one permission set in the extension."
+    },
+    {
+      "id": "AC0011",
+      "action": "Warning",
+      "justification": "Caption is missing. Optionally this can also be activated for fields on API objects with the setting enableRule0016ForApiObjects."
+    },
+    {
+      "id": "AC0012",
+      "action": "Warning",
+      "justification": "Events in internal codeunits are not accessible to extensions and should therefore be avoided."
+    },
+    {
+      "id": "AC0013",
+      "action": "Info",
+      "justification": "Always provide fieldsgroups DropDown and Brick on tables."
+    },
+    {
+      "id": "AC0014",
+      "action": "Warning",
+      "justification": "ToolTip must end with a dot."
+    },
+    {
+      "id": "AC0015",
+      "action": "Warning",
+      "justification": "ToolTip must start with the verb Specifies"
+    },
+    {
+      "id": "AC0016",
+      "action": "Error",
+      "justification": "Do not use line breaks in ToolTip."
+    },
+    {
+      "id": "AC0017",
+      "action": "Warning",
+      "justification": "Try to not exceed 200 characters (including spaces)."
+    },
+    {
+      "id": "AC0018",
+      "action": "Warning",
+      "justification": "Empty Captions should be Locked."
+    },
+    {
+      "id": "AC0019",
+      "action": "Warning",
+      "justification": "Zero (0) Enum value should be reserved for Empty Value."
+    },
+    {
+      "id": "AC0020",
+      "action": "Warning",
+      "justification": "Label with suffix Tok must be locked."
+    },
+    {
+      "id": "AC0021",
+      "action": "Warning",
+      "justification": "Locked Label must have a suffix Tok."
+    },
+    {
+      "id": "AC0022",
+      "action": "Warning",
+      "justification": "Empty Enum values should not have a specified Caption property."
+    },
+    {
+      "id": "AC0023",
+      "action": "Warning",
+      "justification": "Enum values must have non-empty a Caption to be selectable in the client"
+    },
+    {
+      "id": "AC0024",
+      "action": "Warning",
+      "justification": "Event publishers should not be public."
+    },
+    {
+      "id": "AC0025",
+      "action": "Warning",
+      "justification": "Use the (CR)LFSeparator from the \"Type Helper\" codeunit."
+    },
+    {
+      "id": "AC0026",
+      "action": "Warning",
+      "justification": "Explicitly set AllowInCustomizations for fields omitted on pages."
+    },
+    {
+      "id": "AC0027",
+      "action": "Warning",
+      "justification": "The suffix Tok is meant to be used when the value of the label matches the name."
+    },
+    {
+      "id": "AC0028",
+      "action": "Warning",
+      "justification": "Missing ToolTip property on table field."
+    },
+    {
+      "id": "AC0029",
+      "action": "Warning",
+      "justification": "Duplicate ToolTip between page and table field."
+    },
+    {
+      "id": "AC0030",
+      "action": "None",
+      "justification": "Use return value for better error handling."
+    },
+    {
+      "id": "AC0031",
+      "action": "None",
+      "justification": "Informs the user that there are missing permission to access tabledata."
+    },
+    {
+      "id": "AC0032",
+      "action": "Info",
+      "justification": "Unused permission declared. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "DC0001",
+      "action": "Warning",
+      "justification": "Commit() needs a comment to justify its existence. Either a leading or a trailing comment."
+    },
+    {
+      "id": "DC0002",
+      "action": "Error",
+      "justification": "Writing to a FlowField is not common. Add a comment to explain this."
+    },
+    {
+      "id": "DC0003",
+      "action": "Error",
+      "justification": "Empty statements should be avoided or should have a leading or trailing comment explaining their use."
+    },
+    {
+      "id": "DC0004",
+      "action": "Warning",
+      "justification": "Procedure must be either local, internal or define a documentation comment."
+    },
+    {
+      "id": "DC0005",
+      "action": "Warning",
+      "justification": "The documentation comment must match the procedure syntax."
+    },
+    {
+      "id": "DC0006",
+      "action": "Hidden",
+      "justification": "Internal procedures must include XML documentation comments. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "DC0007",
+      "action": "Info",
+      "justification": "Public objects must include XML documentation comments. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "DC0008",
+      "action": "Hidden",
+      "justification": "Internal objects must include XML documentation comments. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "DC0009",
+      "action": "Hidden",
+      "justification": "Events must include XML documentation comments. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "DC0010",
+      "action": "Hidden",
+      "justification": "Internal events must include XML documentation comments. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "FC0001",
+      "action": "Error",
+      "justification": "Procedure or Trigger declaration should not end with semicolon."
+    },
+    {
+      "id": "FC0002",
+      "action": "Warning",
+      "justification": "The casing of variable/method usage must align with the definition."
+    },
+    {
+      "id": "FC0003",
+      "action": "Warning",
+      "justification": "Methods should always be called with parenthesis."
+    },
+    {
+      "id": "FC0004",
+      "action": "Info",
+      "justification": "Permission declarations should be ordered alphabetically. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "FC0005",
+      "action": "Warning",
+      "justification": "Use parenthesis for method calls instead of assignment syntax. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "FC0006",
+      "action": "Info",
+      "justification": "Permission values should be lowercase. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "FC0007",
+      "action": "Info",
+      "justification": "Statement blocks should be separated by a blank line. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "LC0003",
+      "action": "Error",
+      "justification": "Do not use an Object ID for properties or variable declarations. Merged with LC0012 by ALCops."
+    },
+    {
+      "id": "LC0007",
+      "action": "None",
+      "justification": "Show info message about code metrics for each function or trigger. Split from LC0009 into separate diagnostics by ALCops."
+    },
+    {
+      "id": "LC0008",
+      "action": "Warning",
+      "justification": "Show warning about code metrics for each function or trigger if either cyclomatic complexity is 8 or greater or maintainability index 20 or lower. Split from LC0010 into separate diagnostics by ALCops."
+    },
+    {
+      "id": "LC0009",
+      "action": "None",
+      "justification": "Show info message about code metrics for each function or trigger. Split from LC0009 into separate diagnostics by ALCops."
+    },
+    {
+      "id": "LC0010",
+      "action": "Warning",
+      "justification": "Show warning about code metrics for each function or trigger if either cyclomatic complexity is 8 or greater or maintainability index 20 or lower. Split from LC0010 into separate diagnostics by ALCops."
+    },
+    {
+      "id": "LC0019",
+      "action": "Warning",
+      "justification": "If Data Classification is set on the Table. Fields do not need the same classification."
+    },
+    {
+      "id": "LC0020",
+      "action": "Warning",
+      "justification": "If Application Area is set on the TablePage. Controls do not need the same classification."
+    },
+    {
+      "id": "LC0028",
+      "action": "Error",
+      "justification": "Event subscriber arguments now use identifier syntax instead of string literals."
+    },
+    {
+      "id": "LC0031",
+      "action": "Warning",
+      "justification": "Use ReadIsolation instead of LockTable."
+    },
+    {
+      "id": "LC0033",
+      "action": "Warning",
+      "justification": "The specified runtime version in app.json is falling behind."
+    },
+    {
+      "id": "LC0040",
+      "action": "Warning",
+      "justification": "Explicitly set the RunTrigger parameter on build-in methods."
+    },
+    {
+      "id": "LC0043",
+      "action": "Warning",
+      "justification": "Use SecretText type to protect credentials and sensitive textual values from being revealed."
+    },
+    {
+      "id": "LC0048",
+      "action": "Warning",
+      "justification": "Use Error with a ErrorInfo or Label variable to improve telemetry details."
+    },
+    {
+      "id": "LC0052",
+      "action": "Warning",
+      "justification": "The internal procedure is declared but never used."
+    },
+    {
+      "id": "LC0053",
+      "action": "Warning",
+      "justification": "The internal procedure is only used in the object in which it is declared. Consider making the procedure local."
+    },
+    {
+      "id": "LC0054",
+      "action": "Warning",
+      "justification": "Interface name must start with the capital 'I' without any spaces following it."
+    },
+    {
+      "id": "LC0063",
+      "action": "Warning",
+      "justification": "Consider naming field with a more descriptive name."
+    },
+    {
+      "id": "LC0081",
+      "action": "Warning",
+      "justification": "Use Rec.IsEmpty() for checking record existence."
+    },
+    {
+      "id": "LC0082",
+      "action": "Warning",
+      "justification": "Consider using a Query or Rec.Find('-') with Rec.Next()."
+    },
+    {
+      "id": "LC0083",
+      "action": "Warning",
+      "justification": "Use new Date/Time/DateTime methods for extracting parts."
+    },
+    {
+      "id": "LC0086",
+      "action": "Warning",
+      "justification": "Use the new PageStyle datatype instead string literals."
+    },
+    {
+      "id": "LC0088",
+      "action": "Warning",
+      "justification": "Option types should be avoided, use enum if applicable."
+    },
+    {
+      "id": "LC0089",
+      "action": "None",
+      "justification": "Show Cognitive Complexity diagnostics for all methods."
+    },
+    {
+      "id": "LC0090",
+      "action": "Info",
+      "justification": "Show Cognitive Complexity diagnostics for methods above threshold."
+    },
+    {
+      "id": "LC0091",
+      "action": "Warning",
+      "justification": "Translatable texts should be translated."
+    },
+    {
+      "id": "LC0092",
+      "action": "Warning",
+      "justification": "Name does not match the naming convention. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "LC0094",
+      "action": "Warning",
+      "justification": "AllowInCustomizations redundancy. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "LC0095",
+      "action": "Warning",
+      "justification": "Parameter is not referenced. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "LC0096",
+      "action": "Warning",
+      "justification": "Unnecessary record parameter in method call. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "LC0097",
+      "action": "Info",
+      "justification": "Avoid mixing exit() and named return variable assignments. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "LC0098",
+      "action": "Info",
+      "justification": "Event subscriber name does not match the configured template. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "LC0099",
+      "action": "Info",
+      "justification": "Event subscriber parameter is not referenced. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "PC0001",
+      "action": "Error",
+      "justification": "FlowFields should not be editable."
+    },
+    {
+      "id": "PC0002",
+      "action": "Error",
+      "justification": "Fields with property AutoIncrement cannot be used in temporary table (TableType = Temporary)."
+    },
+    {
+      "id": "PC0003",
+      "action": "Error",
+      "justification": "Filter operators should not be used in SetRange."
+    },
+    {
+      "id": "PC0004",
+      "action": "Warning",
+      "justification": "Zero index access on 1-based List objects."
+    },
+    {
+      "id": "PC0005",
+      "action": "None",
+      "justification": "The property Extensible should be explicitly set for public objects."
+    },
+    {
+      "id": "PC0006",
+      "action": "None",
+      "justification": "Every object needs to specify a value for the Access property. Either true or false. Optionally this can also be activated for table fields with the setting enableRule0011ForTableFields."
+    },
+    {
+      "id": "PC0007",
+      "action": "Warning",
+      "justification": "AutoCalcFields should only be used for FlowFields or Blob fields."
+    },
+    {
+      "id": "PC0008",
+      "action": "Warning",
+      "justification": "SetFilter with unsupported operator in filter expression."
+    },
+    {
+      "id": "PC0010",
+      "action": "Warning",
+      "justification": "Event subscriber var keyword mismatch."
+    },
+    {
+      "id": "PC0011",
+      "action": "Warning",
+      "justification": "Handled parameters in event signatures should be passed by var."
+    },
+    {
+      "id": "PC0012",
+      "action": "Warning",
+      "justification": "Set values for FlowFilter fields using filtering methods."
+    },
+    {
+      "id": "PC0013",
+      "action": "Error",
+      "justification": "Incorrect number or type of arguments in .Get() method on Record object."
+    },
+    {
+      "id": "PC0014",
+      "action": "Warning",
+      "justification": "Replace double quotes in JPath expressions with two single quotes."
+    },
+    {
+      "id": "PC0015",
+      "action": "Warning",
+      "justification": "Use IsNullGuid() to check for empty GUID values."
+    },
+    {
+      "id": "PC0016",
+      "action": "Warning",
+      "justification": "Clear(All) does not affect or change values for global variables in single instance codeunits."
+    },
+    {
+      "id": "PC0017",
+      "action": "Warning",
+      "justification": "The given argument has a different type from the one expected."
+    },
+    {
+      "id": "PC0018",
+      "action": "Warning",
+      "justification": "SourceTable property not defined on Page."
+    },
+    {
+      "id": "PC0019",
+      "action": "Warning",
+      "justification": "Single quote escaping issue detected."
+    },
+    {
+      "id": "PC0020",
+      "action": "Warning",
+      "justification": "Tables coupled with TransferFields must have matching fields. Split from LC0044 into separate diagnostics by ALCops."
+    },
+    {
+      "id": "PC0021",
+      "action": "Warning",
+      "justification": "Tables coupled with TransferFields must have matching fields. Split from LC0044 into separate diagnostics by ALCops."
+    },
+    {
+      "id": "PC0022",
+      "action": "Warning",
+      "justification": "Do not assign a text to a target with smaller size."
+    },
+    {
+      "id": "PC0023",
+      "action": "Warning",
+      "justification": "Incorrect 'IsHandled' parameter assignment."
+    },
+    {
+      "id": "PC0024",
+      "action": "Warning",
+      "justification": "The ApplicationArea property is not applicable to API pages."
+    },
+    {
+      "id": "PC0025",
+      "action": "Info",
+      "justification": "Pages of type API must have the ODataKeyFields property set to the SystemId field."
+    },
+    {
+      "id": "PC0026",
+      "action": "Warning",
+      "justification": "Mandatory field is missing on API page."
+    },
+    {
+      "id": "PC0027",
+      "action": "Warning",
+      "justification": "Temporary records should not trigger table triggers."
+    },
+    {
+      "id": "PC0028",
+      "action": "Warning",
+      "justification": "The field with table relation should have at least the same length as the referenced field."
+    },
+    {
+      "id": "PC0029",
+      "action": "Info",
+      "justification": "Use CreateSequentialGuid for key fields. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "PC0030",
+      "action": "Info",
+      "justification": "Use partial records on read operation. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "PC0031",
+      "action": "Warning",
+      "justification": "Partial records cause JIT load on full-field operations. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "PC0032",
+      "action": "Error",
+      "justification": "Report layout property exceeds maximum length. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "PC0033",
+      "action": "Warning",
+      "justification": "Duplicate OData EntityName on page controls. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "PC0034",
+      "action": "Warning",
+      "justification": "Placeholder argument count mismatch. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "PC0035",
+      "action": "Warning",
+      "justification": "Use SetAutoCalcFields for loops. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "PC0036",
+      "action": "Warning",
+      "justification": "PageVariable.SetRecord(): You cannot use a temporary record for the Record parameter."
+    },
+    {
+      "id": "PC0037",
+      "action": "Warning",
+      "justification": "Use Validate() instead of direct field assignment. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "PC0038",
+      "action": "Info",
+      "justification": "Not all code paths return a value. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "TA0001",
+      "action": "Warning",
+      "justification": "Global procedures in test codeunits must be test methods. Entered at the ALCops default severity, to be tightened once measured."
+    },
+    {
+      "id": "AS0001",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Tables and table extensions that have been published must not be deleted."
+    },
+    {
+      "id": "AS0002",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Fields must not be deleted."
+    },
+    {
+      "id": "AS0003",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The previous version of the extension could not be found."
+    },
+    {
+      "id": "AS0004",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Fields must not change type, since dependent extensions may break"
+    },
+    {
+      "id": "AS0005",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Fields must not change name"
+    },
+    {
+      "id": "AS0006",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Tables that have been published must not change name."
+    },
+    {
+      "id": "AS0007",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Objects that have been published must not change namespace."
+    },
+    {
+      "id": "AS0008",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Defining reserved namespaces is not allowed."
+    },
+    {
+      "id": "AS0009",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Key fields must not be changed"
+    },
+    {
+      "id": "AS0010",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Keys must not be deleted"
+    },
+    {
+      "id": "AS0011",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): An affix is required"
+    },
+    {
+      "id": "AS0013",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The field identifier must be within the allowed range"
+    },
+    {
+      "id": "AS0014",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The project manifest must contain the allocated identifier range"
+    },
+    {
+      "id": "AS0015",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): TranslationFile must be enabled."
+    },
+    {
+      "id": "AS0016",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Fields of field class 'Normal' must use the DataClassification property and its value should be different from ToBeClassified"
+    },
+    {
+      "id": "AS0018",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): A procedure belonging to the public API cannot be removed"
+    },
+    {
+      "id": "AS0019",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Event attributes cannot be removed"
+    },
+    {
+      "id": "AS0020",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The type of events cannot be changed."
+    },
+    {
+      "id": "AS0021",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): An argument in an event attribute cannot be changed to false."
+    },
+    {
+      "id": "AS0022",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): An external scope cannot be removed"
+    },
+    {
+      "id": "AS0023",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): A return type cannot be modified in external procedures"
+    },
+    {
+      "id": "AS0024",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Parameters cannot be removed or added in external procedures"
+    },
+    {
+      "id": "AS0025",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Parameters cannot be modified, renamed, or removed from events."
+    },
+    {
+      "id": "AS0026",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The type and subtype of parameters cannot be modified in events and external procedures"
+    },
+    {
+      "id": "AS0027",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Modifying the array size of a parameter in events and external procedures is not allowed"
+    },
+    {
+      "id": "AS0028",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Reducing the array size of a parameter in events and external procedures is not allowed"
+    },
+    {
+      "id": "AS0029",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Pages and PageExtensions that have been published must not be deleted, since dependent extensions may break"
+    },
+    {
+      "id": "AS0030",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Pages that have been published must not be renamed."
+    },
+    {
+      "id": "AS0031",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Actions that have been published must not be deleted."
+    },
+    {
+      "id": "AS0032",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Controls that have been published must not be deleted."
+    },
+    {
+      "id": "AS0033",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Views that have been published must not be deleted."
+    },
+    {
+      "id": "AS0034",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Unsupported table property change"
+    },
+    {
+      "id": "AS0035",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): Unsupported page property change"
+    },
+    {
+      "id": "AS0036",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Unsupported table field property change"
+    },
+    {
+      "id": "AS0038",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Unsupported table key property change"
+    },
+    {
+      "id": "AS0039",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Removing table properties that cause destructive changes is not allowed"
+    },
+    {
+      "id": "AS0040",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): Removing page properties that cause destructive changes is not allowed"
+    },
+    {
+      "id": "AS0041",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Table field property changes that cause destructive changes must not be removed"
+    },
+    {
+      "id": "AS0042",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Table key property changes that cause destructive changes must not be removed"
+    },
+    {
+      "id": "AS0043",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The clustered key must not be deleted"
+    },
+    {
+      "id": "AS0044",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Property changes that cause destructive changes are not allowed"
+    },
+    {
+      "id": "AS0047",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The extension name is too long."
+    },
+    {
+      "id": "AS0048",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The publisher name is too long."
+    },
+    {
+      "id": "AS0049",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The access modifier of an application object cannot be changed to a value that provides less access."
+    },
+    {
+      "id": "AS0050",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The extensibility of an application object cannot be removed"
+    },
+    {
+      "id": "AS0051",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Manifest property is required for AppSource submission"
+    },
+    {
+      "id": "AS0052",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The property 'url' must be set to a valid URL"
+    },
+    {
+      "id": "AS0054",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The AppSourceCop configuration must specify the set of affixes used by the application"
+    },
+    {
+      "id": "AS0055",
+      "action": "None",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Hidden): The AppSourceCop configuration must specify the list of countries/regions targeted by the application"
+    },
+    {
+      "id": "AS0056",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): The country/region codes specified in the 'supportedCountries' property must be valid ISO 3166-1 alpha-2 codes"
+    },
+    {
+      "id": "AS0057",
+      "action": "None",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Hidden): Translations must be provided for all the locales in which the application will be available"
+    },
+    {
+      "id": "AS0058",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Only use AssertError in Test Codeunits"
+    },
+    {
+      "id": "AS0059",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Reserved database tables are read-only in a multi-tenant environment"
+    },
+    {
+      "id": "AS0060",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Unsafe methods cannot be invoked in an AppSource application"
+    },
+    {
+      "id": "AS0061",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Procedures must not subscribe to CompanyOpen events"
+    },
+    {
+      "id": "AS0062",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Page controls and actions must use the ApplicationArea property"
+    },
+    {
+      "id": "AS0063",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Removing a var modifier in events is not allowed"
+    },
+    {
+      "id": "AS0064",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Interface implementations that have been published must not be deleted."
+    },
+    {
+      "id": "AS0065",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Interfaces that have been published must not be deleted."
+    },
+    {
+      "id": "AS0066",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): A new method to an interface that has been published must not be added."
+    },
+    {
+      "id": "AS0067",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Adding an interface to an enum that has been published must have a default implementation."
+    },
+    {
+      "id": "AS0068",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Changing a table extension's target is not allowed."
+    },
+    {
+      "id": "AS0069",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): An enum field replacing an option field should have at least the same number of members."
+    },
+    {
+      "id": "AS0070",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): An enum field replacing an option field should preserve the member names."
+    },
+    {
+      "id": "AS0071",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): An enum field replacing an option field should preserve the member ordinal values."
+    },
+    {
+      "id": "AS0072",
+      "action": "None",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Hidden): The attribute tag must be set to the next release version."
+    },
+    {
+      "id": "AS0073",
+      "action": "None",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Hidden): Attribute tag must be set."
+    },
+    {
+      "id": "AS0074",
+      "action": "None",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Hidden): The attribute tag must be the same across branches."
+    },
+    {
+      "id": "AS0075",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): Attribute reason must be set."
+    },
+    {
+      "id": "AS0076",
+      "action": "None",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Hidden): Attribute tag format."
+    },
+    {
+      "id": "AS0077",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Adding a var modifier in events is not allowed"
+    },
+    {
+      "id": "AS0078",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Adding or removing a var modifier in external procedures is not allowed"
+    },
+    {
+      "id": "AS0079",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): An affix is required for procedures defined in extension objects."
+    },
+    {
+      "id": "AS0080",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Fields must not decrease in length"
+    },
+    {
+      "id": "AS0082",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): It is not allowed to rename an enum value."
+    },
+    {
+      "id": "AS0083",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): It is not allowed to delete a value from an enum."
+    },
+    {
+      "id": "AS0085",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): Use the 'application' property instead of specifying explicit dependencies."
+    },
+    {
+      "id": "AS0086",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): Fields must not increase in length"
+    },
+    {
+      "id": "AS0087",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): Translations of enum value captions must not contain commas"
+    },
+    {
+      "id": "AS0088",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Objects with an ID that can be referenced and which have been published must not be deleted."
+    },
+    {
+      "id": "AS0089",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Objects that can be referenced and which have been published must not be deleted."
+    },
+    {
+      "id": "AS0090",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Objects that can be referenced and which have been published must not be renamed."
+    },
+    {
+      "id": "AS0091",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): One or more dependencies of the previous version of the extension could not be found."
+    },
+    {
+      "id": "AS0094",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): Permission Sets should not be defined in XML files."
+    },
+    {
+      "id": "AS0095",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The access modifier of a table field cannot be changed to a value that provides less access."
+    },
+    {
+      "id": "AS0096",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The name of an extension cannot be changed."
+    },
+    {
+      "id": "AS0097",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The publisher name of an extension cannot be changed."
+    },
+    {
+      "id": "AS0098",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): An affix is needed."
+    },
+    {
+      "id": "AS0099",
+      "action": "Info",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Info): The member ID should be within the allowed range"
+    },
+    {
+      "id": "AS0100",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The 'application' property must be specified in the app.json file."
+    },
+    {
+      "id": "AS0101",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The 'Isolated' argument cannot be changed, added, or removed."
+    },
+    {
+      "id": "AS0102",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Cannot add a return value to a procedure"
+    },
+    {
+      "id": "AS0103",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): Table definitions must have a matching permission set."
+    },
+    {
+      "id": "AS0104",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The extension name is not valid."
+    },
+    {
+      "id": "AS0105",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Object pending obsoletion contains an expired ObsoleteTag."
+    },
+    {
+      "id": "AS0106",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): A variable belonging to the public API cannot be removed."
+    },
+    {
+      "id": "AS0107",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The access modifier of a variable that belongs to the public API cannot be changed to a value that provides less access."
+    },
+    {
+      "id": "AS0108",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The type of a variable belonging to the public API cannot be changed."
+    },
+    {
+      "id": "AS0109",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): The type of the table has changed from Normal to Temporary."
+    },
+    {
+      "id": "AS0110",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): Permission set extensions should not include permissions for objects defined in another application."
+    },
+    {
+      "id": "AS0111",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): Permission set extensions should not include permission sets defined in another application."
+    },
+    {
+      "id": "AS0112",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): Permission set extensions should not include permission sets which include permissions for objects defined in another application."
+    },
+    {
+      "id": "AS0113",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): Permission set extensions should not include wildcard permissions."
+    },
+    {
+      "id": "AS0114",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The name of an external business event cannot be changed."
+    },
+    {
+      "id": "AS0115",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The obsolete state cannot change directly from 'No' to 'Removed'."
+    },
+    {
+      "id": "AS0116",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): Source application for the moved symbol cannot be found."
+    },
+    {
+      "id": "AS0117",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Application object is moved without the use of PendingMove."
+    },
+    {
+      "id": "AS0118",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The length of a field part of the primary key cannot change."
+    },
+    {
+      "id": "AS0119",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The value of the MovedTo property in the source symbol does not match the destination AppId."
+    },
+    {
+      "id": "AS0120",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The value of the MovedFrom property in the destination object does not match the source AppId."
+    },
+    {
+      "id": "AS0121",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): When a symbol is moved the name must remain the same."
+    },
+    {
+      "id": "AS0122",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): Source symbol for the moved symbol cannot be found in the package with the given AppId."
+    },
+    {
+      "id": "AS0123",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): A key cannot be declared as clustered on an existing table."
+    },
+    {
+      "id": "AS0124",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Changing an extension object's target is not allowed."
+    },
+    {
+      "id": "AS0125",
+      "action": "Info",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Info): Changes the XLIFF translation ID are not allowed."
+    },
+    {
+      "id": "AS0126",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): InternalsVisibleTo should not specifying a different publisher name than the one of this extension."
+    },
+    {
+      "id": "AS0127",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): Objects should be placed in a namespace with at least two levels."
+    },
+    {
+      "id": "AS0128",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): An interface must not be removed from the the list of extended interfaces on an interface that has been published."
+    },
+    {
+      "id": "AS0129",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): An interface must not be added to the the list of extended interfaces on an interface that has been published."
+    },
+    {
+      "id": "AS0130",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): Avoid using duplicate object names"
+    },
+    {
+      "id": "AS0131",
+      "action": "None",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Hidden): Tables with schema should not be added."
+    },
+    {
+      "id": "AS0132",
+      "action": "None",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Hidden): Fields with schema should not be added."
+    },
+    {
+      "id": "AS0133",
+      "action": "None",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Hidden): Keys should not be added."
+    },
+    {
+      "id": "AS0134",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): The version of an external business event cannot be changed."
+    },
+    {
+      "id": "AS0135",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): External business events must be marked obsolete before they can be removed."
+    },
+    {
+      "id": "AS0136",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): Field IDs can only be changed with proper obsoletion."
+    },
+    {
+      "id": "AS0137",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The ID of fields in the primary key cannot change."
+    },
+    {
+      "id": "AS0138",
+      "action": "None",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Hidden): Table fields should use the AllowInCustomizations property"
+    },
+    {
+      "id": "AS0139",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): New table fields must use the AllowInCustomizations property"
+    },
+    {
+      "id": "AS0140",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Analysis views that have been published must not be deleted."
+    },
+    {
+      "id": "AS0142",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): The destination table must have the MovedFrom property."
+    },
+    {
+      "id": "AS0146",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): Changing a field from Integer to BigInteger may break dependent extensions."
+    },
+    {
+      "id": "AS0147",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): Changing a parameter from Integer to BigInteger might break dependent extensions."
+    },
+    {
+      "id": "AS0148",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): An interface method was made required without first being marked [RequiredPending]."
+    },
+    {
+      "id": "AS0149",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): Adding or removing a required method on an interface may break dependent extensions at runtime."
+    },
+    {
+      "id": "AS0150",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Error): Fully-namespaced app objects must be in a compliant namespace"
+    },
+    {
+      "id": "AS0151",
+      "action": "Info",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Info): FullNamespaceScope conflicts with mandatory affix configuration"
+    },
+    {
+      "id": "AS0152",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of AppSourceCop (Warning): Removing a codeunit used as a default implementation is a runtime breaking change."
+    },
+    {
+      "id": "LC0089i",
+      "action": "Info",
+      "justification": "Added in v2 with the default severity of LinterCop (Info): {0}: +{1} (1 increment + {2} nesting penalty)"
+    },
+    {
+      "id": "SC0001",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Do not leave TODO comments in finished code"
+    },
+    {
+      "id": "SC0002",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Field assignments should use Validate"
+    },
+    {
+      "id": "SC0003",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Avoid type names and Hungarian-style prefixes in variable names"
+    },
+    {
+      "id": "SC0004",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Event subscriber procedures must be named <Action>_<EventName>"
+    },
+    {
+      "id": "SC0005",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Use SetLoadFields for performance-critical record reads"
+    },
+    {
+      "id": "SC0006",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Do not call Modify() inside an OnValidate trigger"
+    },
+    {
+      "id": "SC0007",
+      "action": "Info",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Info): Labels with placeholders must have a Comment property"
+    },
+    {
+      "id": "SC0008",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Use the ternary operator for a single-value conditional"
+    },
+    {
+      "id": "SC0009",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Caption and ToolTip should be defined on the table field, not on the page field"
+    },
+    {
+      "id": "SC0010",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Set DataClassification as a table-level property, not per field"
+    },
+    {
+      "id": "SC0011",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Opening brace must be on the same line as the declaration"
+    },
+    {
+      "id": "SC0012",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Use the \"Rest Client\" codeunit instead of raw HTTP types"
+    },
+    {
+      "id": "SC0013",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Rest Client must be initialized with a handler codeunit from the current app"
+    },
+    {
+      "id": "SC0014",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Property and enum values must be PascalCase"
+    },
+    {
+      "id": "SC0015",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Object-type references must be PascalCase"
+    },
+    {
+      "id": "SC0016",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Use consistent indentation"
+    },
+    {
+      "id": "SC0017",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): No stray blank lines"
+    },
+    {
+      "id": "SC0018",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Standalone-object members must not carry the SOC affix"
+    },
+    {
+      "id": "SC0019",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Captions must not contain the SOC affix"
+    },
+    {
+      "id": "SC0020",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): ApplicationArea must be All"
+    },
+    {
+      "id": "SC0021",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Event-subscriber codeunits need the standard properties"
+    },
+    {
+      "id": "SC0022",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Label suffix must match how the label is consumed"
+    },
+    {
+      "id": "SC0023",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Remove unused event-subscriber parameters"
+    },
+    {
+      "id": "SC0024",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Namespace must mirror the folder path below src"
+    },
+    {
+      "id": "SC0025",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Separate namespace, using directives, and the object with one blank line"
+    },
+    {
+      "id": "SC0026",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Objects do not need a documentation summary"
+    },
+    {
+      "id": "SC0027",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Procedure documentation summaries must follow the standard shape"
+    },
+    {
+      "id": "SC0028",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Documentation summary must not merely restate the name"
+    },
+    {
+      "id": "SC0029",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Prefer SetAutoCalcFields over CalcFields after a read"
+    },
+    {
+      "id": "SC0030",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Standalone object names must not carry the SOC affix when namespaces are enforced"
+    },
+    {
+      "id": "SC0031",
+      "action": "Error",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Error): Do not pass FlowFields to SetLoadFields or AddLoadFields"
+    },
+    {
+      "id": "SC0032",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Do not mix base-app and extension namespaces in one PermissionSet"
+    },
+    {
+      "id": "SC0033",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Do not wrap StrSubstNo in Message or Error"
+    },
+    {
+      "id": "SC0034",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Do not run validation or triggers on a temporary buffer"
+    },
+    {
+      "id": "SC0035",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): No blank line between enum values"
+    },
+    {
+      "id": "SC0036",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Use the 'in' operator for chained equality comparisons"
+    },
+    {
+      "id": "SC0037",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Procedure documentation must be short"
+    },
+    {
+      "id": "SC0038",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Replace back-to-back ModifyAll calls with one validating loop"
+    },
+    {
+      "id": "SC0039",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Place an extension object in the namespace of the object it extends"
+    },
+    {
+      "id": "SC0040",
+      "action": "Info",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Info): Guard a repeat loop with a positive FindSet instead of a negated exit"
+    },
+    {
+      "id": "SC0041",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Probe existence with Get instead of the return value of Insert or Modify"
+    },
+    {
+      "id": "SC0042",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Identifiers must not contain underscores"
+    },
+    {
+      "id": "SC0043",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Call Get() instead of Get('')"
+    },
+    {
+      "id": "SC0044",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Variable names must not start with a lowercase l or g"
+    },
+    {
+      "id": "SC0045",
+      "action": "Warning",
+      "justification": "Added in v2 with the default severity of SocitasCopV2 (Warning): Avoid LockTimeout"
+    }
+  ]
+}

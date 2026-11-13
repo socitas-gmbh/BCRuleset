@@ -1,0 +1,13 @@
+{
+  "name": "App local ruleset",
+  "includedRuleSets": [
+    { "action": "Default", "path": "https://socitas-gmbh.github.io/BCRuleset/SOCITAS.ruleset.json" },
+    { "action": "Warning", "path": "https://example.com/other.ruleset.json" }
+  ],
+  "rules": [
+    { "id": "LC0010", "action": "Warning", "justification": "local one-to-many" },
+    { "id": "SO0001", "action": "None", "justification": "local SO" },
+    { "id": "AA0137", "action": "Info", "justification": "local AA" },
+    { "id": "LC0029", "action": "None", "justification": "no ALCops counterpart" }
+  ]
+}

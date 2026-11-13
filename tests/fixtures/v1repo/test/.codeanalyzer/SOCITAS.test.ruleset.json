@@ -1,0 +1,9 @@
+{
+  "name": "Test local ruleset",
+  "includedRuleSets": [
+    { "action": "Default", "path": "https://socitas-gmbh.github.io/BCRuleset/SOCITAS.test.ruleset.json" }
+  ],
+  "rules": [
+    { "id": "LC0009", "action": "Info", "justification": "local test LC" }
+  ]
+}

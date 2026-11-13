@@ -1,0 +1,9 @@
+{
+  "rules": [
+    {
+      "id": "ST0001",
+      "action": "Error",
+      "justification": "Test procedures must follow Given/When/Then; TestCop's own default severity."
+    }
+  ]
+}

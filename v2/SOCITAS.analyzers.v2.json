@@ -1,0 +1,28 @@
+{
+  "revision": 1,
+  "alCompiler": "18.0.43.1464",
+  "alcops": "1.3.1",
+  "socitasCopV2": "1.0.0",
+  "testCop": "0.1.0",
+  "appAnalyzers": [
+    "${analyzerFolder}ALCops.Common.dll",
+    "${analyzerFolder}ALCops.ApplicationCop.dll",
+    "${analyzerFolder}ALCops.DocumentationCop.dll",
+    "${analyzerFolder}ALCops.FormattingCop.dll",
+    "${analyzerFolder}ALCops.LinterCop.dll",
+    "${analyzerFolder}ALCops.PlatformCop.dll",
+    "${analyzerFolder}ALCops.TestAutomationCop.dll",
+    "${analyzerFolder}BusinessCentral.SocitasCopV2.dll"
+  ],
+  "testAnalyzers": [
+    "${analyzerFolder}ALCops.Common.dll",
+    "${analyzerFolder}ALCops.ApplicationCop.dll",
+    "${analyzerFolder}ALCops.DocumentationCop.dll",
+    "${analyzerFolder}ALCops.FormattingCop.dll",
+    "${analyzerFolder}ALCops.LinterCop.dll",
+    "${analyzerFolder}ALCops.PlatformCop.dll",
+    "${analyzerFolder}ALCops.TestAutomationCop.dll",
+    "${analyzerFolder}BusinessCentral.SocitasCopV2.dll",
+    "${analyzerFolder}BusinessCentral.TestCop.dll"
+  ]
+}

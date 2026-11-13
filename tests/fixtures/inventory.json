@@ -1,0 +1,14 @@
+{
+  "analyzers": {
+    "CodeCop": [
+      { "id": "AA0001", "defaultSeverity": "Warning", "title": "Binary operator spacing" },
+      { "id": "AA0002", "defaultSeverity": "Warning", "title": "Unused variable" }
+    ],
+    "SocitasCopV2": [
+      { "id": "SC0001", "defaultSeverity": "Warning", "title": "No TODO comments" }
+    ],
+    "TestCop": [
+      { "id": "ST0001", "defaultSeverity": "Info", "title": "Test naming" }
+    ]
+  }
+}

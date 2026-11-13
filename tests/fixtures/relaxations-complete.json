@@ -1,0 +1,5 @@
+[
+  { "id": "A2", "v1TestAction": "None", "v1AppAction": "Warning", "decision": "kept", "v2Ids": ["A2"], "reason": "Test code intentionally ignores this." },
+  { "id": "A4", "v1TestAction": "Info", "v1AppAction": "Warning", "decision": "dropped", "v2Ids": [], "reason": "No longer needed in tests." },
+  { "id": "T9", "v1TestAction": "Warning", "v1AppAction": null, "decision": "remapped", "v2Ids": ["B1"], "reason": "Replaced by B1 in v2." }
+]

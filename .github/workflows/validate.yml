@@ -1,0 +1,113 @@
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      # TestCop is a private repo: COP_RELEASE_TOKEN needs read access to socitas-gmbh/BusinessCentral.* releases.
+      GH_TOKEN: ${{ secrets.COP_RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Pester
+        shell: pwsh
+        run: |
+          Import-Module Pester -MinimumVersion 5.0
+          Invoke-Pester -Path ./tests -CI -Output Detailed
+
+      - name: Regenerate rule inventory from the pins and fail on diff
+        shell: pwsh
+        run: |
+          ./tools/Get-RuleInventory.ps1 -PinsPath v2/SOCITAS.analyzers.v2.json -OutPath "$env:RUNNER_TEMP/rule-inventory.json" -WorkDir "$env:RUNNER_TEMP/inv"
+          if (-not (Test-Path v2/rule-inventory.json)) { throw 'v2/rule-inventory.json is missing' }
+          $a = (Get-Content -Raw v2/rule-inventory.json) -replace "`r`n", "`n"
+          $b = (Get-Content -Raw "$env:RUNNER_TEMP/rule-inventory.json") -replace "`r`n", "`n"
+          if ($a -ne $b) {
+            Write-Host '::error::v2/rule-inventory.json differs from the inventory regenerated from the pins'
+            Copy-Item "$env:RUNNER_TEMP/rule-inventory.json" ./rule-inventory.generated.json
+            git --no-pager diff --no-index --stat v2/rule-inventory.json rule-inventory.generated.json
+            exit 1
+          }
+
+      - name: Coverage - app ruleset v2 against the app analyzers
+        shell: pwsh
+        run: |
+          $inv = Get-Content -Raw v2/rule-inventory.json | ConvertFrom-Json
+          $app = @($inv.analyzers.PSObject.Properties.Name | Where-Object { $_ -notmatch 'TestCop' })
+          ./tools/Test-RulesetCoverage.ps1 -RulesetPath v2/SOCITAS.ruleset.v2.json -InventoryPath v2/rule-inventory.json -Analyzers $app
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+
+      - name: Coverage - test ruleset v2 against all analyzers
+        shell: pwsh
+        run: |
+          ./tools/Test-RulesetCoverage.ps1 -RulesetPath v2/SOCITAS.test.ruleset.v2.json -InventoryPath v2/rule-inventory.json
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+
+      - name: Coverage - next app ruleset against the app analyzers
+        shell: pwsh
+        run: |
+          # always generated from the next pins: no fallback to the current inventory (a pin bump must not pass trivially)
+          $invPath = "$env:RUNNER_TEMP/rule-inventory.next.json"
+          ./tools/Get-RuleInventory.ps1 -PinsPath v2/next/SOCITAS.analyzers.v2.next.json -OutPath $invPath -WorkDir "$env:RUNNER_TEMP/inv-next"
+          $inv = Get-Content -Raw $invPath | ConvertFrom-Json
+          $app = @($inv.analyzers.PSObject.Properties.Name | Where-Object { $_ -notmatch 'TestCop' })
+          ./tools/Test-RulesetCoverage.ps1 -RulesetPath v2/next/SOCITAS.ruleset.v2.next.json -InventoryPath $invPath -Analyzers $app
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+
+      - name: Coverage - next test ruleset against all analyzers
+        shell: pwsh
+        run: |
+          $invPath = "$env:RUNNER_TEMP/rule-inventory.next.json"
+          ./tools/Get-RuleInventory.ps1 -PinsPath v2/next/SOCITAS.analyzers.v2.next.json -OutPath $invPath -WorkDir "$env:RUNNER_TEMP/inv-next"
+          ./tools/Test-RulesetCoverage.ps1 -RulesetPath v2/next/SOCITAS.test.ruleset.v2.next.json -InventoryPath $invPath
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+
+      - name: Test relaxations are recorded
+        shell: pwsh
+        run: |
+          ./tools/Test-TestRelaxations.ps1
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+
+      - name: Test ruleset equals the generator output
+        shell: pwsh
+        run: |
+          ./tools/Build-TestRuleset.ps1 -AppRulesetPath v2/SOCITAS.ruleset.v2.json -RelaxationsPath v2/test-relaxations.json -OutPath "$env:RUNNER_TEMP/test.ruleset.v2.json"
+          $a = (Get-Content -Raw v2/SOCITAS.test.ruleset.v2.json) -replace "`r`n", "`n"
+          $b = (Get-Content -Raw "$env:RUNNER_TEMP/test.ruleset.v2.json") -replace "`r`n", "`n"
+          if ($a -ne $b) { Write-Host '::error::v2/SOCITAS.test.ruleset.v2.json is not the generator output (never hand-edit it)'; exit 1 }
+
+      - name: Next test ruleset equals the generator output
+        shell: pwsh
+        run: |
+          ./tools/Build-TestRuleset.ps1 -AppRulesetPath v2/next/SOCITAS.ruleset.v2.next.json -RelaxationsPath v2/test-relaxations.json -OutPath "$env:RUNNER_TEMP/test.ruleset.v2.next.json"
+          $a = (Get-Content -Raw v2/next/SOCITAS.test.ruleset.v2.next.json) -replace "`r`n", "`n"
+          $b = (Get-Content -Raw "$env:RUNNER_TEMP/test.ruleset.v2.next.json") -replace "`r`n", "`n"
+          if ($a -ne $b) { Write-Host '::error::v2/next/SOCITAS.test.ruleset.v2.next.json is not the generator output (never hand-edit it)'; exit 1 }
+
+      - name: v2 promotion only from the next files
+        if: github.event_name == 'pull_request'
+        shell: pwsh
+        run: |
+          ./tools/Test-V2Promotion.ps1 -BaseRef "origin/${{ github.base_ref }}"
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+
+      - name: v1 rulesets are frozen
+        run: |
+          base="${{ github.event.pull_request.base.sha || github.event.before }}"
+          if [ -z "$base" ] || [ "$base" = "0000000000000000000000000000000000000000" ]; then echo "no base to compare"; exit 0; fi
+          git cat-file -e "$base^{commit}" 2>/dev/null || { echo "base $base not available"; exit 0; }
+          if ! git diff --quiet "$base" HEAD -- SOCITAS.ruleset.json SOCITAS.test.ruleset.json; then
+            echo "::error::SOCITAS.ruleset.json / SOCITAS.test.ruleset.json are frozen (v1) and must not change"
+            git diff --stat "$base" HEAD -- SOCITAS.ruleset.json SOCITAS.test.ruleset.json
+            exit 1
+          fi
