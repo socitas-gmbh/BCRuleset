@@ -1,0 +1,325 @@
+[
+  {
+    "TimeGenerated": "2026-11-10T08:00:00Z",
+    "OperationName": "CI Preview Compile",
+    "Properties": {
+      "appId": "id-Alpha",
+      "appName": "Alpha",
+      "projectName": "ProjX",
+      "pipelineName": "Alpha CI",
+      "sourceBranch": "refs/heads/main",
+      "buildId": "101",
+      "analyzerStack": "v2",
+      "appKind": "app",
+      "previewRuleset": "v2.next",
+      "wouldFailBuild": "false",
+      "status": "ok",
+      "rulesetHash": "NEWHASH",
+      "pinsRevision": "1"
+    }
+  },
+  {
+    "TimeGenerated": "2026-11-12T08:00:00Z",
+    "OperationName": "CI Preview Compile",
+    "Properties": {
+      "appId": "id-Alpha",
+      "appName": "Alpha",
+      "projectName": "ProjX",
+      "pipelineName": "Alpha CI",
+      "sourceBranch": "refs/heads/main",
+      "buildId": "103",
+      "analyzerStack": "v2",
+      "appKind": "app",
+      "previewRuleset": "v2.next",
+      "wouldFailBuild": "true",
+      "status": "ok",
+      "rulesetHash": "NEWHASH",
+      "pinsRevision": "1"
+    }
+  },
+  {
+    "TimeGenerated": "2026-11-11T08:00:00Z",
+    "OperationName": "CI Preview Compile",
+    "Properties": {
+      "appId": "id-Alpha",
+      "appName": "Alpha",
+      "projectName": "ProjX",
+      "pipelineName": "Alpha CI",
+      "sourceBranch": "refs/heads/main",
+      "buildId": "102",
+      "analyzerStack": "v2",
+      "appKind": "app",
+      "previewRuleset": "v2.next",
+      "wouldFailBuild": "false",
+      "status": "ok",
+      "rulesetHash": "NEWHASH",
+      "pinsRevision": "1"
+    }
+  },
+  {
+    "TimeGenerated": "2026-11-12T09:00:00Z",
+    "OperationName": "CI Preview Compile",
+    "Properties": {
+      "appId": "id-Alpha",
+      "appName": "Alpha",
+      "projectName": "ProjX",
+      "pipelineName": "Alpha CI",
+      "sourceBranch": "refs/heads/stage",
+      "buildId": "201",
+      "analyzerStack": "v2",
+      "appKind": "app",
+      "previewRuleset": "v2.next",
+      "wouldFailBuild": "false",
+      "status": "ok",
+      "rulesetHash": "NEWHASH",
+      "pinsRevision": "1"
+    }
+  },
+  {
+    "TimeGenerated": "2026-11-12T09:30:00Z",
+    "OperationName": "CI Preview Compile",
+    "Properties": {
+      "appId": "id-Alpha",
+      "appName": "Alpha",
+      "projectName": "ProjX",
+      "pipelineName": "Alpha CI",
+      "sourceBranch": "refs/heads/dev",
+      "buildId": "301",
+      "analyzerStack": "v2",
+      "appKind": "app",
+      "previewRuleset": "v2",
+      "wouldFailBuild": "true",
+      "status": "ok",
+      "rulesetHash": "NEWHASH",
+      "pinsRevision": "1"
+    }
+  },
+  {
+    "TimeGenerated": "2026-11-12T08:05:00Z",
+    "OperationName": "CI Preview Compile",
+    "Properties": {
+      "appId": "id-Alpha",
+      "appName": "Alpha",
+      "projectName": "ProjX",
+      "pipelineName": "Alpha CI",
+      "sourceBranch": "refs/heads/main",
+      "buildId": "103",
+      "analyzerStack": "v2",
+      "appKind": "test",
+      "previewRuleset": "v2.next",
+      "wouldFailBuild": "unknown",
+      "status": "ok",
+      "rulesetHash": "NEWHASH",
+      "pinsRevision": "1"
+    }
+  },
+  {
+    "TimeGenerated": "2026-11-12T09:05:00Z",
+    "OperationName": "CI Preview Compile",
+    "Properties": {
+      "appId": "id-Alpha",
+      "appName": "Alpha",
+      "projectName": "ProjX",
+      "pipelineName": "Alpha CI",
+      "sourceBranch": "refs/heads/stage",
+      "buildId": "201",
+      "analyzerStack": "v2",
+      "appKind": "test",
+      "previewRuleset": "v2.next",
+      "wouldFailBuild": "false",
+      "status": "identical",
+      "rulesetHash": "NEWHASH",
+      "pinsRevision": "1"
+    }
+  },
+  {
+    "TimeGenerated": "2026-11-12T09:35:00Z",
+    "OperationName": "CI Preview Compile",
+    "Properties": {
+      "appId": "id-Alpha",
+      "appName": "Alpha",
+      "projectName": "ProjX",
+      "pipelineName": "Alpha CI",
+      "sourceBranch": "refs/heads/dev",
+      "buildId": "301",
+      "analyzerStack": "v2",
+      "appKind": "test",
+      "previewRuleset": "v2.next",
+      "wouldFailBuild": "true",
+      "status": "timeout",
+      "rulesetHash": "NEWHASH",
+      "pinsRevision": "1"
+    }
+  },
+  {
+    "TimeGenerated": "2026-11-12T10:00:00Z",
+    "OperationName": "CI Preview Compile",
+    "Properties": {
+      "appId": "id-Beta",
+      "appName": "Beta",
+      "projectName": "ProjX",
+      "pipelineName": "Beta CI",
+      "sourceBranch": "refs/heads/main",
+      "buildId": "401",
+      "analyzerStack": "v2",
+      "appKind": "app",
+      "previewRuleset": "v2.next",
+      "wouldFailBuild": "false",
+      "status": "skipped",
+      "rulesetHash": "NEWHASH",
+      "pinsRevision": "1"
+    }
+  },
+  {
+    "TimeGenerated": "2026-11-12T10:10:00Z",
+    "OperationName": "CI Preview Compile",
+    "Properties": {
+      "appId": "id-Beta",
+      "appName": "Beta",
+      "projectName": "ProjX",
+      "pipelineName": "Beta CI",
+      "sourceBranch": "refs/heads/stage",
+      "buildId": "501",
+      "analyzerStack": "v2",
+      "appKind": "app",
+      "previewRuleset": "v2.next",
+      "wouldFailBuild": "true",
+      "status": "ok",
+      "rulesetHash": "OLDHASH",
+      "pinsRevision": "1"
+    }
+  },
+  {
+    "TimeGenerated": "2026-11-12T10:20:00Z",
+    "OperationName": "CI Preview Compile",
+    "Properties": {
+      "appId": "id-Beta",
+      "appName": "Beta",
+      "projectName": "ProjX",
+      "pipelineName": "Beta CI",
+      "sourceBranch": "refs/heads/dev",
+      "buildId": "601",
+      "analyzerStack": "v2",
+      "appKind": "app",
+      "previewRuleset": "v2.next",
+      "wouldFailBuild": "false",
+      "status": "ok",
+      "rulesetHash": "NEWHASH",
+      "pinsRevision": "1"
+    }
+  },
+  {
+    "TimeGenerated": "2026-11-12T10:30:00Z",
+    "OperationName": "CI Preview Compile",
+    "Properties": {
+      "appId": "id-Beta",
+      "appName": "Beta",
+      "projectName": "ProjX",
+      "pipelineName": "Beta CI",
+      "sourceBranch": "main",
+      "buildId": "401",
+      "analyzerStack": "v2",
+      "appKind": "test",
+      "previewRuleset": "v2.next",
+      "wouldFailBuild": "false",
+      "status": "ok",
+      "rulesetHash": "NEWHASH",
+      "pinsRevision": "1"
+    }
+  },
+  {
+    "TimeGenerated": "2026-11-12T11:00:00Z",
+    "OperationName": "CI Preview Compile",
+    "Properties": {
+      "appId": "id-Delta",
+      "appName": "Delta",
+      "projectName": "ProjX",
+      "pipelineName": "Delta CI",
+      "sourceBranch": "refs/heads/main",
+      "buildId": "701",
+      "analyzerStack": "v2",
+      "appKind": "app",
+      "previewRuleset": "v2",
+      "wouldFailBuild": "false",
+      "status": "ok",
+      "rulesetHash": "NEWHASH",
+      "pinsRevision": "1"
+    }
+  },
+  {
+    "TimeGenerated": "2026-11-12T12:00:00Z",
+    "OperationName": "CI Preview Compile",
+    "Properties": {
+      "appId": "id-Gamma",
+      "appName": "Gamma",
+      "projectName": "ProjX",
+      "pipelineName": "Gamma CI",
+      "sourceBranch": "refs/heads/main",
+      "buildId": "801",
+      "analyzerStack": "v1",
+      "appKind": "app",
+      "previewRuleset": "v2.next",
+      "wouldFailBuild": "true",
+      "status": "ok",
+      "rulesetHash": "NEWHASH",
+      "pinsRevision": "1"
+    }
+  },
+  {
+    "TimeGenerated": "2026-11-12T12:00:00Z",
+    "OperationName": "CI Preview Compile",
+    "Properties": {
+      "appId": "id-Gamma",
+      "appName": "Gamma",
+      "projectName": "ProjX",
+      "pipelineName": "Gamma CI",
+      "sourceBranch": "refs/heads/stage",
+      "buildId": "802",
+      "analyzerStack": "v1",
+      "appKind": "app",
+      "previewRuleset": "v2",
+      "wouldFailBuild": "true",
+      "status": "ok",
+      "rulesetHash": "NEWHASH",
+      "pinsRevision": "1"
+    }
+  },
+  {
+    "TimeGenerated": "2026-11-11T12:00:00Z",
+    "OperationName": "CI Preview Compile",
+    "Properties": {
+      "appId": "id-Epsilon",
+      "appName": "Epsilon",
+      "projectName": "ProjX",
+      "pipelineName": "Epsilon CI",
+      "sourceBranch": "refs/heads/main",
+      "buildId": "901",
+      "analyzerStack": "v2",
+      "appKind": "app",
+      "previewRuleset": "v2.next",
+      "wouldFailBuild": "true",
+      "status": "ok",
+      "rulesetHash": "NEWHASH",
+      "pinsRevision": "1"
+    }
+  },
+  {
+    "TimeGenerated": "2026-11-12T12:00:00Z",
+    "OperationName": "CI Preview Compile",
+    "Properties": {
+      "appId": "id-Epsilon",
+      "appName": "Epsilon",
+      "projectName": "ProjX",
+      "pipelineName": "Epsilon CI",
+      "sourceBranch": "refs/heads/main",
+      "buildId": "902",
+      "analyzerStack": "v2",
+      "appKind": "app",
+      "previewRuleset": "v2.next",
+      "wouldFailBuild": "true",
+      "status": "ok",
+      "rulesetHash": "OLDHASH",
+      "pinsRevision": "1"
+    }
+  }
+]

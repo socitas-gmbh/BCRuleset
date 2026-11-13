@@ -1,0 +1,89 @@
+[
+  {
+    "id": "AA0175",
+    "v1TestAction": "None",
+    "v1AppAction": "Warning",
+    "decision": "kept",
+    "v2Ids": [
+      "AA0175"
+    ],
+    "reason": "CodeCop AA0175 is unchanged in the v2 stack and still fires on tests that call Get/Find only to assert that a record exists; the v1 relaxation applies as before."
+  },
+  {
+    "id": "AA0181",
+    "v1TestAction": "None",
+    "v1AppAction": "Warning",
+    "decision": "kept",
+    "v2Ids": [
+      "AA0181"
+    ],
+    "reason": "CodeCop AA0181 is unchanged in the v2 stack and still fires on tests that call Find only to assert existence without Next; the v1 relaxation applies as before."
+  },
+  {
+    "id": "AA0210",
+    "v1TestAction": "None",
+    "v1AppAction": "Info",
+    "decision": "kept",
+    "v2Ids": [
+      "AA0210"
+    ],
+    "reason": "CodeCop AA0210 is unchanged in the v2 stack and still fires on tests that filter production tables on non-indexed fields; no keys are added for tests."
+  },
+  {
+    "id": "AI0001",
+    "v1TestAction": "None",
+    "v1AppAction": null,
+    "decision": "dropped",
+    "v2Ids": [],
+    "reason": "AI0001 belongs to AiCop (avoid global variables), which is not part of the v2 analyzer stack; no v2 rule reports it (SocitasCopV2 1.0.0 has no counterpart), so there is nothing left to relax."
+  },
+  {
+    "id": "AI0005",
+    "v1TestAction": "None",
+    "v1AppAction": null,
+    "decision": "dropped",
+    "v2Ids": [],
+    "reason": "AI0005 belongs to AiCop (hand-rolled JsonObject reader chain), which is not part of the v2 analyzer stack; no v2 rule reports it (SocitasCopV2 1.0.0 has no counterpart), so there is nothing left to relax."
+  },
+  {
+    "id": "LC0010",
+    "v1TestAction": "None",
+    "v1AppAction": "Warning",
+    "decision": "remapped",
+    "v2Ids": [
+      "LC0008",
+      "LC0010"
+    ],
+    "reason": "LinterCop-to-ALCops.json maps LC0010 to ALCops LC0008 (maintainability index) and LC0010 (cyclomatic complexity); both react to long, linear fixture setup procedures in tests, so both are relaxed."
+  },
+  {
+    "id": "LC0022",
+    "v1TestAction": "None",
+    "v1AppAction": "Warning",
+    "decision": "remapped",
+    "v2Ids": [
+      "AC0005"
+    ],
+    "reason": "LinterCop-to-ALCops.json maps LC0022 to ALCops ApplicationCop AC0005 (GlobalLanguage must go through the Translation Helper); tests that switch GlobalLanguage directly to set up language scenarios still need it relaxed."
+  },
+  {
+    "id": "SC0002",
+    "v1TestAction": "None",
+    "v1AppAction": null,
+    "decision": "kept",
+    "v2Ids": [
+      "SC0002"
+    ],
+    "reason": "SocitasCopV2 SC0002 (field assignments should use Validate) exists in 1.0.0 with the same intent; tests assign fields directly on purpose so Validate does not fire business logic."
+  },
+  {
+    "id": "SC0042",
+    "v1TestAction": "None",
+    "v1AppAction": null,
+    "decision": "kept",
+    "v2Ids": [
+      "SC0042"
+    ],
+    "reason": "SocitasCopV2 SC0042 (identifiers must not contain underscores) exists in 1.0.0 and would fire on Area_Case_Expectation test and handler names, which the test convention requires."
+  }
+]

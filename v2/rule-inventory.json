@@ -1,0 +1,2254 @@
+{
+  "pins": {
+    "alCompiler": "18.0.43.1464",
+    "alcops": "1.3.1",
+    "socitasCopV2": "1.0.0",
+    "testCop": "0.1.0"
+  },
+  "analyzers": {
+    "ALCops.ApplicationCop": [
+      {
+        "id": "AC0001",
+        "defaultSeverity": "Info",
+        "title": "DrillDownPageId and LookupPageId property must be defined for tables used in list pages"
+      },
+      {
+        "id": "AC0002",
+        "defaultSeverity": "Warning",
+        "title": "Single-field primary key requires the NotBlank property"
+      },
+      {
+        "id": "AC0003",
+        "defaultSeverity": "Warning",
+        "title": "Set NotBlank property to false when 'No. Series' TableRelation exists"
+      },
+      {
+        "id": "AC0004",
+        "defaultSeverity": "Info",
+        "title": "Confirm() must be implemented through the \"Confirm Management\" codeunit"
+      },
+      {
+        "id": "AC0005",
+        "defaultSeverity": "Info",
+        "title": "GlobalLanguage() must be implemented through the \"Translation Helper\" codeunit"
+      },
+      {
+        "id": "AC0006",
+        "defaultSeverity": "Warning",
+        "title": "Use the \"Page Management\" codeunit instead invoking Page.Run directly"
+      },
+      {
+        "id": "AC0007",
+        "defaultSeverity": "Warning",
+        "title": "Install and Upgrade codeunits should have Access set to Internal"
+      },
+      {
+        "id": "AC0008",
+        "defaultSeverity": "Info",
+        "title": "DataPerCompany must be explicitly set on table objects"
+      },
+      {
+        "id": "AC0009",
+        "defaultSeverity": "Warning",
+        "title": "The Caption of permissionset objects should not exceed the maximum length"
+      },
+      {
+        "id": "AC0010",
+        "defaultSeverity": "Warning",
+        "title": "All application objects must be covered by a PermissionSet"
+      },
+      {
+        "id": "AC0011",
+        "defaultSeverity": "Info",
+        "title": "Captions must be defined on user-facing objects and controls"
+      },
+      {
+        "id": "AC0012",
+        "defaultSeverity": "Warning",
+        "title": "Integration events must not be declared in codeunits with Access set to Internal"
+      },
+      {
+        "id": "AC0013",
+        "defaultSeverity": "Info",
+        "title": "DropDown and Brick fieldgroups must be defined"
+      },
+      {
+        "id": "AC0014",
+        "defaultSeverity": "Info",
+        "title": "ToolTip must end with a punctuation"
+      },
+      {
+        "id": "AC0015",
+        "defaultSeverity": "Info",
+        "title": "ToolTip should start with 'Specifies'"
+      },
+      {
+        "id": "AC0016",
+        "defaultSeverity": "Info",
+        "title": "Do not use line breaks in ToolTip"
+      },
+      {
+        "id": "AC0017",
+        "defaultSeverity": "Info",
+        "title": "ToolTip should not exceed 200 characters"
+      },
+      {
+        "id": "AC0018",
+        "defaultSeverity": "Warning",
+        "title": "Empty captions should be locked"
+      },
+      {
+        "id": "AC0019",
+        "defaultSeverity": "Info",
+        "title": "Reserve Enum value zero (0) for empty value"
+      },
+      {
+        "id": "AC0020",
+        "defaultSeverity": "Warning",
+        "title": "Labels suffixed with Tok must be locked."
+      },
+      {
+        "id": "AC0021",
+        "defaultSeverity": "Info",
+        "title": "Locked Label must have a suffix Tok."
+      },
+      {
+        "id": "AC0022",
+        "defaultSeverity": "Warning",
+        "title": "Empty Enum value should not have a Caption property specified."
+      },
+      {
+        "id": "AC0023",
+        "defaultSeverity": "Warning",
+        "title": "Enum value must have non-empty Caption to be selectable in the client."
+      },
+      {
+        "id": "AC0024",
+        "defaultSeverity": "Warning",
+        "title": "Event publisher methods should not be public."
+      },
+      {
+        "id": "AC0025",
+        "defaultSeverity": "Info",
+        "title": "Use the (CR)LFSeparator from the \"Type Helper\" codeunit."
+      },
+      {
+        "id": "AC0026",
+        "defaultSeverity": "Info",
+        "title": "Explicitly set AllowInCustomizations for excluded fields"
+      },
+      {
+        "id": "AC0027",
+        "defaultSeverity": "Info",
+        "title": "Use the 'Tok' suffix for token labels."
+      },
+      {
+        "id": "AC0028",
+        "defaultSeverity": "Info",
+        "title": "Table field must define a ToolTip."
+      },
+      {
+        "id": "AC0029",
+        "defaultSeverity": "Info",
+        "title": "Duplicate ToolTip between page and table field."
+      },
+      {
+        "id": "AC0030",
+        "defaultSeverity": "Info",
+        "title": "Use return value for better error handling"
+      },
+      {
+        "id": "AC0031",
+        "defaultSeverity": "Info",
+        "title": "Table data access requires explicit object permissions"
+      },
+      {
+        "id": "AC0032",
+        "defaultSeverity": "Info",
+        "title": "Unused permission declared"
+      }
+    ],
+    "ALCops.DocumentationCop": [
+      {
+        "id": "DC0001",
+        "defaultSeverity": "Info",
+        "title": "Commit() needs a comment to justify its existence"
+      },
+      {
+        "id": "DC0002",
+        "defaultSeverity": "Info",
+        "title": "Writing to FlowFields is not common and requires an explanatory comment"
+      },
+      {
+        "id": "DC0003",
+        "defaultSeverity": "Info",
+        "title": "Empty statements should be removed or documented"
+      },
+      {
+        "id": "DC0004",
+        "defaultSeverity": "Info",
+        "title": "Public procedures must include XML documentation comments"
+      },
+      {
+        "id": "DC0005",
+        "defaultSeverity": "Info",
+        "title": "XML documentation must match the procedure signature"
+      },
+      {
+        "id": "DC0006",
+        "defaultSeverity": "Info",
+        "title": "Internal procedures must include XML documentation comments"
+      },
+      {
+        "id": "DC0007",
+        "defaultSeverity": "Info",
+        "title": "Public objects must include XML documentation comments"
+      },
+      {
+        "id": "DC0008",
+        "defaultSeverity": "Info",
+        "title": "Internal objects must include XML documentation comments"
+      },
+      {
+        "id": "DC0009",
+        "defaultSeverity": "Info",
+        "title": "An integration or business event must include XML documentation comments"
+      },
+      {
+        "id": "DC0010",
+        "defaultSeverity": "Info",
+        "title": "Internal event must include XML documentation comments"
+      }
+    ],
+    "ALCops.FormattingCop": [
+      {
+        "id": "FC0001",
+        "defaultSeverity": "Warning",
+        "title": "Procedure or Trigger declaration should not end with semicolon"
+      },
+      {
+        "id": "FC0002",
+        "defaultSeverity": "Info",
+        "title": "Casing of symbols and keywords must align with the language definition"
+      },
+      {
+        "id": "FC0003",
+        "defaultSeverity": "Warning",
+        "title": "Function calls should have parenthesis even if they do not have any parameters"
+      },
+      {
+        "id": "FC0004",
+        "defaultSeverity": "Info",
+        "title": "Permission declarations should be sorted by object type and name"
+      },
+      {
+        "id": "FC0005",
+        "defaultSeverity": "Warning",
+        "title": "Call methods with parenthesis instead of using assignment syntax"
+      },
+      {
+        "id": "FC0006",
+        "defaultSeverity": "Info",
+        "title": "Permission values should be lowercase"
+      },
+      {
+        "id": "FC0007",
+        "defaultSeverity": "Info",
+        "title": "Statement blocks should be separated by a blank line"
+      }
+    ],
+    "ALCops.LinterCop": [
+      {
+        "id": "LC0003",
+        "defaultSeverity": "Warning",
+        "title": "Do not use Object IDs as object references"
+      },
+      {
+        "id": "LC0007",
+        "defaultSeverity": "Info",
+        "title": "Maintainability index metric"
+      },
+      {
+        "id": "LC0008",
+        "defaultSeverity": "Warning",
+        "title": "Maintainability index below configured threshold"
+      },
+      {
+        "id": "LC0009",
+        "defaultSeverity": "Info",
+        "title": "Cyclomatic complexity: {0} (threshold ≥ {1})"
+      },
+      {
+        "id": "LC0010",
+        "defaultSeverity": "Warning",
+        "title": "Cyclomatic complexity exceeds configured threshold"
+      },
+      {
+        "id": "LC0019",
+        "defaultSeverity": "Warning",
+        "title": "DataClassification matches the table-level DataClassification and can be removed."
+      },
+      {
+        "id": "LC0020",
+        "defaultSeverity": "Warning",
+        "title": "ApplicationArea matches the page-level ApplicationArea and can be removed"
+      },
+      {
+        "id": "LC0028",
+        "defaultSeverity": "Warning",
+        "title": "Use identifier syntax in event subscriber arguments"
+      },
+      {
+        "id": "LC0031",
+        "defaultSeverity": "Info",
+        "title": "Use ReadIsolation instead of LockTable"
+      },
+      {
+        "id": "LC0033",
+        "defaultSeverity": "Warning",
+        "title": "The specified runtime version in app.json is falling behind. The project targets {0} version {1} and the current runtime is {2}. Update the runtime to {3} for compatibility with the latest runtime features."
+      },
+      {
+        "id": "LC0040",
+        "defaultSeverity": "Warning",
+        "title": "The method call '{0}' does not explicitly specify the RunTrigger parameter. Set RunTrigger explicitly instead of the implicit default value of false."
+      },
+      {
+        "id": "LC0043",
+        "defaultSeverity": "Warning",
+        "title": "Use SecretText type to protect credentials and sensitive textual values from being revealed"
+      },
+      {
+        "id": "LC0048",
+        "defaultSeverity": "Warning",
+        "title": "Error is called with a Text value. Use ErrorInfo or a Label variable to preserve error details in telemetry."
+      },
+      {
+        "id": "LC0052",
+        "defaultSeverity": "Warning",
+        "title": "The internal method is declared but never used."
+      },
+      {
+        "id": "LC0053",
+        "defaultSeverity": "Warning",
+        "title": "The internal method is only used in the object in which it is declared."
+      },
+      {
+        "id": "LC0054",
+        "defaultSeverity": "Warning",
+        "title": "Use the standard 'I' prefix for interface object names."
+      },
+      {
+        "id": "LC0063",
+        "defaultSeverity": "Info",
+        "title": "Consider naming field with a more descriptive name: '{0}'."
+      },
+      {
+        "id": "LC0081",
+        "defaultSeverity": "Warning",
+        "title": "Use Rec.IsEmpty() for checking record existence"
+      },
+      {
+        "id": "LC0082",
+        "defaultSeverity": "Info",
+        "title": "Consider using a Query object or Rec.Find('-') with Rec.Next() for checking exactly one record"
+      },
+      {
+        "id": "LC0083",
+        "defaultSeverity": "Warning",
+        "title": "Use the new method {0}.{1} to extract specific parts of date/time values."
+      },
+      {
+        "id": "LC0086",
+        "defaultSeverity": "Warning",
+        "title": "Use the new PageStyle datatype instead string literals"
+      },
+      {
+        "id": "LC0088",
+        "defaultSeverity": "Info",
+        "title": "Prefer Enum over Option type"
+      },
+      {
+        "id": "LC0089",
+        "defaultSeverity": "Info",
+        "title": "Cognitive Complexity: {0} (threshold ≥ {1})"
+      },
+      {
+        "id": "LC0089i",
+        "defaultSeverity": "Info",
+        "title": "{0}: +{1} (1 increment + {2} nesting penalty)"
+      },
+      {
+        "id": "LC0090",
+        "defaultSeverity": "Warning",
+        "title": "Cognitive Complexity exceeds threshold."
+      },
+      {
+        "id": "LC0091",
+        "defaultSeverity": "Warning",
+        "title": "Translatable text should be translated"
+      },
+      {
+        "id": "LC0092",
+        "defaultSeverity": "Warning",
+        "title": "Name does not match naming convention"
+      },
+      {
+        "id": "LC0094",
+        "defaultSeverity": "Warning",
+        "title": "AllowInCustomizations matches the table-level AllowInCustomizations and can be removed."
+      },
+      {
+        "id": "LC0095",
+        "defaultSeverity": "Warning",
+        "title": "Parameter is not referenced"
+      },
+      {
+        "id": "LC0096",
+        "defaultSeverity": "Warning",
+        "title": "Unnecessary record parameter in method call"
+      },
+      {
+        "id": "LC0097",
+        "defaultSeverity": "Info",
+        "title": "Avoid mixing exit() and named return variable assignments"
+      },
+      {
+        "id": "LC0098",
+        "defaultSeverity": "Info",
+        "title": "Event subscriber procedure name does not match the configured template"
+      },
+      {
+        "id": "LC0099",
+        "defaultSeverity": "Info",
+        "title": "Event subscriber parameter is not referenced"
+      }
+    ],
+    "ALCops.PlatformCop": [
+      {
+        "id": "PC0001",
+        "defaultSeverity": "Warning",
+        "title": "FlowFields should not be editable"
+      },
+      {
+        "id": "PC0002",
+        "defaultSeverity": "Error",
+        "title": "AutoIncrement fields are not supported in temporary tables"
+      },
+      {
+        "id": "PC0003",
+        "defaultSeverity": "Error",
+        "title": "Filter operators should not be used in SetRange"
+      },
+      {
+        "id": "PC0004",
+        "defaultSeverity": "Error",
+        "title": "Zero index access on 1-based List objects"
+      },
+      {
+        "id": "PC0005",
+        "defaultSeverity": "Warning",
+        "title": "Explicitly set Extensible property on public objects"
+      },
+      {
+        "id": "PC0006",
+        "defaultSeverity": "Warning",
+        "title": "Every object needs to specify a value for the Access property"
+      },
+      {
+        "id": "PC0007",
+        "defaultSeverity": "Error",
+        "title": "Avoids a runtime error from using AutoCalcFields on a field that is not a FlowField or a field of type Blob."
+      },
+      {
+        "id": "PC0008",
+        "defaultSeverity": "Error",
+        "title": "Avoid unsupported operators with placeholders in SetFilter expressions"
+      },
+      {
+        "id": "PC0010",
+        "defaultSeverity": "Warning",
+        "title": "Event subscriber var keyword mismatch."
+      },
+      {
+        "id": "PC0011",
+        "defaultSeverity": "Warning",
+        "title": "Handled parameters in event signatures should be passed by var"
+      },
+      {
+        "id": "PC0012",
+        "defaultSeverity": "Warning",
+        "title": "Set values for FlowFilter fields using filtering methods"
+      },
+      {
+        "id": "PC0013",
+        "defaultSeverity": "Error",
+        "title": "Incorrect number or type of arguments in .Get() method on Record object"
+      },
+      {
+        "id": "PC0014",
+        "defaultSeverity": "Warning",
+        "title": "Use two single quotes instead of double quotes in JPath expressions"
+      },
+      {
+        "id": "PC0015",
+        "defaultSeverity": "Error",
+        "title": "Use IsNullGuid() to check for empty GUID values."
+      },
+      {
+        "id": "PC0016",
+        "defaultSeverity": "Warning",
+        "title": "Clear/ClearAll does not reset SingleInstance codeunit state"
+      },
+      {
+        "id": "PC0017",
+        "defaultSeverity": "Warning",
+        "title": "Page record argument does not match source table"
+      },
+      {
+        "id": "PC0018",
+        "defaultSeverity": "Error",
+        "title": "Page record methods require a SourceTable"
+      },
+      {
+        "id": "PC0019",
+        "defaultSeverity": "Warning",
+        "title": "Invalid single-quote escaping in filter string"
+      },
+      {
+        "id": "PC0020",
+        "defaultSeverity": "Warning",
+        "title": "Incompatible field types across TransferFields"
+      },
+      {
+        "id": "PC0021",
+        "defaultSeverity": "Warning",
+        "title": "Inconsistent field names across TransferFields"
+      },
+      {
+        "id": "PC0022",
+        "defaultSeverity": "Warning",
+        "title": "Possible overflow when assigning text to a smaller target type."
+      },
+      {
+        "id": "PC0023",
+        "defaultSeverity": "Warning",
+        "title": "Incorrect 'IsHandled' parameter assignment."
+      },
+      {
+        "id": "PC0024",
+        "defaultSeverity": "Info",
+        "title": "The 'ApplicationArea' property is not applicable to API pages."
+      },
+      {
+        "id": "PC0025",
+        "defaultSeverity": "Error",
+        "title": "The ODataKeyFields property should use the SystemId field."
+      },
+      {
+        "id": "PC0026",
+        "defaultSeverity": "Warning",
+        "title": "Mandatory fields must be exposed on API pages."
+      },
+      {
+        "id": "PC0027",
+        "defaultSeverity": "Warning",
+        "title": "Avoid triggering table logic on temporary records"
+      },
+      {
+        "id": "PC0028",
+        "defaultSeverity": "Warning",
+        "title": "Table relation field length mismatch"
+      },
+      {
+        "id": "PC0029",
+        "defaultSeverity": "Info",
+        "title": "Use CreateSequentialGuid() instead of CreateGuid() for key fields"
+      },
+      {
+        "id": "PC0030",
+        "defaultSeverity": "Info",
+        "title": "Use partial records on read operation"
+      },
+      {
+        "id": "PC0031",
+        "defaultSeverity": "Warning",
+        "title": "Partial records cause JIT load on full-field operations"
+      },
+      {
+        "id": "PC0032",
+        "defaultSeverity": "Error",
+        "title": "Report layout property exceeds maximum length"
+      },
+      {
+        "id": "PC0033",
+        "defaultSeverity": "Warning",
+        "title": "Duplicate OData EntityName on page controls"
+      },
+      {
+        "id": "PC0034",
+        "defaultSeverity": "Warning",
+        "title": "Placeholder argument count mismatch"
+      },
+      {
+        "id": "PC0035",
+        "defaultSeverity": "Warning",
+        "title": "Use SetAutoCalcFields instead of CalcFields inside loops"
+      },
+      {
+        "id": "PC0036",
+        "defaultSeverity": "Warning",
+        "title": "SetRecord() does not support temporary records"
+      },
+      {
+        "id": "PC0037",
+        "defaultSeverity": "Warning",
+        "title": "Use Validate() instead of direct field assignment"
+      },
+      {
+        "id": "PC0038",
+        "defaultSeverity": "Info",
+        "title": "Not all code paths return a value"
+      }
+    ],
+    "ALCops.TestAutomationCop": [
+      {
+        "id": "TA0001",
+        "defaultSeverity": "Info",
+        "title": "Global procedures in test codeunits must be test methods"
+      }
+    ],
+    "BusinessCentral.SocitasCopV2": [
+      {
+        "id": "SC0001",
+        "defaultSeverity": "Warning",
+        "title": "Do not leave TODO comments in finished code"
+      },
+      {
+        "id": "SC0002",
+        "defaultSeverity": "Warning",
+        "title": "Field assignments should use Validate"
+      },
+      {
+        "id": "SC0003",
+        "defaultSeverity": "Warning",
+        "title": "Avoid type names and Hungarian-style prefixes in variable names"
+      },
+      {
+        "id": "SC0004",
+        "defaultSeverity": "Warning",
+        "title": "Event subscriber procedures must be named <Action>_<EventName>"
+      },
+      {
+        "id": "SC0005",
+        "defaultSeverity": "Warning",
+        "title": "Use SetLoadFields for performance-critical record reads"
+      },
+      {
+        "id": "SC0006",
+        "defaultSeverity": "Warning",
+        "title": "Do not call Modify() inside an OnValidate trigger"
+      },
+      {
+        "id": "SC0007",
+        "defaultSeverity": "Info",
+        "title": "Labels with placeholders must have a Comment property"
+      },
+      {
+        "id": "SC0008",
+        "defaultSeverity": "Warning",
+        "title": "Use the ternary operator for a single-value conditional"
+      },
+      {
+        "id": "SC0009",
+        "defaultSeverity": "Warning",
+        "title": "Caption and ToolTip should be defined on the table field, not on the page field"
+      },
+      {
+        "id": "SC0010",
+        "defaultSeverity": "Warning",
+        "title": "Set DataClassification as a table-level property, not per field"
+      },
+      {
+        "id": "SC0011",
+        "defaultSeverity": "Warning",
+        "title": "Opening brace must be on the same line as the declaration"
+      },
+      {
+        "id": "SC0012",
+        "defaultSeverity": "Warning",
+        "title": "Use the \"Rest Client\" codeunit instead of raw HTTP types"
+      },
+      {
+        "id": "SC0013",
+        "defaultSeverity": "Warning",
+        "title": "Rest Client must be initialized with a handler codeunit from the current app"
+      },
+      {
+        "id": "SC0014",
+        "defaultSeverity": "Warning",
+        "title": "Property and enum values must be PascalCase"
+      },
+      {
+        "id": "SC0015",
+        "defaultSeverity": "Warning",
+        "title": "Object-type references must be PascalCase"
+      },
+      {
+        "id": "SC0016",
+        "defaultSeverity": "Warning",
+        "title": "Use consistent indentation"
+      },
+      {
+        "id": "SC0017",
+        "defaultSeverity": "Warning",
+        "title": "No stray blank lines"
+      },
+      {
+        "id": "SC0018",
+        "defaultSeverity": "Warning",
+        "title": "Standalone-object members must not carry the SOC affix"
+      },
+      {
+        "id": "SC0019",
+        "defaultSeverity": "Warning",
+        "title": "Captions must not contain the SOC affix"
+      },
+      {
+        "id": "SC0020",
+        "defaultSeverity": "Warning",
+        "title": "ApplicationArea must be All"
+      },
+      {
+        "id": "SC0021",
+        "defaultSeverity": "Warning",
+        "title": "Event-subscriber codeunits need the standard properties"
+      },
+      {
+        "id": "SC0022",
+        "defaultSeverity": "Warning",
+        "title": "Label suffix must match how the label is consumed"
+      },
+      {
+        "id": "SC0023",
+        "defaultSeverity": "Warning",
+        "title": "Remove unused event-subscriber parameters"
+      },
+      {
+        "id": "SC0024",
+        "defaultSeverity": "Warning",
+        "title": "Namespace must mirror the folder path below src"
+      },
+      {
+        "id": "SC0025",
+        "defaultSeverity": "Warning",
+        "title": "Separate namespace, using directives, and the object with one blank line"
+      },
+      {
+        "id": "SC0026",
+        "defaultSeverity": "Warning",
+        "title": "Objects do not need a documentation summary"
+      },
+      {
+        "id": "SC0027",
+        "defaultSeverity": "Warning",
+        "title": "Procedure documentation summaries must follow the standard shape"
+      },
+      {
+        "id": "SC0028",
+        "defaultSeverity": "Warning",
+        "title": "Documentation summary must not merely restate the name"
+      },
+      {
+        "id": "SC0029",
+        "defaultSeverity": "Warning",
+        "title": "Prefer SetAutoCalcFields over CalcFields after a read"
+      },
+      {
+        "id": "SC0030",
+        "defaultSeverity": "Warning",
+        "title": "Standalone object names must not carry the SOC affix when namespaces are enforced"
+      },
+      {
+        "id": "SC0031",
+        "defaultSeverity": "Error",
+        "title": "Do not pass FlowFields to SetLoadFields or AddLoadFields"
+      },
+      {
+        "id": "SC0032",
+        "defaultSeverity": "Warning",
+        "title": "Do not mix base-app and extension namespaces in one PermissionSet"
+      },
+      {
+        "id": "SC0033",
+        "defaultSeverity": "Warning",
+        "title": "Do not wrap StrSubstNo in Message or Error"
+      },
+      {
+        "id": "SC0034",
+        "defaultSeverity": "Warning",
+        "title": "Do not run validation or triggers on a temporary buffer"
+      },
+      {
+        "id": "SC0035",
+        "defaultSeverity": "Warning",
+        "title": "No blank line between enum values"
+      },
+      {
+        "id": "SC0036",
+        "defaultSeverity": "Warning",
+        "title": "Use the 'in' operator for chained equality comparisons"
+      },
+      {
+        "id": "SC0037",
+        "defaultSeverity": "Warning",
+        "title": "Procedure documentation must be short"
+      },
+      {
+        "id": "SC0038",
+        "defaultSeverity": "Warning",
+        "title": "Replace back-to-back ModifyAll calls with one validating loop"
+      },
+      {
+        "id": "SC0039",
+        "defaultSeverity": "Warning",
+        "title": "Place an extension object in the namespace of the object it extends"
+      },
+      {
+        "id": "SC0040",
+        "defaultSeverity": "Info",
+        "title": "Guard a repeat loop with a positive FindSet instead of a negated exit"
+      },
+      {
+        "id": "SC0041",
+        "defaultSeverity": "Warning",
+        "title": "Probe existence with Get instead of the return value of Insert or Modify"
+      },
+      {
+        "id": "SC0042",
+        "defaultSeverity": "Warning",
+        "title": "Identifiers must not contain underscores"
+      },
+      {
+        "id": "SC0043",
+        "defaultSeverity": "Warning",
+        "title": "Call Get() instead of Get('')"
+      },
+      {
+        "id": "SC0044",
+        "defaultSeverity": "Warning",
+        "title": "Variable names must not start with a lowercase l or g"
+      },
+      {
+        "id": "SC0045",
+        "defaultSeverity": "Warning",
+        "title": "Avoid LockTimeout"
+      }
+    ],
+    "BusinessCentral.TestCop": [
+      {
+        "id": "ST0001",
+        "defaultSeverity": "Error",
+        "title": "Test procedures must follow Given/When/Then"
+      }
+    ],
+    "Microsoft.Dynamics.Nav.AppSourceCop": [
+      {
+        "id": "AS0001",
+        "defaultSeverity": "Error",
+        "title": "Tables and table extensions that have been published must not be deleted."
+      },
+      {
+        "id": "AS0002",
+        "defaultSeverity": "Error",
+        "title": "Fields must not be deleted."
+      },
+      {
+        "id": "AS0003",
+        "defaultSeverity": "Error",
+        "title": "The previous version of the extension could not be found."
+      },
+      {
+        "id": "AS0004",
+        "defaultSeverity": "Error",
+        "title": "Fields must not change type, since dependent extensions may break"
+      },
+      {
+        "id": "AS0005",
+        "defaultSeverity": "Error",
+        "title": "Fields must not change name"
+      },
+      {
+        "id": "AS0006",
+        "defaultSeverity": "Error",
+        "title": "Tables that have been published must not change name."
+      },
+      {
+        "id": "AS0007",
+        "defaultSeverity": "Error",
+        "title": "Objects that have been published must not change namespace."
+      },
+      {
+        "id": "AS0008",
+        "defaultSeverity": "Error",
+        "title": "Defining reserved namespaces is not allowed."
+      },
+      {
+        "id": "AS0009",
+        "defaultSeverity": "Error",
+        "title": "Key fields must not be changed"
+      },
+      {
+        "id": "AS0010",
+        "defaultSeverity": "Error",
+        "title": "Keys must not be deleted"
+      },
+      {
+        "id": "AS0011",
+        "defaultSeverity": "Error",
+        "title": "An affix is required"
+      },
+      {
+        "id": "AS0013",
+        "defaultSeverity": "Error",
+        "title": "The field identifier must be within the allowed range"
+      },
+      {
+        "id": "AS0014",
+        "defaultSeverity": "Error",
+        "title": "The project manifest must contain the allocated identifier range"
+      },
+      {
+        "id": "AS0015",
+        "defaultSeverity": "Error",
+        "title": "TranslationFile must be enabled."
+      },
+      {
+        "id": "AS0016",
+        "defaultSeverity": "Error",
+        "title": "Fields of field class 'Normal' must use the DataClassification property and its value should be different from ToBeClassified"
+      },
+      {
+        "id": "AS0018",
+        "defaultSeverity": "Error",
+        "title": "A procedure belonging to the public API cannot be removed"
+      },
+      {
+        "id": "AS0019",
+        "defaultSeverity": "Error",
+        "title": "Event attributes cannot be removed"
+      },
+      {
+        "id": "AS0020",
+        "defaultSeverity": "Error",
+        "title": "The type of events cannot be changed."
+      },
+      {
+        "id": "AS0021",
+        "defaultSeverity": "Error",
+        "title": "An argument in an event attribute cannot be changed to false."
+      },
+      {
+        "id": "AS0022",
+        "defaultSeverity": "Error",
+        "title": "An external scope cannot be removed"
+      },
+      {
+        "id": "AS0023",
+        "defaultSeverity": "Error",
+        "title": "A return type cannot be modified in external procedures"
+      },
+      {
+        "id": "AS0024",
+        "defaultSeverity": "Error",
+        "title": "Parameters cannot be removed or added in external procedures"
+      },
+      {
+        "id": "AS0025",
+        "defaultSeverity": "Error",
+        "title": "Parameters cannot be modified, renamed, or removed from events."
+      },
+      {
+        "id": "AS0026",
+        "defaultSeverity": "Error",
+        "title": "The type and subtype of parameters cannot be modified in events and external procedures"
+      },
+      {
+        "id": "AS0027",
+        "defaultSeverity": "Error",
+        "title": "Modifying the array size of a parameter in events and external procedures is not allowed"
+      },
+      {
+        "id": "AS0028",
+        "defaultSeverity": "Error",
+        "title": "Reducing the array size of a parameter in events and external procedures is not allowed"
+      },
+      {
+        "id": "AS0029",
+        "defaultSeverity": "Error",
+        "title": "Pages and PageExtensions that have been published must not be deleted, since dependent extensions may break"
+      },
+      {
+        "id": "AS0030",
+        "defaultSeverity": "Error",
+        "title": "Pages that have been published must not be renamed."
+      },
+      {
+        "id": "AS0031",
+        "defaultSeverity": "Error",
+        "title": "Actions that have been published must not be deleted."
+      },
+      {
+        "id": "AS0032",
+        "defaultSeverity": "Error",
+        "title": "Controls that have been published must not be deleted."
+      },
+      {
+        "id": "AS0033",
+        "defaultSeverity": "Error",
+        "title": "Views that have been published must not be deleted."
+      },
+      {
+        "id": "AS0034",
+        "defaultSeverity": "Error",
+        "title": "Unsupported table property change"
+      },
+      {
+        "id": "AS0035",
+        "defaultSeverity": "Warning",
+        "title": "Unsupported page property change"
+      },
+      {
+        "id": "AS0036",
+        "defaultSeverity": "Error",
+        "title": "Unsupported table field property change"
+      },
+      {
+        "id": "AS0038",
+        "defaultSeverity": "Error",
+        "title": "Unsupported table key property change"
+      },
+      {
+        "id": "AS0039",
+        "defaultSeverity": "Error",
+        "title": "Removing table properties that cause destructive changes is not allowed"
+      },
+      {
+        "id": "AS0040",
+        "defaultSeverity": "Warning",
+        "title": "Removing page properties that cause destructive changes is not allowed"
+      },
+      {
+        "id": "AS0041",
+        "defaultSeverity": "Error",
+        "title": "Table field property changes that cause destructive changes must not be removed"
+      },
+      {
+        "id": "AS0042",
+        "defaultSeverity": "Error",
+        "title": "Table key property changes that cause destructive changes must not be removed"
+      },
+      {
+        "id": "AS0043",
+        "defaultSeverity": "Error",
+        "title": "The clustered key must not be deleted"
+      },
+      {
+        "id": "AS0044",
+        "defaultSeverity": "Error",
+        "title": "Property changes that cause destructive changes are not allowed"
+      },
+      {
+        "id": "AS0047",
+        "defaultSeverity": "Error",
+        "title": "The extension name is too long."
+      },
+      {
+        "id": "AS0048",
+        "defaultSeverity": "Error",
+        "title": "The publisher name is too long."
+      },
+      {
+        "id": "AS0049",
+        "defaultSeverity": "Error",
+        "title": "The access modifier of an application object cannot be changed to a value that provides less access."
+      },
+      {
+        "id": "AS0050",
+        "defaultSeverity": "Error",
+        "title": "The extensibility of an application object cannot be removed"
+      },
+      {
+        "id": "AS0051",
+        "defaultSeverity": "Error",
+        "title": "Manifest property is required for AppSource submission"
+      },
+      {
+        "id": "AS0052",
+        "defaultSeverity": "Error",
+        "title": "The property 'url' must be set to a valid URL"
+      },
+      {
+        "id": "AS0053",
+        "defaultSeverity": "Error",
+        "title": "The compilation target of an application must be a value that is allowed in a multi-tenant SaaS environment"
+      },
+      {
+        "id": "AS0054",
+        "defaultSeverity": "Error",
+        "title": "The AppSourceCop configuration must specify the set of affixes used by the application"
+      },
+      {
+        "id": "AS0055",
+        "defaultSeverity": "Hidden",
+        "title": "The AppSourceCop configuration must specify the list of countries/regions targeted by the application"
+      },
+      {
+        "id": "AS0056",
+        "defaultSeverity": "Warning",
+        "title": "The country/region codes specified in the 'supportedCountries' property must be valid ISO 3166-1 alpha-2 codes"
+      },
+      {
+        "id": "AS0057",
+        "defaultSeverity": "Hidden",
+        "title": "Translations must be provided for all the locales in which the application will be available"
+      },
+      {
+        "id": "AS0058",
+        "defaultSeverity": "Error",
+        "title": "Only use AssertError in Test Codeunits"
+      },
+      {
+        "id": "AS0059",
+        "defaultSeverity": "Error",
+        "title": "Reserved database tables are read-only in a multi-tenant environment"
+      },
+      {
+        "id": "AS0060",
+        "defaultSeverity": "Error",
+        "title": "Unsafe methods cannot be invoked in an AppSource application"
+      },
+      {
+        "id": "AS0061",
+        "defaultSeverity": "Error",
+        "title": "Procedures must not subscribe to CompanyOpen events"
+      },
+      {
+        "id": "AS0062",
+        "defaultSeverity": "Error",
+        "title": "Page controls and actions must use the ApplicationArea property"
+      },
+      {
+        "id": "AS0063",
+        "defaultSeverity": "Error",
+        "title": "Removing a var modifier in events is not allowed"
+      },
+      {
+        "id": "AS0064",
+        "defaultSeverity": "Error",
+        "title": "Interface implementations that have been published must not be deleted."
+      },
+      {
+        "id": "AS0065",
+        "defaultSeverity": "Error",
+        "title": "Interfaces that have been published must not be deleted."
+      },
+      {
+        "id": "AS0066",
+        "defaultSeverity": "Error",
+        "title": "A new method to an interface that has been published must not be added."
+      },
+      {
+        "id": "AS0067",
+        "defaultSeverity": "Error",
+        "title": "Adding an interface to an enum that has been published must have a default implementation."
+      },
+      {
+        "id": "AS0068",
+        "defaultSeverity": "Error",
+        "title": "Changing a table extension's target is not allowed."
+      },
+      {
+        "id": "AS0069",
+        "defaultSeverity": "Error",
+        "title": "An enum field replacing an option field should have at least the same number of members."
+      },
+      {
+        "id": "AS0070",
+        "defaultSeverity": "Error",
+        "title": "An enum field replacing an option field should preserve the member names."
+      },
+      {
+        "id": "AS0071",
+        "defaultSeverity": "Error",
+        "title": "An enum field replacing an option field should preserve the member ordinal values."
+      },
+      {
+        "id": "AS0072",
+        "defaultSeverity": "Hidden",
+        "title": "The attribute tag must be set to the next release version."
+      },
+      {
+        "id": "AS0073",
+        "defaultSeverity": "Hidden",
+        "title": "Attribute tag must be set."
+      },
+      {
+        "id": "AS0074",
+        "defaultSeverity": "Hidden",
+        "title": "The attribute tag must be the same across branches."
+      },
+      {
+        "id": "AS0075",
+        "defaultSeverity": "Warning",
+        "title": "Attribute reason must be set."
+      },
+      {
+        "id": "AS0076",
+        "defaultSeverity": "Hidden",
+        "title": "Attribute tag format."
+      },
+      {
+        "id": "AS0077",
+        "defaultSeverity": "Error",
+        "title": "Adding a var modifier in events is not allowed"
+      },
+      {
+        "id": "AS0078",
+        "defaultSeverity": "Error",
+        "title": "Adding or removing a var modifier in external procedures is not allowed"
+      },
+      {
+        "id": "AS0079",
+        "defaultSeverity": "Warning",
+        "title": "An affix is required for procedures defined in extension objects."
+      },
+      {
+        "id": "AS0080",
+        "defaultSeverity": "Error",
+        "title": "Fields must not decrease in length"
+      },
+      {
+        "id": "AS0081",
+        "defaultSeverity": "Warning",
+        "title": "InternalsVisibleTo should not be used as a security feature."
+      },
+      {
+        "id": "AS0082",
+        "defaultSeverity": "Error",
+        "title": "It is not allowed to rename an enum value."
+      },
+      {
+        "id": "AS0083",
+        "defaultSeverity": "Error",
+        "title": "It is not allowed to delete a value from an enum."
+      },
+      {
+        "id": "AS0084",
+        "defaultSeverity": "Error",
+        "title": "The ID range assigned to the extension must be within the allowed range"
+      },
+      {
+        "id": "AS0085",
+        "defaultSeverity": "Warning",
+        "title": "Use the 'application' property instead of specifying explicit dependencies."
+      },
+      {
+        "id": "AS0086",
+        "defaultSeverity": "Warning",
+        "title": "Fields must not increase in length"
+      },
+      {
+        "id": "AS0087",
+        "defaultSeverity": "Warning",
+        "title": "Translations of enum value captions must not contain commas"
+      },
+      {
+        "id": "AS0088",
+        "defaultSeverity": "Error",
+        "title": "Objects with an ID that can be referenced and which have been published must not be deleted."
+      },
+      {
+        "id": "AS0089",
+        "defaultSeverity": "Error",
+        "title": "Objects that can be referenced and which have been published must not be deleted."
+      },
+      {
+        "id": "AS0090",
+        "defaultSeverity": "Error",
+        "title": "Objects that can be referenced and which have been published must not be renamed."
+      },
+      {
+        "id": "AS0091",
+        "defaultSeverity": "Error",
+        "title": "One or more dependencies of the previous version of the extension could not be found."
+      },
+      {
+        "id": "AS0092",
+        "defaultSeverity": "Warning",
+        "title": "The app.json file must specify an Azure Application Insights resource."
+      },
+      {
+        "id": "AS0094",
+        "defaultSeverity": "Warning",
+        "title": "Permission Sets should not be defined in XML files."
+      },
+      {
+        "id": "AS0095",
+        "defaultSeverity": "Error",
+        "title": "The access modifier of a table field cannot be changed to a value that provides less access."
+      },
+      {
+        "id": "AS0096",
+        "defaultSeverity": "Error",
+        "title": "The name of an extension cannot be changed."
+      },
+      {
+        "id": "AS0097",
+        "defaultSeverity": "Error",
+        "title": "The publisher name of an extension cannot be changed."
+      },
+      {
+        "id": "AS0098",
+        "defaultSeverity": "Warning",
+        "title": "An affix is needed."
+      },
+      {
+        "id": "AS0099",
+        "defaultSeverity": "Info",
+        "title": "The member ID should be within the allowed range"
+      },
+      {
+        "id": "AS0100",
+        "defaultSeverity": "Error",
+        "title": "The 'application' property must be specified in the app.json file."
+      },
+      {
+        "id": "AS0101",
+        "defaultSeverity": "Error",
+        "title": "The 'Isolated' argument cannot be changed, added, or removed."
+      },
+      {
+        "id": "AS0102",
+        "defaultSeverity": "Error",
+        "title": "Cannot add a return value to a procedure"
+      },
+      {
+        "id": "AS0103",
+        "defaultSeverity": "Warning",
+        "title": "Table definitions must have a matching permission set."
+      },
+      {
+        "id": "AS0104",
+        "defaultSeverity": "Error",
+        "title": "The extension name is not valid."
+      },
+      {
+        "id": "AS0105",
+        "defaultSeverity": "Error",
+        "title": "Object pending obsoletion contains an expired ObsoleteTag."
+      },
+      {
+        "id": "AS0106",
+        "defaultSeverity": "Error",
+        "title": "A variable belonging to the public API cannot be removed."
+      },
+      {
+        "id": "AS0107",
+        "defaultSeverity": "Error",
+        "title": "The access modifier of a variable that belongs to the public API cannot be changed to a value that provides less access."
+      },
+      {
+        "id": "AS0108",
+        "defaultSeverity": "Error",
+        "title": "The type of a variable belonging to the public API cannot be changed."
+      },
+      {
+        "id": "AS0109",
+        "defaultSeverity": "Warning",
+        "title": "The type of the table has changed from Normal to Temporary."
+      },
+      {
+        "id": "AS0110",
+        "defaultSeverity": "Warning",
+        "title": "Permission set extensions should not include permissions for objects defined in another application."
+      },
+      {
+        "id": "AS0111",
+        "defaultSeverity": "Warning",
+        "title": "Permission set extensions should not include permission sets defined in another application."
+      },
+      {
+        "id": "AS0112",
+        "defaultSeverity": "Warning",
+        "title": "Permission set extensions should not include permission sets which include permissions for objects defined in another application."
+      },
+      {
+        "id": "AS0113",
+        "defaultSeverity": "Warning",
+        "title": "Permission set extensions should not include wildcard permissions."
+      },
+      {
+        "id": "AS0114",
+        "defaultSeverity": "Error",
+        "title": "The name of an external business event cannot be changed."
+      },
+      {
+        "id": "AS0115",
+        "defaultSeverity": "Error",
+        "title": "The obsolete state cannot change directly from 'No' to 'Removed'."
+      },
+      {
+        "id": "AS0116",
+        "defaultSeverity": "Warning",
+        "title": "Source application for the moved symbol cannot be found."
+      },
+      {
+        "id": "AS0117",
+        "defaultSeverity": "Error",
+        "title": "Application object is moved without the use of PendingMove."
+      },
+      {
+        "id": "AS0118",
+        "defaultSeverity": "Error",
+        "title": "The length of a field part of the primary key cannot change."
+      },
+      {
+        "id": "AS0119",
+        "defaultSeverity": "Error",
+        "title": "The value of the MovedTo property in the source symbol does not match the destination AppId."
+      },
+      {
+        "id": "AS0120",
+        "defaultSeverity": "Error",
+        "title": "The value of the MovedFrom property in the destination object does not match the source AppId."
+      },
+      {
+        "id": "AS0121",
+        "defaultSeverity": "Error",
+        "title": "When a symbol is moved the name must remain the same."
+      },
+      {
+        "id": "AS0122",
+        "defaultSeverity": "Warning",
+        "title": "Source symbol for the moved symbol cannot be found in the package with the given AppId."
+      },
+      {
+        "id": "AS0123",
+        "defaultSeverity": "Error",
+        "title": "A key cannot be declared as clustered on an existing table."
+      },
+      {
+        "id": "AS0124",
+        "defaultSeverity": "Error",
+        "title": "Changing an extension object's target is not allowed."
+      },
+      {
+        "id": "AS0125",
+        "defaultSeverity": "Info",
+        "title": "Changes the XLIFF translation ID are not allowed."
+      },
+      {
+        "id": "AS0126",
+        "defaultSeverity": "Warning",
+        "title": "InternalsVisibleTo should not specifying a different publisher name than the one of this extension."
+      },
+      {
+        "id": "AS0127",
+        "defaultSeverity": "Warning",
+        "title": "Objects should be placed in a namespace with at least two levels."
+      },
+      {
+        "id": "AS0128",
+        "defaultSeverity": "Error",
+        "title": "An interface must not be removed from the the list of extended interfaces on an interface that has been published."
+      },
+      {
+        "id": "AS0129",
+        "defaultSeverity": "Error",
+        "title": "An interface must not be added to the the list of extended interfaces on an interface that has been published."
+      },
+      {
+        "id": "AS0130",
+        "defaultSeverity": "Warning",
+        "title": "Avoid using duplicate object names"
+      },
+      {
+        "id": "AS0131",
+        "defaultSeverity": "Hidden",
+        "title": "Tables with schema should not be added."
+      },
+      {
+        "id": "AS0132",
+        "defaultSeverity": "Hidden",
+        "title": "Fields with schema should not be added."
+      },
+      {
+        "id": "AS0133",
+        "defaultSeverity": "Hidden",
+        "title": "Keys should not be added."
+      },
+      {
+        "id": "AS0134",
+        "defaultSeverity": "Warning",
+        "title": "The version of an external business event cannot be changed."
+      },
+      {
+        "id": "AS0135",
+        "defaultSeverity": "Error",
+        "title": "External business events must be marked obsolete before they can be removed."
+      },
+      {
+        "id": "AS0136",
+        "defaultSeverity": "Warning",
+        "title": "Field IDs can only be changed with proper obsoletion."
+      },
+      {
+        "id": "AS0137",
+        "defaultSeverity": "Error",
+        "title": "The ID of fields in the primary key cannot change."
+      },
+      {
+        "id": "AS0138",
+        "defaultSeverity": "Hidden",
+        "title": "Table fields should use the AllowInCustomizations property"
+      },
+      {
+        "id": "AS0139",
+        "defaultSeverity": "Warning",
+        "title": "New table fields must use the AllowInCustomizations property"
+      },
+      {
+        "id": "AS0140",
+        "defaultSeverity": "Error",
+        "title": "Analysis views that have been published must not be deleted."
+      },
+      {
+        "id": "AS0142",
+        "defaultSeverity": "Error",
+        "title": "The destination table must have the MovedFrom property."
+      },
+      {
+        "id": "AS0146",
+        "defaultSeverity": "Warning",
+        "title": "Changing a field from Integer to BigInteger may break dependent extensions."
+      },
+      {
+        "id": "AS0147",
+        "defaultSeverity": "Warning",
+        "title": "Changing a parameter from Integer to BigInteger might break dependent extensions."
+      },
+      {
+        "id": "AS0148",
+        "defaultSeverity": "Error",
+        "title": "An interface method was made required without first being marked [RequiredPending]."
+      },
+      {
+        "id": "AS0149",
+        "defaultSeverity": "Warning",
+        "title": "Adding or removing a required method on an interface may break dependent extensions at runtime."
+      },
+      {
+        "id": "AS0150",
+        "defaultSeverity": "Error",
+        "title": "Fully-namespaced app objects must be in a compliant namespace"
+      },
+      {
+        "id": "AS0151",
+        "defaultSeverity": "Info",
+        "title": "FullNamespaceScope conflicts with mandatory affix configuration"
+      },
+      {
+        "id": "AS0152",
+        "defaultSeverity": "Warning",
+        "title": "Removing a codeunit used as a default implementation is a runtime breaking change."
+      }
+    ],
+    "Microsoft.Dynamics.Nav.CodeCop": [
+      {
+        "id": "AA0001",
+        "defaultSeverity": "Warning",
+        "title": "There must be exactly one space character on each side of a binary operator such as := + - AND OR =."
+      },
+      {
+        "id": "AA0002",
+        "defaultSeverity": "Warning",
+        "title": "There must be no space character."
+      },
+      {
+        "id": "AA0003",
+        "defaultSeverity": "Warning",
+        "title": "There must be exactly one space character between the NOT operator and its argument."
+      },
+      {
+        "id": "AA0005",
+        "defaultSeverity": "Warning",
+        "title": "Only use BEGIN..END to enclose compound statements."
+      },
+      {
+        "id": "AA0008",
+        "defaultSeverity": "Warning",
+        "title": "Function calls should have parenthesis even if they do not have any parameters."
+      },
+      {
+        "id": "AA0013",
+        "defaultSeverity": "Warning",
+        "title": "When BEGIN follows THEN, ELSE, DO, it should be on the same line, preceded by one space character."
+      },
+      {
+        "id": "AA0018",
+        "defaultSeverity": "Warning",
+        "title": "The END, IF, REPEAT, UNTIL, FOR, WHILE, and CASE statement should always start a line."
+      },
+      {
+        "id": "AA0021",
+        "defaultSeverity": "Warning",
+        "title": "Variable declarations should be ordered by type."
+      },
+      {
+        "id": "AA0022",
+        "defaultSeverity": "Warning",
+        "title": "Substitute the IF THEN ELSE structure with a CASE."
+      },
+      {
+        "id": "AA0040",
+        "defaultSeverity": "Warning",
+        "title": "Avoid using nested WITH statements."
+      },
+      {
+        "id": "AA0050",
+        "defaultSeverity": "Warning",
+        "title": "Permission set extensions should not include permissions for objects defined in another application."
+      },
+      {
+        "id": "AA0051",
+        "defaultSeverity": "Warning",
+        "title": "Permission set extensions should not include permission sets defined in another application."
+      },
+      {
+        "id": "AA0052",
+        "defaultSeverity": "Warning",
+        "title": "Permission set extensions should not include permission sets which include permissions for objects defined in another application."
+      },
+      {
+        "id": "AA0053",
+        "defaultSeverity": "Warning",
+        "title": "Permission set extensions should not include wildcard permissions."
+      },
+      {
+        "id": "AA0072",
+        "defaultSeverity": "Info",
+        "title": "The name of variables and parameters must be suffixed with the type or object name."
+      },
+      {
+        "id": "AA0073",
+        "defaultSeverity": "Warning",
+        "title": "The name of temporary variable must be prefixed with Temp."
+      },
+      {
+        "id": "AA0074",
+        "defaultSeverity": "Warning",
+        "title": "TextConst and Label variable names should have an approved suffix."
+      },
+      {
+        "id": "AA0087",
+        "defaultSeverity": "Warning",
+        "title": "Lowering permissions should only be used in tests"
+      },
+      {
+        "id": "AA0100",
+        "defaultSeverity": "Warning",
+        "title": "Do not have identifiers with quotes in the name."
+      },
+      {
+        "id": "AA0101",
+        "defaultSeverity": "Warning",
+        "title": "Use camel case property values in pages of type API."
+      },
+      {
+        "id": "AA0102",
+        "defaultSeverity": "Warning",
+        "title": "Use camel case name for field controls in pages of type API."
+      },
+      {
+        "id": "AA0103",
+        "defaultSeverity": "Warning",
+        "title": "Use camel case property values in queries of type API."
+      },
+      {
+        "id": "AA0104",
+        "defaultSeverity": "Warning",
+        "title": "Use camel case name for column controls in queries of type API."
+      },
+      {
+        "id": "AA0105",
+        "defaultSeverity": "Error",
+        "title": "PagePart controls must not refer to parent pages."
+      },
+      {
+        "id": "AA0106",
+        "defaultSeverity": "Error",
+        "title": "A page of type API can only refer to the same subpage once."
+      },
+      {
+        "id": "AA0131",
+        "defaultSeverity": "Warning",
+        "title": "String parameters must match placeholders."
+      },
+      {
+        "id": "AA0136",
+        "defaultSeverity": "Warning",
+        "title": "Do not write code that will never be hit."
+      },
+      {
+        "id": "AA0137",
+        "defaultSeverity": "Warning",
+        "title": "Do not declare variables that are unused."
+      },
+      {
+        "id": "AA0139",
+        "defaultSeverity": "Warning",
+        "title": "Do not assign a text  to a target with smaller size."
+      },
+      {
+        "id": "AA0150",
+        "defaultSeverity": "Warning",
+        "title": "Do not declare parameters by reference if their values are never changed."
+      },
+      {
+        "id": "AA0161",
+        "defaultSeverity": "Warning",
+        "title": "Only use AssertError in Test Codeunits."
+      },
+      {
+        "id": "AA0175",
+        "defaultSeverity": "Warning",
+        "title": "Only find record if you need to use it."
+      },
+      {
+        "id": "AA0181",
+        "defaultSeverity": "Warning",
+        "title": "The FindSet() or Find() methods must be used only in connection with the Next() method."
+      },
+      {
+        "id": "AA0189",
+        "defaultSeverity": "Warning",
+        "title": "Only use a correct values of ApplicationArea."
+      },
+      {
+        "id": "AA0194",
+        "defaultSeverity": "Warning",
+        "title": "Only write actions that have an effect."
+      },
+      {
+        "id": "AA0198",
+        "defaultSeverity": "Warning",
+        "title": "Do not use identical names for local and global variables."
+      },
+      {
+        "id": "AA0199",
+        "defaultSeverity": "Warning",
+        "title": "Use only a correct order for ApplicationArea."
+      },
+      {
+        "id": "AA0200",
+        "defaultSeverity": "Warning",
+        "title": "When ApplicationArea is set to 'All', no other values for ApplicationArea should be specified."
+      },
+      {
+        "id": "AA0201",
+        "defaultSeverity": "Warning",
+        "title": "When ApplicationArea is set to 'Basic', you must also specify 'Suite'."
+      },
+      {
+        "id": "AA0202",
+        "defaultSeverity": "Warning",
+        "title": "To avoid confusion, do not give local variables the same name as fields, methods, or actions in the same scope."
+      },
+      {
+        "id": "AA0203",
+        "defaultSeverity": "Warning",
+        "title": "To avoid confusion, do not give methods the same name as fields or actions in the same scope."
+      },
+      {
+        "id": "AA0204",
+        "defaultSeverity": "Warning",
+        "title": "To avoid confusion, do not give global variables the same name as fields, methods, or actions in the same scope."
+      },
+      {
+        "id": "AA0205",
+        "defaultSeverity": "Warning",
+        "title": "Variables must be initialized before usage."
+      },
+      {
+        "id": "AA0206",
+        "defaultSeverity": "Warning",
+        "title": "The value assigned to a variable must be used."
+      },
+      {
+        "id": "AA0207",
+        "defaultSeverity": "Warning",
+        "title": "The EventSubscriber method must be local."
+      },
+      {
+        "id": "AA0210",
+        "defaultSeverity": "Info",
+        "title": "Avoid non-indexed fields into filtering."
+      },
+      {
+        "id": "AA0211",
+        "defaultSeverity": "Warning",
+        "title": "Avoids a runtime error from using CalcFields on a field that is not a FlowField or a field of type Blob."
+      },
+      {
+        "id": "AA0213",
+        "defaultSeverity": "Warning",
+        "title": "Obsoleted object must have a state 'Pending' or 'Removed' and a justification specifying why this field is being obsoleted."
+      },
+      {
+        "id": "AA0214",
+        "defaultSeverity": "Warning",
+        "title": "The local record should be modified before saving to the database."
+      },
+      {
+        "id": "AA0215",
+        "defaultSeverity": "Warning",
+        "title": "Follow [the style guide](https://learn.microsoft.com/dynamics365/business-central/dev-itpro/compliance/apptest-bestpracticesforalcode#file-naming) about the best practices for naming."
+      },
+      {
+        "id": "AA0216",
+        "defaultSeverity": "Warning",
+        "title": "Use a text constant for passing user messages and errors without concatenations."
+      },
+      {
+        "id": "AA0217",
+        "defaultSeverity": "Warning",
+        "title": "Use a text constant or label for format string in StrSubstNo."
+      },
+      {
+        "id": "AA0218",
+        "defaultSeverity": "Warning",
+        "title": "You must write a tooltip in the Tooltip property for all controls of type Action and Field that exist on page objects."
+      },
+      {
+        "id": "AA0219",
+        "defaultSeverity": "Info",
+        "title": "The Tooltip property of Fields should start with 'Specifies'."
+      },
+      {
+        "id": "AA0220",
+        "defaultSeverity": "Warning",
+        "title": "The value of the Tooltip property of Fields must be filled."
+      },
+      {
+        "id": "AA0221",
+        "defaultSeverity": "Warning",
+        "title": "You must specify a OptionCaption property for all fields which source expressions is not a table field."
+      },
+      {
+        "id": "AA0222",
+        "defaultSeverity": "Warning",
+        "title": "SIFT index should not be used on primary or unique key."
+      },
+      {
+        "id": "AA0223",
+        "defaultSeverity": "Warning",
+        "title": "The value of the OptionCaption property of Fields must be filled in."
+      },
+      {
+        "id": "AA0224",
+        "defaultSeverity": "Warning",
+        "title": "The count of option captions specified in the OptionCaption property is wrong."
+      },
+      {
+        "id": "AA0225",
+        "defaultSeverity": "Warning",
+        "title": "You must specify a caption in the Caption property for Fields that exist on page objects."
+      },
+      {
+        "id": "AA0226",
+        "defaultSeverity": "Warning",
+        "title": "The value of the Caption property of Fields must be filled in."
+      },
+      {
+        "id": "AA0227",
+        "defaultSeverity": "Warning",
+        "title": "Optional return value should not be omitted in upgrade codeunits."
+      },
+      {
+        "id": "AA0228",
+        "defaultSeverity": "Warning",
+        "title": "The local method must be used; otherwise removed."
+      },
+      {
+        "id": "AA0230",
+        "defaultSeverity": "Warning",
+        "title": "Version should not be specified for internal assemblies."
+      },
+      {
+        "id": "AA0231",
+        "defaultSeverity": "Warning",
+        "title": "StrSubstNo or string concatenation must not be used as a parameter in the Error method."
+      },
+      {
+        "id": "AA0232",
+        "defaultSeverity": "Info",
+        "title": "The FlowField of a table should be indexed."
+      },
+      {
+        "id": "AA0233",
+        "defaultSeverity": "Warning",
+        "title": "Use Get(), FindFirst() and FindLast() without Next() method."
+      },
+      {
+        "id": "AA0234",
+        "defaultSeverity": "Info",
+        "title": "You should write a tooltip in the Tooltip property for all fields on table objects."
+      },
+      {
+        "id": "AA0235",
+        "defaultSeverity": "Info",
+        "title": "When using 'OnInstallAppPerCompany' you should also add 'Company-Initialize'::'OnCompanyInitialize' event subscriber."
+      },
+      {
+        "id": "AA0237",
+        "defaultSeverity": "Warning",
+        "title": "The name of non-temporary variables must not be prefixed with Temp."
+      },
+      {
+        "id": "AA0240",
+        "defaultSeverity": "Warning",
+        "title": "Email and Phone No must not be present in any part of the source code."
+      },
+      {
+        "id": "AA0241",
+        "defaultSeverity": "Hidden",
+        "title": "Use all lowercase letters for reserved language keywords."
+      },
+      {
+        "id": "AA0242",
+        "defaultSeverity": "Warning",
+        "title": "Limit JIT loads by selecting all fields for load."
+      },
+      {
+        "id": "AA0243",
+        "defaultSeverity": "Warning",
+        "title": "Running an upgrade codeunit is not allowed."
+      },
+      {
+        "id": "AA0244",
+        "defaultSeverity": "Warning",
+        "title": "Do not use identical names for parameters and global variables."
+      },
+      {
+        "id": "AA0245",
+        "defaultSeverity": "Warning",
+        "title": "To avoid confusion, do not give parameters the same name as fields, methods, or actions in the same scope."
+      },
+      {
+        "id": "AA0246",
+        "defaultSeverity": "Warning",
+        "title": "Suppressing all diagnostics is not allowed."
+      },
+      {
+        "id": "AA0247",
+        "defaultSeverity": "Info",
+        "title": "Use namespaces."
+      },
+      {
+        "id": "AA0248",
+        "defaultSeverity": "Hidden",
+        "title": "Add 'this' qualification to improve readability."
+      },
+      {
+        "id": "AA0249",
+        "defaultSeverity": "Warning",
+        "title": "PageField trigger is unused due to a property value."
+      },
+      {
+        "id": "AA0250",
+        "defaultSeverity": "Warning",
+        "title": "External business event should have obsolete marker."
+      },
+      {
+        "id": "AA0251",
+        "defaultSeverity": "Error",
+        "title": "External business event with obsolete marker must have the obsolete attribute set."
+      },
+      {
+        "id": "AA0252",
+        "defaultSeverity": "Error",
+        "title": "Moving external business events to another app is not allowed."
+      },
+      {
+        "id": "AA0448",
+        "defaultSeverity": "Warning",
+        "title": "You must use the FieldCaption method instead of the FieldName method and TableCaption method instead of TableName method."
+      },
+      {
+        "id": "AA0462",
+        "defaultSeverity": "Warning",
+        "title": "The CalcDate should only be used with DataFormula variables. Alternatively the string should be enclosed using the <> symbols."
+      },
+      {
+        "id": "AA0470",
+        "defaultSeverity": "Warning",
+        "title": "Placeholders should have a comment explaining their content."
+      },
+      {
+        "id": "AA0471",
+        "defaultSeverity": "Info",
+        "title": "Page control fields of type 'Decimal' must have the property AutoFormatType specified."
+      },
+      {
+        "id": "AA0472",
+        "defaultSeverity": "Info",
+        "title": "Page control fields having amount AutoFormatType defined must have the property AutoFormatExpression specified."
+      },
+      {
+        "id": "AA0473",
+        "defaultSeverity": "Info",
+        "title": "Table control fields of type 'Decimal' must have the property AutoFormatType specified."
+      },
+      {
+        "id": "AA0474",
+        "defaultSeverity": "Info",
+        "title": "Table control fields that have amount AutoFormatType defined, must have the property AutoFormatExpression specified."
+      },
+      {
+        "id": "AA0475",
+        "defaultSeverity": "Error",
+        "title": "Truncate can only be used on normal tables without media fields and outside of try functions."
+      },
+      {
+        "id": "AA0476",
+        "defaultSeverity": "Error",
+        "title": "The AI test configuration is not valid."
+      },
+      {
+        "id": "AA0477",
+        "defaultSeverity": "Info",
+        "title": "Unordered using statements"
+      }
+    ],
+    "Microsoft.Dynamics.Nav.PerTenantExtensionCop": [
+      {
+        "id": "PTE0001",
+        "defaultSeverity": "Error",
+        "title": "Object ID must be in free range."
+      },
+      {
+        "id": "PTE0002",
+        "defaultSeverity": "Error",
+        "title": "Field ID must be in free range."
+      },
+      {
+        "id": "PTE0003",
+        "defaultSeverity": "Error",
+        "title": "Procedures must not subscribe to CompanyOpen events"
+      },
+      {
+        "id": "PTE0004",
+        "defaultSeverity": "Error",
+        "title": "Table definitions must have a matching permission set."
+      },
+      {
+        "id": "PTE0005",
+        "defaultSeverity": "Error",
+        "title": "The compilation target of an application must be a value that is allowed in a multi-tenant SaaS environment"
+      },
+      {
+        "id": "PTE0006",
+        "defaultSeverity": "Error",
+        "title": "Encryption key functions must not be invoked."
+      },
+      {
+        "id": "PTE0007",
+        "defaultSeverity": "Error",
+        "title": "Test assertion functions are not allowed in a non-test context."
+      },
+      {
+        "id": "PTE0008",
+        "defaultSeverity": "Error",
+        "title": "Page controls and actions must use the ApplicationArea property"
+      },
+      {
+        "id": "PTE0009",
+        "defaultSeverity": "Error",
+        "title": "This app.json property must not be used for per-tenant extensions."
+      },
+      {
+        "id": "PTE0010",
+        "defaultSeverity": "Error",
+        "title": "The extension name is too long."
+      },
+      {
+        "id": "PTE0011",
+        "defaultSeverity": "Error",
+        "title": "The publisher name is too long."
+      },
+      {
+        "id": "PTE0012",
+        "defaultSeverity": "Warning",
+        "title": "InternalsVisibleTo should not be used as a security feature."
+      },
+      {
+        "id": "PTE0013",
+        "defaultSeverity": "Error",
+        "title": "Entitlements cannot be defined in an extension."
+      },
+      {
+        "id": "PTE0014",
+        "defaultSeverity": "Warning",
+        "title": "Permission Sets should not be defined in XML files."
+      },
+      {
+        "id": "PTE0015",
+        "defaultSeverity": "Error",
+        "title": "The extension name is not valid."
+      },
+      {
+        "id": "PTE0016",
+        "defaultSeverity": "Warning",
+        "title": "Permission set extensions should not include permissions for objects defined in another application."
+      },
+      {
+        "id": "PTE0017",
+        "defaultSeverity": "Warning",
+        "title": "Permission set extensions should not include permission sets defined in another application."
+      },
+      {
+        "id": "PTE0018",
+        "defaultSeverity": "Warning",
+        "title": "Permission set extensions should not include permission sets which include permissions for objects defined in another application."
+      },
+      {
+        "id": "PTE0019",
+        "defaultSeverity": "Warning",
+        "title": "Permission set extensions should not include wildcard permissions."
+      },
+      {
+        "id": "PTE0020",
+        "defaultSeverity": "Warning",
+        "title": "Use the 'application' property instead of specifying an explicit dependency on Base Application."
+      },
+      {
+        "id": "PTE0021",
+        "defaultSeverity": "Error",
+        "title": "Defining reserved namespaces is not allowed."
+      },
+      {
+        "id": "PTE0022",
+        "defaultSeverity": "Info",
+        "title": "The member ID should be within the allowed range"
+      },
+      {
+        "id": "PTE0023",
+        "defaultSeverity": "Info",
+        "title": "The enum ordinal value should be within the allowed range"
+      },
+      {
+        "id": "PTE0024",
+        "defaultSeverity": "Error",
+        "title": "Moving tables or fields is not allowed on per-tenant extensions."
+      },
+      {
+        "id": "PTE0025",
+        "defaultSeverity": "Warning",
+        "title": "Avoid using duplicate object names"
+      },
+      {
+        "id": "PTE0026",
+        "defaultSeverity": "Hidden",
+        "title": "Table fields should use the AllowInCustomizations property"
+      }
+    ],
+    "Microsoft.Dynamics.Nav.UICop": [
+      {
+        "id": "AW0001",
+        "defaultSeverity": "Warning",
+        "title": "The Web client does not support displaying the Request page of XMLPorts."
+      },
+      {
+        "id": "AW0002",
+        "defaultSeverity": "Warning",
+        "title": "The Web client does not support displaying both Actions and Fields in Cue Groups. Only Fields will be displayed."
+      },
+      {
+        "id": "AW0003",
+        "defaultSeverity": "Warning",
+        "title": "The Web client does not support displaying Repeater controls containing Parts."
+      },
+      {
+        "id": "AW0004",
+        "defaultSeverity": "Warning",
+        "title": "A Blob cannot be used as a source expression for a page field."
+      },
+      {
+        "id": "AW0005",
+        "defaultSeverity": "Info",
+        "title": "Actions should use the Image property."
+      },
+      {
+        "id": "AW0006",
+        "defaultSeverity": "Info",
+        "title": "Pages and reports should use the UsageCategory and ApplicationArea properties to be searchable."
+      },
+      {
+        "id": "AW0007",
+        "defaultSeverity": "Error",
+        "title": "The Web client does not support displaying Repeater controls that contain FlowFilter fields."
+      },
+      {
+        "id": "AW0008",
+        "defaultSeverity": "Warning",
+        "title": "The Web client only supports displaying Repeater controls in pages of type List, ListPart, and Worksheet."
+      },
+      {
+        "id": "AW0009",
+        "defaultSeverity": "Warning",
+        "title": "Using a Blob with subtype Bitmap on a page field is deprecated. Instead use the Media/MediaSet data types."
+      },
+      {
+        "id": "AW0010",
+        "defaultSeverity": "Warning",
+        "title": "A Repeater control used on a List page must be defined at the beginning of the area(Content) section."
+      },
+      {
+        "id": "AW0011",
+        "defaultSeverity": "Info",
+        "title": "Add PromotedOnly=\"true\" to some or all promoted actions to avoid identical actions from appearing in both the promoted and default sections of the command bar."
+      },
+      {
+        "id": "AW0012",
+        "defaultSeverity": "Warning",
+        "title": "The Web client does not support properties for teaching tips in certain contexts."
+      },
+      {
+        "id": "AW0013",
+        "defaultSeverity": "Warning",
+        "title": "Groups containing promoted actions should not be hidden."
+      },
+      {
+        "id": "AW0014",
+        "defaultSeverity": "Warning",
+        "title": "Groups containing ActionRef targets should not be hidden."
+      },
+      {
+        "id": "AW0015",
+        "defaultSeverity": "Warning",
+        "title": "Actions with scope repeater must be promoted."
+      },
+      {
+        "id": "AW0016",
+        "defaultSeverity": "Warning",
+        "title": "Rich Text Editor fields are only allowed while alone in a FastTab group."
+      },
+      {
+        "id": "AW0017",
+        "defaultSeverity": "Warning",
+        "title": "MaskType property cannot be used inside repeaters."
+      }
+    ]
+  }
+}

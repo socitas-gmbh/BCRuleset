@@ -1,0 +1,9 @@
+{
+  "name": "v1 app fixture",
+  "rules": [
+    { "id": "A1", "action": "Error", "justification": "x" },
+    { "id": "A2", "action": "Warning", "justification": "x" },
+    { "id": "A3", "action": "None", "justification": "x" },
+    { "id": "A4", "action": "Warning", "justification": "x" }
+  ]
+}

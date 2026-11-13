@@ -1,0 +1,9 @@
+{
+  "name": "Fixture ruleset",
+  "rules": [
+    { "id": "AA0001", "action": "Error", "justification": "x" },
+    { "id": "AA0002", "action": "Warning", "justification": "x" },
+    { "id": "SC0001", "action": "Warning", "justification": "x" },
+    { "id": "ST0001", "action": "Info", "justification": "x" }
+  ]
+}
