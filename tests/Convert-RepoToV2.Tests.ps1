@@ -3,7 +3,7 @@
 # Assumed contract (plan 1.1/1.2), in addition to the task statement:
 #   Convert-RepoToV2.ps1 -RepoRoot <dir> [-WhatIf]; run as child pwsh; exit 0 = ok, 1 = problems.
 #   Layout: <root>/app and optional <root>/test, each with .vscode/settings.json and .codeanalyzer/*.ruleset.json.
-#   - Maps come from LinterCop-to-ALCops.json (repo root of BCRuleset); canonical lists from SOCITAS.analyzers.v2.json.
+#   - Maps come from LinterCop-to-ALCops.json (repo root of BCRuleset); canonical lists from v2/SOCITAS.analyzers.v2.json.
 #   - A one-to-many mapping yields one rule per target id (same action/justification); ids are de-duplicated,
 #     so LC0010 -> LC0008,LC0010 stays stable on re-run (idempotence).
 #   - Ruleset path in app/.vscode/settings.json stays the local file; only includedRuleSets[].path is rewritten
@@ -19,7 +19,7 @@ BeforeAll {
     . (Join-Path $PSScriptRoot 'TestHelpers.ps1')
     $script:Tool = Join-Path $PSScriptRoot '../tools/Convert-RepoToV2.ps1'
     $script:Fx = Join-Path $PSScriptRoot 'fixtures/v1repo'
-    $script:Canon = Get-Content -Raw (Join-Path $PSScriptRoot '../SOCITAS.analyzers.v2.json') | ConvertFrom-Json
+    $script:Canon = Get-Content -Raw (Join-Path $PSScriptRoot '../v2/SOCITAS.analyzers.v2.json') | ConvertFrom-Json
 
     function New-Repo([switch]$NoTest) {
         $d = Join-Path $TestDrive ([guid]::NewGuid().ToString('N'))
@@ -91,18 +91,18 @@ Describe 'Convert-RepoToV2.ps1' {
         It 'app ruleset include points at v2, other include and its action kept' {
             $rs = Read-Json (Join-Path $script:R 'app/.codeanalyzer/SOCITAS.ruleset.json')
             $paths = @($rs.includedRuleSets | ForEach-Object { $_.path })
-            $paths | Should -Contain 'https://socitas-gmbh.github.io/BCRuleset/SOCITAS.ruleset.v2.json'
+            $paths | Should -Contain 'https://socitas-gmbh.github.io/BCRuleset/v2/SOCITAS.ruleset.v2.json'
             $paths | Should -Not -Contain 'https://socitas-gmbh.github.io/BCRuleset/SOCITAS.ruleset.json'
             $other = $rs.includedRuleSets | Where-Object { $_.path -eq 'https://example.com/other.ruleset.json' }
             $other | Should -Not -BeNullOrEmpty
             $other.action | Should -Be 'Warning'
-            ($rs.includedRuleSets | Where-Object { $_.path -like '*SOCITAS.ruleset.v2.json' }).action | Should -Be 'Default'
+            ($rs.includedRuleSets | Where-Object { $_.path -like '*v2/SOCITAS.ruleset.v2.json' }).action | Should -Be 'Default'
         }
 
         It 'test ruleset include points at the test v2 ruleset' {
             $rs = Read-Json (Join-Path $script:R 'test/.codeanalyzer/SOCITAS.test.ruleset.json')
             $paths = @($rs.includedRuleSets | ForEach-Object { $_.path })
-            $paths | Should -Contain 'https://socitas-gmbh.github.io/BCRuleset/SOCITAS.test.ruleset.v2.json'
+            $paths | Should -Contain 'https://socitas-gmbh.github.io/BCRuleset/v2/SOCITAS.test.ruleset.v2.json'
             $paths | Should -Not -Contain 'https://socitas-gmbh.github.io/BCRuleset/SOCITAS.test.ruleset.json'
         }
 
@@ -264,7 +264,7 @@ Describe 'Convert-RepoToV2.ps1 - scripts/settings.json rulesetFile' {
         $res.ExitCode | Should -Be 0 -Because $res.Output
         foreach ($n in 'ci', 'ci-next') {
             $j = Get-Content -Raw (Join-Path $r "app/.codeanalyzer/$n.ruleset.json") | ConvertFrom-Json
-            @($j.includedRuleSets)[0].path | Should -Match 'SOCITAS\.ruleset\.v2\.json$' -Because $n
+            @($j.includedRuleSets)[0].path | Should -Match '/v2/SOCITAS\.ruleset\.v2\.json$' -Because $n
             @($j.rules.id) | Should -Contain 'LC0008' -Because $n
         }
     }

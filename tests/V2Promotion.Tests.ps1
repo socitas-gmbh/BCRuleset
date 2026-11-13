@@ -17,7 +17,7 @@ BeforeAll {
         $o = & git -C $repo -c user.name=t -c user.email=t@example.com -c commit.gpgsign=false @a 2>&1 | Out-String
         if ($LASTEXITCODE -ne 0) { throw "git $($a -join ' ') failed: $o" }
     }
-    function Put($repo, $name, $text) { [IO.File]::WriteAllText((Join-Path $repo $name), "$text`n") }
+    function Put($repo, $name, $text) { $p = Join-Path $repo $name; [void][IO.Directory]::CreateDirectory((Split-Path -Parent $p)); [IO.File]::WriteAllText($p, "$text`n") }
     function Get-Text($repo, $name) { Get-Content -Raw (Join-Path $repo $name) }
     # Base state: v1 frozen, v2 = 'cur', next = 'proposal' (a proposal merged earlier), tagged 'base'.
     function New-Repo {
@@ -28,8 +28,8 @@ BeforeAll {
         Put $repo 'SOCITAS.ruleset.json' 'v1 app'
         Put $repo 'SOCITAS.test.ruleset.json' 'v1 test'
         foreach ($p in $script:Pairs) {
-            Put $repo "$p.v2.json" "$p current"
-            Put $repo "$p.v2.next.json" "$p proposal"
+            Put $repo "v2/$p.v2.json" "$p current"
+            Put $repo "v2/next/$p.v2.next.json" "$p proposal"
         }
         Invoke-G $repo @('add', '-A'); Invoke-G $repo @('commit', '-q', '-m', 'base'); Invoke-G $repo @('tag', 'base')
         $repo
@@ -52,26 +52,26 @@ Describe 'Test-V2Promotion - passes' {
     }
     It 'exits 0 for a proposal: only *.v2.next.json changed (<p>)' -ForEach @(
         @{ p = 'SOCITAS.ruleset' }, @{ p = 'SOCITAS.test.ruleset' }, @{ p = 'SOCITAS.analyzers' }) {
-        $repo = New-Repo; Put $repo "$p.v2.next.json" "$p proposal 2"
+        $repo = New-Repo; Put $repo "v2/next/$p.v2.next.json" "$p proposal 2"
         $r = Invoke-Gate $repo
         $r.ExitCode | Should -Be 0 -Because $r.Output
     }
     It 'exits 0 for a promotion: <p>.v2.json now equals <p>.v2.next.json of the base' -ForEach @(
         @{ p = 'SOCITAS.ruleset' }, @{ p = 'SOCITAS.test.ruleset' }, @{ p = 'SOCITAS.analyzers' }) {
-        $repo = New-Repo; Put $repo "$p.v2.json" (Get-Text $repo "$p.v2.next.json").TrimEnd()
+        $repo = New-Repo; Put $repo "v2/$p.v2.json" (Get-Text $repo "v2/next/$p.v2.next.json").TrimEnd()
         $r = Invoke-Gate $repo
         $r.ExitCode | Should -Be 0 -Because $r.Output
     }
     It 'exits 0 for a promotion of all three files at once' {
         $repo = New-Repo
-        foreach ($p in $script:Pairs) { Put $repo "$p.v2.json" (Get-Text $repo "$p.v2.next.json").TrimEnd() }
+        foreach ($p in $script:Pairs) { Put $repo "v2/$p.v2.json" (Get-Text $repo "v2/next/$p.v2.next.json").TrimEnd() }
         $r = Invoke-Gate $repo
         $r.ExitCode | Should -Be 0 -Because $r.Output
     }
     It 'exits 0 for a promotion that also proposes a new next in the same PR (compared as of BaseRef)' {
         $repo = New-Repo
-        Put $repo 'SOCITAS.ruleset.v2.json' (Get-Text $repo 'SOCITAS.ruleset.v2.next.json').TrimEnd()
-        Put $repo 'SOCITAS.ruleset.v2.next.json' 'SOCITAS.ruleset proposal 3'
+        Put $repo 'v2/SOCITAS.ruleset.v2.json' (Get-Text $repo 'v2/next/SOCITAS.ruleset.v2.next.json').TrimEnd()
+        Put $repo 'v2/next/SOCITAS.ruleset.v2.next.json' 'SOCITAS.ruleset proposal 3'
         $r = Invoke-Gate $repo
         $r.ExitCode | Should -Be 0 -Because $r.Output
     }
@@ -79,9 +79,9 @@ Describe 'Test-V2Promotion - passes' {
 
 Describe 'Test-V2Promotion - direct edits fail' {
     It 'exits 1 naming <f> when it is changed to something that is not the base next' -ForEach @(
-        @{ f = 'SOCITAS.ruleset.v2.json'; p = 'SOCITAS.ruleset' },
-        @{ f = 'SOCITAS.test.ruleset.v2.json'; p = 'SOCITAS.test.ruleset' },
-        @{ f = 'SOCITAS.analyzers.v2.json'; p = 'SOCITAS.analyzers' }) {
+        @{ f = 'v2/SOCITAS.ruleset.v2.json'; p = 'SOCITAS.ruleset' },
+        @{ f = 'v2/SOCITAS.test.ruleset.v2.json'; p = 'SOCITAS.test.ruleset' },
+        @{ f = 'v2/SOCITAS.analyzers.v2.json'; p = 'SOCITAS.analyzers' }) {
         $repo = New-Repo; Put $repo $f 'hand edit'
         $r = Invoke-Gate $repo
         $r.ExitCode | Should -Be 1 -Because $r.Output
@@ -89,26 +89,26 @@ Describe 'Test-V2Promotion - direct edits fail' {
     }
     It 'exits 1 when v2 equals a next that was changed in the same PR (not the base next)' {
         $repo = New-Repo
-        Put $repo 'SOCITAS.ruleset.v2.next.json' 'sneaky'
-        Put $repo 'SOCITAS.ruleset.v2.json' 'sneaky'
+        Put $repo 'v2/next/SOCITAS.ruleset.v2.next.json' 'sneaky'
+        Put $repo 'v2/SOCITAS.ruleset.v2.json' 'sneaky'
         $r = Invoke-Gate $repo
         $r.ExitCode | Should -Be 1 -Because $r.Output
-        $r.Output | Should -Match ([regex]::Escape('SOCITAS.ruleset.v2.json'))
+        $r.Output | Should -Match ([regex]::Escape('v2/SOCITAS.ruleset.v2.json'))
     }
     It 'exits 1 when v2 equals the next of a DIFFERENT pair' {
         $repo = New-Repo
-        Put $repo 'SOCITAS.ruleset.v2.json' (Get-Text $repo 'SOCITAS.analyzers.v2.next.json').TrimEnd()
+        Put $repo 'v2/SOCITAS.ruleset.v2.json' (Get-Text $repo 'v2/next/SOCITAS.analyzers.v2.next.json').TrimEnd()
         $r = Invoke-Gate $repo
         $r.ExitCode | Should -Be 1 -Because $r.Output
     }
     It 'exits 1 for the direct edit even when a valid promotion of another file is in the same PR, naming only the edited one' {
         $repo = New-Repo
-        Put $repo 'SOCITAS.analyzers.v2.json' (Get-Text $repo 'SOCITAS.analyzers.v2.next.json').TrimEnd()
-        Put $repo 'SOCITAS.test.ruleset.v2.json' 'hand edit'
+        Put $repo 'v2/SOCITAS.analyzers.v2.json' (Get-Text $repo 'v2/next/SOCITAS.analyzers.v2.next.json').TrimEnd()
+        Put $repo 'v2/SOCITAS.test.ruleset.v2.json' 'hand edit'
         $r = Invoke-Gate $repo
         $r.ExitCode | Should -Be 1 -Because $r.Output
-        $r.Output | Should -Match ([regex]::Escape('SOCITAS.test.ruleset.v2.json'))
-        $r.Output | Should -Not -Match ([regex]::Escape('SOCITAS.analyzers.v2.json'))
+        $r.Output | Should -Match ([regex]::Escape('v2/SOCITAS.test.ruleset.v2.json'))
+        $r.Output | Should -Not -Match ([regex]::Escape('v2/SOCITAS.analyzers.v2.json'))
     }
 }
 
@@ -122,7 +122,7 @@ Describe 'Test-V2Promotion - v1 is frozen' {
     }
     It 'exits 1 when a v1 change rides along with an otherwise valid proposal' {
         $repo = New-Repo
-        Put $repo 'SOCITAS.ruleset.v2.next.json' 'proposal 2'
+        Put $repo 'v2/next/SOCITAS.ruleset.v2.next.json' 'proposal 2'
         Put $repo 'SOCITAS.ruleset.json' 'v1 changed'
         $r = Invoke-Gate $repo
         $r.ExitCode | Should -Be 1 -Because $r.Output

@@ -54,10 +54,10 @@ Describe 'v2 inventory' {
 }
 
 Describe 'AC8 - v2 app ruleset covers exactly the app analyzers' {
-    It 'SOCITAS.ruleset.v2.json exists' { P 'SOCITAS.ruleset.v2.json' | Should -Exist }
+    It 'v2/SOCITAS.ruleset.v2.json exists' { P 'v2/SOCITAS.ruleset.v2.json' | Should -Exist }
 
     It 'has the same id set as the inventory (MS cops, ALCops, SocitasCopV2), no duplicates, every action set' {
-        $rules = (Load 'SOCITAS.ruleset.v2.json').rules
+        $rules = (Load 'v2/SOCITAS.ruleset.v2.json').rules
         $ids = @($rules | ForEach-Object id)
         @($ids | Group-Object | Where-Object Count -gt 1 | ForEach-Object Name) | Should -BeNullOrEmpty
         $expected = InvIds $script:AppFilter
@@ -70,16 +70,16 @@ Describe 'AC8 - v2 app ruleset covers exactly the app analyzers' {
         $inv = Load 'v2/rule-inventory.json'
         $app = @($inv.analyzers.PSObject.Properties.Name | Where-Object { $_ -notmatch 'TestCop' })
         $r = Invoke-Tool -Script (P 'tools/Test-RulesetCoverage.ps1') -Arguments @{
-            RulesetPath = (P 'SOCITAS.ruleset.v2.json'); InventoryPath = (P 'v2/rule-inventory.json'); Analyzers = $app }
+            RulesetPath = (P 'v2/SOCITAS.ruleset.v2.json'); InventoryPath = (P 'v2/rule-inventory.json'); Analyzers = $app }
         $r.ExitCode | Should -Be 0 -Because $r.Output
     }
 }
 
 Describe 'AC8/AC13 - v2 test ruleset covers app analyzers plus TestCop' {
-    It 'SOCITAS.test.ruleset.v2.json exists' { P 'SOCITAS.test.ruleset.v2.json' | Should -Exist }
+    It 'v2/SOCITAS.test.ruleset.v2.json exists' { P 'v2/SOCITAS.test.ruleset.v2.json' | Should -Exist }
 
     It 'has the same id set as the whole inventory incl. ST0001' {
-        $ids = RuleIds 'SOCITAS.test.ruleset.v2.json'
+        $ids = RuleIds 'v2/SOCITAS.test.ruleset.v2.json'
         $ids | Should -Contain 'ST0001'
         @($ids | Group-Object | Where-Object Count -gt 1) | Should -BeNullOrEmpty
         @(Compare-Object (InvIds $script:AllFilter | Sort-Object -Unique) ($ids | Sort-Object -Unique)) | Should -BeNullOrEmpty
@@ -87,17 +87,17 @@ Describe 'AC8/AC13 - v2 test ruleset covers app analyzers plus TestCop' {
 
     It 'the coverage tool exits 0 on it (all analyzers)' {
         $r = Invoke-Tool -Script (P 'tools/Test-RulesetCoverage.ps1') -Arguments @{
-            RulesetPath = (P 'SOCITAS.test.ruleset.v2.json'); InventoryPath = (P 'v2/rule-inventory.json') }
+            RulesetPath = (P 'v2/SOCITAS.test.ruleset.v2.json'); InventoryPath = (P 'v2/rule-inventory.json') }
         $r.ExitCode | Should -Be 0 -Because $r.Output
     }
 
     It 'equals the output of Build-TestRuleset.ps1 (never hand-edited)' {
         $out = Join-Path $TestDrive 'generated.test.ruleset.v2.json'
         $r = Invoke-Tool -Script (P 'tools/Build-TestRuleset.ps1') -Arguments @{
-            AppRulesetPath = (P 'SOCITAS.ruleset.v2.json'); RelaxationsPath = (P 'v2/test-relaxations.json'); OutPath = $out }
+            AppRulesetPath = (P 'v2/SOCITAS.ruleset.v2.json'); RelaxationsPath = (P 'v2/test-relaxations.json'); OutPath = $out }
         $r.ExitCode | Should -Be 0 -Because $r.Output
         $norm = { param($f) (Get-Content -Raw $f) -replace "`r`n", "`n" }
-        (& $norm $out) | Should -BeExactly (& $norm (P 'SOCITAS.test.ruleset.v2.json'))
+        (& $norm $out) | Should -BeExactly (& $norm (P 'v2/SOCITAS.test.ruleset.v2.json'))
     }
 }
 
@@ -126,9 +126,9 @@ Describe 'AC13 - test relaxations recorded' {
 }
 
 Describe 'AC5 - analyzer pins' {
-    BeforeAll { $script:Pins = if (Test-Path (P 'SOCITAS.analyzers.v2.json')) { Load 'SOCITAS.analyzers.v2.json' } }
+    BeforeAll { $script:Pins = if (Test-Path (P 'v2/SOCITAS.analyzers.v2.json')) { Load 'v2/SOCITAS.analyzers.v2.json' } }
 
-    It 'SOCITAS.analyzers.v2.json exists' { P 'SOCITAS.analyzers.v2.json' | Should -Exist }
+    It 'v2/SOCITAS.analyzers.v2.json exists' { P 'v2/SOCITAS.analyzers.v2.json' | Should -Exist }
 
     It 'pins alcops 1.3.1, socitasCopV2 1.0.0, testCop 0.1.0 exactly' {
         $script:Pins.alcops | Should -BeExactly '1.3.1'
@@ -167,21 +167,21 @@ Describe 'v1 files are frozen (M7)' {
 Describe 'AC10 - candidate files exist and track the current v2 files' {
     BeforeAll {
         $script:NextPairs = @(
-            @{ cur = 'SOCITAS.ruleset.v2.json'; next = 'SOCITAS.ruleset.v2.next.json' },
-            @{ cur = 'SOCITAS.test.ruleset.v2.json'; next = 'SOCITAS.test.ruleset.v2.next.json' },
-            @{ cur = 'SOCITAS.analyzers.v2.json'; next = 'SOCITAS.analyzers.v2.next.json' })
+            @{ cur = 'v2/SOCITAS.ruleset.v2.json'; next = 'v2/next/SOCITAS.ruleset.v2.next.json' },
+            @{ cur = 'v2/SOCITAS.test.ruleset.v2.json'; next = 'v2/next/SOCITAS.test.ruleset.v2.next.json' },
+            @{ cur = 'v2/SOCITAS.analyzers.v2.json'; next = 'v2/next/SOCITAS.analyzers.v2.next.json' })
         function NextInventory { if (Test-Path (P 'v2/rule-inventory.next.json')) { 'v2/rule-inventory.next.json' } else { 'v2/rule-inventory.json' } }
     }
 
     It '<next> exists' -ForEach @(
-        @{ next = 'SOCITAS.ruleset.v2.next.json' }, @{ next = 'SOCITAS.test.ruleset.v2.next.json' }, @{ next = 'SOCITAS.analyzers.v2.next.json' }) {
+        @{ next = 'v2/next/SOCITAS.ruleset.v2.next.json' }, @{ next = 'v2/next/SOCITAS.test.ruleset.v2.next.json' }, @{ next = 'v2/next/SOCITAS.analyzers.v2.next.json' }) {
         P $next | Should -Exist
     }
 
     It '<next> is byte-identical to <cur> when nothing is proposed' -ForEach @(
-        @{ cur = 'SOCITAS.ruleset.v2.json'; next = 'SOCITAS.ruleset.v2.next.json' },
-        @{ cur = 'SOCITAS.test.ruleset.v2.json'; next = 'SOCITAS.test.ruleset.v2.next.json' },
-        @{ cur = 'SOCITAS.analyzers.v2.json'; next = 'SOCITAS.analyzers.v2.next.json' }) {
+        @{ cur = 'v2/SOCITAS.ruleset.v2.json'; next = 'v2/next/SOCITAS.ruleset.v2.next.json' },
+        @{ cur = 'v2/SOCITAS.test.ruleset.v2.json'; next = 'v2/next/SOCITAS.test.ruleset.v2.next.json' },
+        @{ cur = 'v2/SOCITAS.analyzers.v2.json'; next = 'v2/next/SOCITAS.analyzers.v2.next.json' }) {
         P $next | Should -Exist
         $a = (& git hash-object (P $cur)).Trim(); $b = (& git hash-object (P $next)).Trim()
         if ($a -ne $b) { Set-ItResult -Skipped -Because "a proposal is open: $next differs from $cur (promotion gate covers it)"; return }
@@ -189,29 +189,29 @@ Describe 'AC10 - candidate files exist and track the current v2 files' {
     }
 
     It 'the next app ruleset passes the coverage tool against the inventory for the next pins' {
-        P 'SOCITAS.ruleset.v2.next.json' | Should -Exist
+        P 'v2/next/SOCITAS.ruleset.v2.next.json' | Should -Exist
         $invPath = NextInventory
         $inv = Load $invPath
         $app = @($inv.analyzers.PSObject.Properties.Name | Where-Object { $_ -notmatch 'TestCop' })
         $r = Invoke-Tool -Script (P 'tools/Test-RulesetCoverage.ps1') -Arguments @{
-            RulesetPath = (P 'SOCITAS.ruleset.v2.next.json'); InventoryPath = (P $invPath); Analyzers = $app }
+            RulesetPath = (P 'v2/next/SOCITAS.ruleset.v2.next.json'); InventoryPath = (P $invPath); Analyzers = $app }
         $r.ExitCode | Should -Be 0 -Because $r.Output
     }
 
     It 'the next test ruleset equals Build-TestRuleset.ps1 output for the next app ruleset' {
-        P 'SOCITAS.ruleset.v2.next.json' | Should -Exist
-        P 'SOCITAS.test.ruleset.v2.next.json' | Should -Exist
+        P 'v2/next/SOCITAS.ruleset.v2.next.json' | Should -Exist
+        P 'v2/next/SOCITAS.test.ruleset.v2.next.json' | Should -Exist
         $out = Join-Path $TestDrive 'generated.test.ruleset.v2.next.json'
         $r = Invoke-Tool -Script (P 'tools/Build-TestRuleset.ps1') -Arguments @{
-            AppRulesetPath = (P 'SOCITAS.ruleset.v2.next.json'); RelaxationsPath = (P 'v2/test-relaxations.json'); OutPath = $out }
+            AppRulesetPath = (P 'v2/next/SOCITAS.ruleset.v2.next.json'); RelaxationsPath = (P 'v2/test-relaxations.json'); OutPath = $out }
         $r.ExitCode | Should -Be 0 -Because $r.Output
         $norm = { param($f) (Get-Content -Raw $f) -replace "`r`n", "`n" }
-        (& $norm $out) | Should -BeExactly (& $norm (P 'SOCITAS.test.ruleset.v2.next.json'))
+        (& $norm $out) | Should -BeExactly (& $norm (P 'v2/next/SOCITAS.test.ruleset.v2.next.json'))
     }
 
     It 'the next analyzers pins keep the canonical shape (plain versions, testAnalyzers = appAnalyzers + TestCop)' {
-        P 'SOCITAS.analyzers.v2.next.json' | Should -Exist
-        $n = Load 'SOCITAS.analyzers.v2.next.json'
+        P 'v2/next/SOCITAS.analyzers.v2.next.json' | Should -Exist
+        $n = Load 'v2/next/SOCITAS.analyzers.v2.next.json'
         foreach ($k in 'alcops', 'socitasCopV2', 'testCop') { [string]$n.$k | Should -Match '^\d+\.\d+\.\d+$' -Because $k }
         foreach ($a in $n.appAnalyzers) { @($n.testAnalyzers) | Should -Contain $a }
         @($n.testAnalyzers) | Should -Contain '${analyzerFolder}BusinessCentral.TestCop.dll'
@@ -225,13 +225,13 @@ Describe 'AC10 - candidate files exist and track the current v2 files' {
 Describe 'AC6 - inventory provenance matches the pins it is used for' {
     BeforeAll {
         $script:PinKeys = 'alCompiler', 'alcops', 'socitasCopV2', 'testCop'
-        $script:PinsCur = Load 'SOCITAS.analyzers.v2.json'
-        $script:PinsNext = Load 'SOCITAS.analyzers.v2.next.json'
+        $script:PinsCur = Load 'v2/SOCITAS.analyzers.v2.json'
+        $script:PinsNext = Load 'v2/next/SOCITAS.analyzers.v2.next.json'
         function PinsEqual($a, $b) { foreach ($k in $script:PinKeys) { if ([string]$a.$k -ne [string]$b.$k) { return $false } }; $true }
         function PinsText($o) { ($script:PinKeys | ForEach-Object { "$_=$($o.$_)" }) -join ' ' }
     }
 
-    It 'v2/rule-inventory.json records the pins of SOCITAS.analyzers.v2.json' {
+    It 'v2/rule-inventory.json records the pins of v2/SOCITAS.analyzers.v2.json' {
         $inv = Load 'v2/rule-inventory.json'
         $inv.PSObject.Properties.Name | Should -Contain 'pins'
         PinsText $inv.pins | Should -BeExactly (PinsText $script:PinsCur)
@@ -254,7 +254,7 @@ Describe 'AC6 - inventory provenance matches the pins it is used for' {
 
     It 'the next-coverage workflow steps always regenerate the inventory from the next pins (no fallback to the current one)' {
         $wf = Get-Content -Raw (P '.github/workflows/validate.yml')
-        $wf | Should -Match 'Get-RuleInventory\.ps1 -PinsPath SOCITAS\.analyzers\.v2\.next\.json'
+        $wf | Should -Match 'Get-RuleInventory\.ps1 -PinsPath v2/next/SOCITAS\.analyzers\.v2\.next\.json'
         $wf | Should -Not -Match 'if \(Test-Path v2/rule-inventory\.next\.json\)'
     }
 }

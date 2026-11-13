@@ -14,9 +14,9 @@ $ErrorActionPreference = 'Stop'
 Push-Location -LiteralPath $RepoRoot
 try {
     $pairs = [ordered]@{
-        'SOCITAS.ruleset.v2.json'      = 'SOCITAS.ruleset.v2.next.json'
-        'SOCITAS.test.ruleset.v2.json' = 'SOCITAS.test.ruleset.v2.next.json'
-        'SOCITAS.analyzers.v2.json'    = 'SOCITAS.analyzers.v2.next.json'
+        'v2/SOCITAS.ruleset.v2.json'      = 'v2/next/SOCITAS.ruleset.v2.next.json'
+        'v2/SOCITAS.test.ruleset.v2.json' = 'v2/next/SOCITAS.test.ruleset.v2.next.json'
+        'v2/SOCITAS.analyzers.v2.json'    = 'v2/next/SOCITAS.analyzers.v2.next.json'
     }
     $frozen = @('SOCITAS.ruleset.json', 'SOCITAS.test.ruleset.json')
 

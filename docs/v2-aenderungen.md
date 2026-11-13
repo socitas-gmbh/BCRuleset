@@ -4,7 +4,7 @@ v2 wird zentral gesteuert und darf nachgeschärft werden. Damit vorher bekannt i
 
 ## Änderung vorschlagen
 
-1. In einem PR die Kandidatendateien ändern: `SOCITAS.ruleset.v2.next.json`, `SOCITAS.test.ruleset.v2.next.json` (wird mit `tools/Build-TestRuleset.ps1` aus dem App-Ruleset erzeugt, nie von Hand) und/oder `SOCITAS.analyzers.v2.next.json`. Die aktuellen v2-Dateien bleiben unverändert.
+1. In einem PR die Kandidatendateien ändern: `v2/next/SOCITAS.ruleset.v2.next.json`, `v2/next/SOCITAS.test.ruleset.v2.next.json` (wird mit `tools/Build-TestRuleset.ps1` aus dem App-Ruleset erzeugt, nie von Hand) und/oder `v2/next/SOCITAS.analyzers.v2.next.json`. Die aktuellen v2-Dateien bleiben unverändert.
 2. PR mergen. Solange nichts vorgeschlagen ist, sind die `next`-Dateien byte-identisch zu den aktuellen.
 3. Das CI der v2-Repos kompiliert auf main/stage/dev den Kandidaten als Vorschau (`previewRuleset = v2.next`, OperationName `CI Preview Compile`) und meldet `wouldFailBuild` als Telemetrie. Der echte Build ändert sich nicht.
 4. Auswirkung prüfen:
@@ -14,8 +14,8 @@ v2 wird zentral gesteuert und darf nachgeschärft werden. Damit vorher bekannt i
 
 ## Pin-Bump (Analyzer-Versionen)
 
-1. Pins in `SOCITAS.analyzers.v2.next.json` anheben (`revision` erhöhen).
+1. Pins in `v2/next/SOCITAS.analyzers.v2.next.json` anheben (`revision` erhöhen).
 2. Inventar neu erzeugen:
-   `pwsh tools/Get-RuleInventory.ps1 -PinsPath SOCITAS.analyzers.v2.next.json -OutPath v2/rule-inventory.next.json`
-3. Für neue Regel-IDs in `SOCITAS.ruleset.v2.next.json` ausdrücklich eine Aktion eintragen, danach das Test-Ruleset neu generieren. Die Abdeckungsprüfung im CI erzeugt das Inventar immer neu aus `SOCITAS.analyzers.v2.next.json` (kein Rückgriff auf das aktuelle Inventar; das Inventar trägt die Pins, aus denen es erzeugt wurde, im Feld `pins`) und schlägt bei jeder ID ohne Aktion fehl.
-4. Weiter wie oben (Vorschau, Report, Promotion). Bei der Promotion `v2/rule-inventory.json` mit dem neuen Inventar ersetzen und `v2/rule-inventory.next.json` entfernen oder angleichen.
+   `pwsh tools/Get-RuleInventory.ps1 -PinsPath v2/next/SOCITAS.analyzers.v2.next.json -OutPath v2/next/rule-inventory.next.json`
+3. Für neue Regel-IDs in `v2/next/SOCITAS.ruleset.v2.next.json` ausdrücklich eine Aktion eintragen, danach das Test-Ruleset neu generieren. Die Abdeckungsprüfung im CI erzeugt das Inventar immer neu aus `v2/next/SOCITAS.analyzers.v2.next.json` (kein Rückgriff auf das aktuelle Inventar; das Inventar trägt die Pins, aus denen es erzeugt wurde, im Feld `pins`) und schlägt bei jeder ID ohne Aktion fehl.
+4. Weiter wie oben (Vorschau, Report, Promotion). Bei der Promotion `v2/rule-inventory.json` mit dem neuen Inventar ersetzen und `v2/next/rule-inventory.next.json` entfernen oder angleichen.

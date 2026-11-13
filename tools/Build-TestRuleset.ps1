@@ -1,7 +1,7 @@
 #Requires -Version 7.0
 <#
 .SYNOPSIS
-  Generates SOCITAS.test.ruleset.v2.json = v2 app ruleset + kept/remapped test relaxations + test-only rules (ST*).
+  Generates v2/SOCITAS.test.ruleset.v2.json = v2 app ruleset + kept/remapped test relaxations + test-only rules (ST*).
 .NOTES
   Deterministic, LF line endings. Never hand-edit the output.
 #>

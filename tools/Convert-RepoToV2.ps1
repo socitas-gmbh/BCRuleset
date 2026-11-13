@@ -6,8 +6,8 @@
   For every project under -RepoRoot (a folder with .vscode/settings.json that still carries v1 markers):
     1. al.codeAnalyzers: drops BusinessCentral.LinterCop.dll / BusinessCentral.SocitasCop.dll, keeps ${...Cop}
        markers and unknown entries, appends the canonical v2 list (appAnalyzers, testAnalyzers for test projects).
-    2. al.ruleSetPath ruleset: includedRuleSets SOCITAS.ruleset.json -> SOCITAS.ruleset.v2.json and
-       SOCITAS.test.ruleset.json -> SOCITAS.test.ruleset.v2.json; local rules[].id mapped via LinterCop-to-ALCops.json
+    2. al.ruleSetPath ruleset: includedRuleSets SOCITAS.ruleset.json -> v2/SOCITAS.ruleset.v2.json and
+       SOCITAS.test.ruleset.json -> v2/SOCITAS.test.ruleset.v2.json; local rules[].id mapped via LinterCop-to-ALCops.json
        (one-to-many -> one rule per target, zero targets -> kept and reported).
        The container path compiles with scripts/settings.json `rulesetFile` (top level and inside versions[] / any nested
        object), which may differ from al.ruleSetPath: every ruleset it names that still carries the v1 include (or, when the
@@ -253,7 +253,7 @@ try {
     if (-not (Test-Path -LiteralPath $RepoRoot -PathType Container)) { throw "RepoRoot not found: $RepoRoot" }
     $root = (Resolve-Path -LiteralPath $RepoRoot).ProviderPath.TrimEnd('\', '/')
     $mapDoc = Get-SourceJson -Path $MapPath -Name 'LinterCop-to-ALCops.json'
-    $pins = Get-SourceJson -Path $PinsPath -Name 'SOCITAS.analyzers.v2.json'
+    $pins = Get-SourceJson -Path $PinsPath -Name 'v2/SOCITAS.analyzers.v2.json'
     $Map = @{}
     foreach ($p in $mapDoc.map.PSObject.Properties) { $Map[$p.Name.ToUpperInvariant()] = @($p.Value | ForEach-Object { [string]$_ }) }
     $appAnalyzers = @($pins.appAnalyzers | ForEach-Object { [string]$_ })
@@ -353,8 +353,8 @@ function Convert-Ruleset {
     if ($inc -and $inc.Value) {
         foreach ($i in @($inc.Value)) {
             $old = [string]$i.path
-            $new = $old -replace '(?i)SOCITAS\.test\.ruleset\.json$', 'SOCITAS.test.ruleset.v2.json'
-            $new = $new -replace '(?i)SOCITAS\.ruleset\.json$', 'SOCITAS.ruleset.v2.json'
+            $new = $old -replace '(?i)SOCITAS\.test\.ruleset\.json$', 'v2/SOCITAS.test.ruleset.v2.json'
+            $new = $new -replace '(?i)SOCITAS\.ruleset\.json$', 'v2/SOCITAS.ruleset.v2.json'
             if ($new -ne $old) { $i.path = $new; $dirty = $true }
         }
     }
@@ -547,8 +547,8 @@ foreach ($proj in $ordered) {
         }
         if ($rsIsV1Url) {
             $old = [string]$rsSetting.Value
-            $nv = $old -replace '(?i)SOCITAS\.test\.ruleset\.json$', 'SOCITAS.test.ruleset.v2.json'
-            $nv = $nv -replace '(?i)SOCITAS\.ruleset\.json$', 'SOCITAS.ruleset.v2.json'
+            $nv = $old -replace '(?i)SOCITAS\.test\.ruleset\.json$', 'v2/SOCITAS.test.ruleset.v2.json'
+            $nv = $nv -replace '(?i)SOCITAS\.ruleset\.json$', 'v2/SOCITAS.ruleset.v2.json'
             $settings.'al.ruleSetPath' = $nv
             $settingsDirty = $true
         }

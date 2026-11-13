@@ -28,7 +28,7 @@ jobs:
       - name: Regenerate rule inventory from the pins and fail on diff
         shell: pwsh
         run: |
-          ./tools/Get-RuleInventory.ps1 -PinsPath SOCITAS.analyzers.v2.json -OutPath "$env:RUNNER_TEMP/rule-inventory.json" -WorkDir "$env:RUNNER_TEMP/inv"
+          ./tools/Get-RuleInventory.ps1 -PinsPath v2/SOCITAS.analyzers.v2.json -OutPath "$env:RUNNER_TEMP/rule-inventory.json" -WorkDir "$env:RUNNER_TEMP/inv"
           if (-not (Test-Path v2/rule-inventory.json)) { throw 'v2/rule-inventory.json is missing' }
           $a = (Get-Content -Raw v2/rule-inventory.json) -replace "`r`n", "`n"
           $b = (Get-Content -Raw "$env:RUNNER_TEMP/rule-inventory.json") -replace "`r`n", "`n"
@@ -44,13 +44,13 @@ jobs:
         run: |
           $inv = Get-Content -Raw v2/rule-inventory.json | ConvertFrom-Json
           $app = @($inv.analyzers.PSObject.Properties.Name | Where-Object { $_ -notmatch 'TestCop' })
-          ./tools/Test-RulesetCoverage.ps1 -RulesetPath SOCITAS.ruleset.v2.json -InventoryPath v2/rule-inventory.json -Analyzers $app
+          ./tools/Test-RulesetCoverage.ps1 -RulesetPath v2/SOCITAS.ruleset.v2.json -InventoryPath v2/rule-inventory.json -Analyzers $app
           if ($LASTEXITCODE -ne 0) { exit 1 }
 
       - name: Coverage - test ruleset v2 against all analyzers
         shell: pwsh
         run: |
-          ./tools/Test-RulesetCoverage.ps1 -RulesetPath SOCITAS.test.ruleset.v2.json -InventoryPath v2/rule-inventory.json
+          ./tools/Test-RulesetCoverage.ps1 -RulesetPath v2/SOCITAS.test.ruleset.v2.json -InventoryPath v2/rule-inventory.json
           if ($LASTEXITCODE -ne 0) { exit 1 }
 
       - name: Coverage - next app ruleset against the app analyzers
@@ -58,18 +58,18 @@ jobs:
         run: |
           # always generated from the next pins: no fallback to the current inventory (a pin bump must not pass trivially)
           $invPath = "$env:RUNNER_TEMP/rule-inventory.next.json"
-          ./tools/Get-RuleInventory.ps1 -PinsPath SOCITAS.analyzers.v2.next.json -OutPath $invPath -WorkDir "$env:RUNNER_TEMP/inv-next"
+          ./tools/Get-RuleInventory.ps1 -PinsPath v2/next/SOCITAS.analyzers.v2.next.json -OutPath $invPath -WorkDir "$env:RUNNER_TEMP/inv-next"
           $inv = Get-Content -Raw $invPath | ConvertFrom-Json
           $app = @($inv.analyzers.PSObject.Properties.Name | Where-Object { $_ -notmatch 'TestCop' })
-          ./tools/Test-RulesetCoverage.ps1 -RulesetPath SOCITAS.ruleset.v2.next.json -InventoryPath $invPath -Analyzers $app
+          ./tools/Test-RulesetCoverage.ps1 -RulesetPath v2/next/SOCITAS.ruleset.v2.next.json -InventoryPath $invPath -Analyzers $app
           if ($LASTEXITCODE -ne 0) { exit 1 }
 
       - name: Coverage - next test ruleset against all analyzers
         shell: pwsh
         run: |
           $invPath = "$env:RUNNER_TEMP/rule-inventory.next.json"
-          ./tools/Get-RuleInventory.ps1 -PinsPath SOCITAS.analyzers.v2.next.json -OutPath $invPath -WorkDir "$env:RUNNER_TEMP/inv-next"
-          ./tools/Test-RulesetCoverage.ps1 -RulesetPath SOCITAS.test.ruleset.v2.next.json -InventoryPath $invPath
+          ./tools/Get-RuleInventory.ps1 -PinsPath v2/next/SOCITAS.analyzers.v2.next.json -OutPath $invPath -WorkDir "$env:RUNNER_TEMP/inv-next"
+          ./tools/Test-RulesetCoverage.ps1 -RulesetPath v2/next/SOCITAS.test.ruleset.v2.next.json -InventoryPath $invPath
           if ($LASTEXITCODE -ne 0) { exit 1 }
 
       - name: Test relaxations are recorded
@@ -81,18 +81,18 @@ jobs:
       - name: Test ruleset equals the generator output
         shell: pwsh
         run: |
-          ./tools/Build-TestRuleset.ps1 -AppRulesetPath SOCITAS.ruleset.v2.json -RelaxationsPath v2/test-relaxations.json -OutPath "$env:RUNNER_TEMP/test.ruleset.v2.json"
-          $a = (Get-Content -Raw SOCITAS.test.ruleset.v2.json) -replace "`r`n", "`n"
+          ./tools/Build-TestRuleset.ps1 -AppRulesetPath v2/SOCITAS.ruleset.v2.json -RelaxationsPath v2/test-relaxations.json -OutPath "$env:RUNNER_TEMP/test.ruleset.v2.json"
+          $a = (Get-Content -Raw v2/SOCITAS.test.ruleset.v2.json) -replace "`r`n", "`n"
           $b = (Get-Content -Raw "$env:RUNNER_TEMP/test.ruleset.v2.json") -replace "`r`n", "`n"
-          if ($a -ne $b) { Write-Host '::error::SOCITAS.test.ruleset.v2.json is not the generator output (never hand-edit it)'; exit 1 }
+          if ($a -ne $b) { Write-Host '::error::v2/SOCITAS.test.ruleset.v2.json is not the generator output (never hand-edit it)'; exit 1 }
 
       - name: Next test ruleset equals the generator output
         shell: pwsh
         run: |
-          ./tools/Build-TestRuleset.ps1 -AppRulesetPath SOCITAS.ruleset.v2.next.json -RelaxationsPath v2/test-relaxations.json -OutPath "$env:RUNNER_TEMP/test.ruleset.v2.next.json"
-          $a = (Get-Content -Raw SOCITAS.test.ruleset.v2.next.json) -replace "`r`n", "`n"
+          ./tools/Build-TestRuleset.ps1 -AppRulesetPath v2/next/SOCITAS.ruleset.v2.next.json -RelaxationsPath v2/test-relaxations.json -OutPath "$env:RUNNER_TEMP/test.ruleset.v2.next.json"
+          $a = (Get-Content -Raw v2/next/SOCITAS.test.ruleset.v2.next.json) -replace "`r`n", "`n"
           $b = (Get-Content -Raw "$env:RUNNER_TEMP/test.ruleset.v2.next.json") -replace "`r`n", "`n"
-          if ($a -ne $b) { Write-Host '::error::SOCITAS.test.ruleset.v2.next.json is not the generator output (never hand-edit it)'; exit 1 }
+          if ($a -ne $b) { Write-Host '::error::v2/next/SOCITAS.test.ruleset.v2.next.json is not the generator output (never hand-edit it)'; exit 1 }
 
       - name: v2 promotion only from the next files
         if: github.event_name == 'pull_request'

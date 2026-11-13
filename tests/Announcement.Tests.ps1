@@ -11,7 +11,7 @@ Describe 'AC17 - v2 announcement (docs/v2.md)' {
 
     It 'has a section on what v2 is, naming the v2 stack (ALCops, SocitasCopV2, TestCop) and the pinned versions' {
         ($script:headings -join "`n") | Should -Match '(?i)was ist|überblick|worum'
-        foreach ($t in 'ALCops', 'SocitasCopV2', 'TestCop', 'SOCITAS.ruleset.v2.json', 'SOCITAS.analyzers.v2.json') { $script:text | Should -Match ([regex]::Escape($t)) }
+        foreach ($t in 'ALCops', 'SocitasCopV2', 'TestCop', 'v2/SOCITAS.ruleset.v2.json', 'v2/SOCITAS.analyzers.v2.json') { $script:text | Should -Match ([regex]::Escape($t)) }
         $script:text | Should -Match '(?i)v1.*(eingefroren|bleibt)'
     }
 

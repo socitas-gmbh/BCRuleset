@@ -3,7 +3,7 @@
 .SYNOPSIS
   Generates v2/rule-inventory.json: every diagnostic id per analyzer for the pinned versions.
 .PARAMETER PinsPath
-  SOCITAS.analyzers.v2.json (alCompiler, alcops, socitasCopV2, testCop).
+  v2/SOCITAS.analyzers.v2.json (alCompiler, alcops, socitasCopV2, testCop).
 .PARAMETER OutPath
   Inventory file to write.
 .PARAMETER CompilerPath
