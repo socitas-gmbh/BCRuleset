@@ -888,13 +888,13 @@
     },
     {
       "id": "DC0006",
-      "action": "Warning",
-      "justification": "Internal procedures must include XML documentation comments. Raised to Warning by SOCITAS decision."
+      "action": "Hidden",
+      "justification": "Internal procedures must include XML documentation comments. Entered at the ALCops default severity, to be tightened once measured."
     },
     {
       "id": "DC0007",
-      "action": "None",
-      "justification": "Public objects must include XML documentation comments. Disabled by SOCITAS decision."
+      "action": "Info",
+      "justification": "Public objects must include XML documentation comments. Entered at the ALCops default severity, to be tightened once measured."
     },
     {
       "id": "DC0008",
