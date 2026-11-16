@@ -888,8 +888,8 @@
     },
     {
       "id": "DC0006",
-      "action": "Hidden",
-      "justification": "Internal procedures must include XML documentation comments. Entered at the ALCops default severity, to be tightened once measured."
+      "action": "Warning",
+      "justification": "Internal procedures must include XML documentation comments. Raised to Warning by SOCITAS decision."
     },
     {
       "id": "DC0007",
