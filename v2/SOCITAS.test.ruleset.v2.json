@@ -928,8 +928,8 @@
     },
     {
       "id": "FC0004",
-      "action": "Info",
-      "justification": "Permission declarations should be ordered alphabetically. Entered at the ALCops default severity, to be tightened once measured."
+      "action": "Warning",
+      "justification": "Permission declarations should be ordered alphabetically. Raised to Warning by SOCITAS decision."
     },
     {
       "id": "FC0005",
