@@ -1059,7 +1059,7 @@
     {
       "id": "LC0089",
       "action": "None",
-      "justification": "Show Cognitive Complexity diagnostics for all methods."
+      "justification": "Turned off: it reports the Cognitive Complexity score of every method as an Info diagnostic, which is noise nobody acts on. LC0090 reports methods above the threshold."
     },
     {
       "id": "LC0090",
@@ -1988,8 +1988,8 @@
     },
     {
       "id": "LC0089i",
-      "action": "Info",
-      "justification": "Added in v2 with the default severity of LinterCop (Info): {0}: +{1} (1 increment + {2} nesting penalty)"
+      "action": "None",
+      "justification": "Turned off: it reports every Cognitive Complexity increment as an Info diagnostic, which is noise nobody acts on. LC0090 reports methods above the threshold."
     },
     {
       "id": "SC0001",
