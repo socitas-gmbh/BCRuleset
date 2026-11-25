@@ -1098,8 +1098,8 @@
     },
     {
       "id": "LC0098",
-      "action": "Info",
-      "justification": "Event subscriber name does not match the configured template. Entered at the ALCops default severity, to be tightened once measured."
+      "action": "None",
+      "justification": "Event subscriber name does not match the configured template. Disabled by SOCITAS decision: SC0004 (Action_EventName) is the leading naming rule and conflicts with the LC0098 default template."
     },
     {
       "id": "LC0099",
